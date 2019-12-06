@@ -8,7 +8,7 @@ import 'flexmonster/flexmonster.css';
 
 //2. Referring to the vue-flexmonster module as a plugin: 
 Vue.use(Pivot);
-Vue.component(Pivot);
+//Vue.component(Pivot);
 
 Vue.config.productionTip = false
 
