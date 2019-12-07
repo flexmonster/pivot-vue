@@ -53,7 +53,7 @@ button {
   padding: 10px 10px;
   font-size: 14px;
 }
-button:hover {
+button:hover, button:focus {
   border: 2px solid #df3800;
   background: #df3800;
   color: #fff;

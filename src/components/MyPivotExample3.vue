@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>How to <a href="https://www.flexmonster.com/doc/customizing-toolbar/">customize the Toolbar</a> and use <a href="https://www.flexmonster.com/api/customizecell/">customizeCell</a></h1>
+    <h1><a href="https://www.flexmonster.com/doc/customizing-toolbar/">Toolbar customization</a> and <a href="https://www.flexmonster.com/api/customizecell/">customizeCell example</a></h1>
     <Pivot
       ref="pivot"
       toolbar
