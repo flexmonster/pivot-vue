@@ -1,4 +1,6 @@
 # Flexmonster Pivot Table &amp; Charts integration with VueJS
+[![Flexmonster Pivot Table & Charts](https://s3.amazonaws.com/flexmonster/github/fm-github-cover.png)](https://flexmonster.com)
+
 
 ## How to run the Sample Project: 
 
