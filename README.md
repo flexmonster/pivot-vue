@@ -5,19 +5,19 @@
 ## How to run the Sample Project: 
 
  
-1) Clone the sample project: 
+###### 1) Clone the sample project: 
 
 ```bash
 git clone https://github.com/flexmonster/pivot-vue.git && cd pivot-vue
 ```
 
-2) Install the dependencies defined in `package.json`: 
+###### 2) Install the dependencies defined in `package.json`: 
 
 ```bash
 npm i
 ```
 
-3) Run the sample project: 
+###### 3) Run the sample project: 
 
 ```bash
 npm run serve 
