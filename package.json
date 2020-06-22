@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "vue-cli-service serve --open",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.3.2",
-    "flexmonster": "^2.7.20",
+    "flexmonster": "latest",
     "vue": "^2.6.10",
-    "vue-flexmonster": "^2.7.20"
+    "vue-flexmonster": "latest"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.0",
