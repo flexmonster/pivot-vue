@@ -20,7 +20,7 @@ npm i
 ###### 3) Run the sample project: 
 
 ```bash
-npm run serve 
+npm start 
 ```
 
 The project should be available at http://localhost:8080/  
