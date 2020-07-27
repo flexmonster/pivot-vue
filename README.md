@@ -13,7 +13,7 @@ This repository holds the source code for a simple [Vue.js](https://vuejs.org/) 
 
 ## Prerequisites
 
-To run a simple application with Vue.js pivot table, you will need Node.js and npm. [Get it here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) if it's not already installed on your machine.
+To run a simple application with the Vue.js pivot table, you will need Node.js and npm. [Get it here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) if it's not already installed on your machine.
 
 ## Installation 
 
