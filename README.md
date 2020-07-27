@@ -1,28 +1,42 @@
-# Flexmonster Pivot Table &amp; Charts integration with VueJS
-[![Flexmonster Pivot Table & Charts](https://s3.amazonaws.com/flexmonster/github/fm-github-cover.png)](https://flexmonster.com)
+# Flexmonster Pivot Table &amp; Charts integration with Vue.js
+[![Flexmonster Pivot Table & Charts](https://www.flexmonster.com/fm_uploads/2020/06/GitHub_fm.png)](https://flexmonster.com)
+Website: www.flexmonster.com
 
+## Flexmonster Pivot Table & Charts
+Flexmonster Pivot is a powerful Javascript tool for interactive web reporting. It allows you to visualize and analyze data from JSON, CSV, SQL, NoSQL, Elasticsearch, and OLAP data sources fast and conveniently. Flexmonster is designed to integrate seamlessly with any client-side framework and can be easily embedded into your application.
 
-## How to run the Sample Project: 
+This repository holds the source code for a simple [Vue.js](https://vuejs.org/) and Flexmonster Pivot Table & Charts project:
 
- 
-###### 1) Clone the sample project: 
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+
+## Prerequisites
+
+To run a simple application you will need Node.js and npm. [Get it here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) if it's not already installed on your machine.
+
+## Installation 
+
+1. Download the `.zip` archive with the sample project or clone it from GitHub with the following command:
 
 ```bash
 git clone https://github.com/flexmonster/pivot-vue.git && cd pivot-vue
 ```
 
-###### 2) Install the dependencies defined in `package.json`: 
+2. Install the npm packages described in `package.json`: 
 
 ```bash
-npm i
+npm install
 ```
 
-###### 3) Run the sample project: 
+3. Run the sample project: 
 
 ```bash
 npm start 
 ```
 
-The project should be available at http://localhost:8080/  
+To see the result, open `http://localhost:8080/` in your browser.
 
- 
+## Usage
+
+For details on usage, see the [Flexmonster integration with Vue](https://www.flexmonster.com/doc/integration-with-vue/) guide.
