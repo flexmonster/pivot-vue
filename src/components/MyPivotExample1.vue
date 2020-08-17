@@ -5,6 +5,7 @@
       ref="pivot"
       toolbar 
       v-bind:report="'https://cdn.flexmonster.com/reports/report.json'"
+      _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
     ></Pivot>
   </div>
 </template>

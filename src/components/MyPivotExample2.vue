@@ -7,6 +7,7 @@
       v-bind:report="'https://cdn.flexmonster.com/reports/report.json'"
       v-bind:reportcomplete="myeventHandler1"
       v-bind:cellclick="myeventHandler2"
+      _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
     ></Pivot>
   </div>
 </template>

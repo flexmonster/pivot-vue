@@ -86,6 +86,7 @@
       }"
       v-bind:beforetoolbarcreated="customizeToolbar"
       v-bind:customizeCell="customizeCellFunction"
+      _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
     ></Pivot>
   </div>
 </template>
