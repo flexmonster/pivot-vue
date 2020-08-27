@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Simple usage example</h1>
+    <h3 class="title-one page-title">Simple Usage Example</h3>
     <Pivot
       ref="pivot"
       toolbar 
@@ -13,19 +13,18 @@
 <script>
 
 //Using the vue-flexmonster module (local registration):
-
 //1. Importing the vue-flexmonster module: 
 //Uncomment the lines below:
 // import {Pivot} from "vue-flexmonster";
 // import 'flexmonster/flexmonster.css';
 
 export default {
-  name: "Example_3",
+  name: "Example_1",
   //2. Defining the component:
   //Uncomment the lines below:
   // components: {
   //    Pivot
   // },
-
 };
+
 </script>

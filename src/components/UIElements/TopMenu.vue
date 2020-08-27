@@ -1,0 +1,169 @@
+<template>
+  <header class="mainheader fixed-head">
+    <div class="container-xl">
+      <a href="https://www.flexmonster.com/" class="logo">
+        <img src="https://www.flexmonster.com/base/assets/img/svg/logo.svg" alt />
+      </a>
+      <ul class="mainnav">
+        <li class>
+          <a href="https://www.flexmonster.com/doc/">Docs</a>
+        </li>
+        <li class>
+          <a href="https://www.flexmonster.com/support/">Support</a>
+        </li>
+        <li class>
+          <a href="https://www.flexmonster.com/contact/">Contact us</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+</template>
+
+<script>
+export default {
+  name: "TopMenu",
+};
+</script>
+
+<style>
+@media only screen and (max-width: 440px) {
+  .mainheader .mainnav {
+    display: none;
+  }
+}
+
+.mainheader {
+  padding: 19px 80px;
+  position: absolute;
+  font-size: 0;
+  width: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+  z-index: 999;
+  border-bottom: 1px solid transparent;
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.mainheader.fixed-head {
+  background-color: #fff;
+  position: fixed;
+  border-bottom: 1px solid #cdcdcf;
+  -webkit-box-shadow: 0px 2px 10px rgba(226, 230, 232, 0.6);
+  box-shadow: 0px 2px 10px rgba(226, 230, 232, 0.6);
+  z-index: 1001;
+}
+
+.mainheader .container-xl {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mainheader .logo {
+  width: 225px;
+  display: block;
+}
+
+.mainheader .logo {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mainheader .logo img {
+  display: block;
+  width: 100%;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+
+.mainheader .mainnav {
+  margin: 0 10px;
+}
+.mainheader .mainnav,
+.mainheader .mainheader-icons {
+  padding-top: 2px;
+}
+ol,
+ul {
+  list-style: none;
+}
+
+.mainnav li {
+  margin-right: 20px;
+}
+
+.mainnav li {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 24px;
+}
+
+.mainnav li a {
+  font-size: 14px;
+  line-height: 1.35714;
+  text-transform: uppercase;
+  color: #454545;
+  position: relative;
+}
+
+.mainnav li a:hover:before {
+  opacity: 1;
+  width: 100%;
+}
+
+.mainnav li a:before {
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #df3800;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.data-slider .ui-slider-handle > span,
+.data-slider .ui-slider-handle > span:before,
+.mainnav li a:before{
+  display: block;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.text-def ul li:before,
+.check-wrap .lbl:after,
+.data-slider:before,
+.data-slider:after,
+.data-slider .ui-slider-handle > span:before,
+.mainnav li a:before{
+  content: "";
+  display: block;
+  position: absolute;
+}
+</style>

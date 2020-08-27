@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1><a href="https://www.flexmonster.com/doc/customizing-toolbar/">Toolbar customization</a> and <a href="https://www.flexmonster.com/api/customizecell/">customizeCell example</a></h1>
+    <h3 class="title-one page-title"> How to <a href="https://www.flexmonster.com/doc/customizing-toolbar/">customize the Toolbar</a> example</h3>
     <Pivot
       ref="pivot"
       toolbar
@@ -85,58 +85,39 @@
         }
       }"
       v-bind:beforetoolbarcreated="customizeToolbar"
-      v-bind:customizeCell="customizeCellFunction"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
     ></Pivot>
   </div>
 </template>
 
 <script>
-//Using the vue-flexmonster module (local registration):
-
-//1. Importing the vue-flexmonster module: 
-//Uncomment the lines below:
-// import {Pivot} from "vue-flexmonster";
-// import 'flexmonster/flexmonster.css';
-
 export default {
-  name: "Example_1",  
-  //2. Defining the component:
-  //Uncomment the lines below:
-  // components: {
-  //    Pivot
-  // },
+  name: "Example_5",
   methods: {
-    showInfo: function() {
+    showInfo: function () {
       this.$refs.pivot.flexmonster.alert({
         title: "Customizing Flexmonster",
-        message: "1) How to customize the Toolbar: <a style='text-decoration:underline; color:blue' href='https://www.flexmonster.com/doc/customizing-toolbar/'>https://www.flexmonster.com/doc/customizing-toolbar/</a> <br><br> 2) Using customizeCell: <a style='text-decoration:underline; color:blue' href='https://www.flexmonster.com/api/customizecell/'>https://www.flexmonster.com/api/customizecell/</a>",
+        message:
+          "How to customize the Toolbar: <a style='text-decoration:underline; color:blue' href='https://www.flexmonster.com/doc/customizing-toolbar/'>https://www.flexmonster.com/doc/customizing-toolbar/</a> <br>",
         type: "info",
-        blocking: false
+        blocking: false,
       });
     },
-    
-    customizeToolbar: function(toolbar) {
+
+    customizeToolbar: function (toolbar) {
       var tabs = toolbar.getTabs();
       toolbar.getTabs = () => {
         tabs = [];
         // add new tab
-        tabs.unshift({
+        tabs.push({
           id: "fm-tab-newtab",
           title: "New Tab",
           handler: this.showInfo,
-          icon: toolbar.icons.open
+          icon: toolbar.icons.open,
         });
         return tabs;
       };
     },
-
-    customizeCellFunction: function(cell, data){
-      if (data.measure) {
-        cell.attr["measure"] = data.measure.name;
-      }
-    }
-
-  }
+  },
 };
 </script>
