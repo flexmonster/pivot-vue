@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="title-one page-title">How to <a href="https://www.flexmonster.com/doc/integration-with-highcharts/">integrate with Highcharts</a> example</h3>
+    <h3 class="title-one page-title">How to <a class="title-link" target="blank" href="https://www.flexmonster.com/doc/integration-with-highcharts/">integrate with Highcharts</a> example</h3>
     <Pivot
       ref="pivot"
       toolbar

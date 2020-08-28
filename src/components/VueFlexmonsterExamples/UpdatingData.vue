@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="title-one page-title">How to <a href="https://www.flexmonster.com/api/updatedata/">update the data in Flexmonster</a> example</h3>
+    <h3 class="title-one page-title">How to <a class="title-link" target="blank" href="https://www.flexmonster.com/api/updatedata/">update the data in Flexmonster</a> example</h3>
     <button v-on:click="updateTheData">Update the data</button>
     <Pivot
       ref="pivot"

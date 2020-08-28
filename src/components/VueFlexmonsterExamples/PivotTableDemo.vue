@@ -19,7 +19,7 @@
 // import 'flexmonster/flexmonster.css';
 
 export default {
-  name: "Example_1",
+  name: "PivotTableDemo",
   //2. Defining the component:
   //Uncomment the lines below:
   // components: {

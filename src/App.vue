@@ -57,42 +57,42 @@
 </template>
 
 <script>
-import Example_1 from "./components/VueFlexmonsterExamples/MyPivotExample1.vue";
-import Example_2 from "./components/VueFlexmonsterExamples/MyPivotExample2.vue";
-import Example_3 from "./components/VueFlexmonsterExamples/MyPivotExample3.vue";
-import Example_4 from "./components/VueFlexmonsterExamples/MyPivotExample4.vue";
-import Example_5 from "./components/VueFlexmonsterExamples/MyPivotExample5.vue";
-import Example_6 from "./components/VueFlexmonsterExamples/MyPivotExample6.vue";
-import Example_7 from "./components/VueFlexmonsterExamples/MyPivotExample7.vue";
+import PivotTableDemo from "./components/VueFlexmonsterExamples/PivotTableDemo.vue";
+import CallingEvents from "./components/VueFlexmonsterExamples/CallingEvents.vue";
+import UsingAPICalls from "./components/VueFlexmonsterExamples/UsingAPICalls.vue";
+import UpdatingData from "./components/VueFlexmonsterExamples/UpdatingData.vue";
+import CustomizingToolbar from "./components/VueFlexmonsterExamples/CustomizingToolbar.vue";
+import CustomizingGrid from "./components/VueFlexmonsterExamples/CustomizingGrid.vue";
+import WithHighcharts from "./components/VueFlexmonsterExamples/WithHighcharts.vue";
 
 import TopMenu from "./components/UIElements/TopMenu";
 
 export default {
   name: "app",
   components: {
-    Example_1,
-    Example_2,
-    Example_3,
-    Example_4,
-    Example_5,
-    Example_6,
-    Example_7,
+    PivotTableDemo,
+    CallingEvents,
+    UsingAPICalls,
+    UpdatingData,
+    CustomizingToolbar,
+    CustomizingGrid,
+    WithHighcharts,
     TopMenu,
   },
   data: function () {
     return {
-      currentTab: "Example_1",
-      tabs0: [{ key: "Example_1", label: "Pivot Table Demo" }],
+      currentTab: "PivotTableDemo",
+      tabs0: [{ key: "PivotTableDemo", label: "Pivot Table Demo" }],
       tabs1: [
-        { key: "Example_2", label: "Calling Events" },
-        { key: "Example_3", label: "Using API Calls" },
-        { key: "Example_4", label: "Updating Data" },
+        { key: "CallingEvents", label: "Calling Events" },
+        { key: "UsingAPICalls", label: "Using API Calls" },
+        { key: "UpdatingData", label: "Updating Data" },
       ],
       tabs2: [
-        { key: "Example_5", label: "Customizing Toolbar" },
-        { key: "Example_6", label: "Customizing Grid" },
+        { key: "CustomizingToolbar", label: "Customizing Toolbar" },
+        { key: "CustomizingGrid", label: "Customizing Grid" },
       ],
-      tabs3: [{ key: "Example_7", label: "with Highcharts" }],
+      tabs3: [{ key: "WithHighcharts", label: "with Highcharts" }],
     };
   },
   computed: {
@@ -154,6 +154,7 @@ button:focus {
 .container {
   float: left;
   width: 75%;
+  min-width: 605px;
   padding: 30px 40px;
   background: #fff;
   padding-top: 0;
@@ -185,6 +186,7 @@ h6 {
 .side-menu {
   float: left;
   width: 25%;
+  min-width: 200px;
   border-right: 1px solid #eaeaea;
 }
 ol,
@@ -217,5 +219,41 @@ ul {
 .side-menu-wrap .side-menu li a.active,
 .side-menu-wrap .side-menu li.active a {
   color: #df3800;
+}
+
+.title-link {
+  color: #00A45A;
+  position: relative;
+}
+
+.title-link:hover:before {
+  opacity: 1;
+  width: 100%;
+}
+
+.title-link:before {
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #00A45A;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.title-link:before{
+  display: block;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.title-link:before{
+  content: "";
+  display: block;
+  position: absolute;
 }
 </style>

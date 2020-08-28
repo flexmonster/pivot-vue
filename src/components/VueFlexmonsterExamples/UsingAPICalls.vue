@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="title-one page-title">How to access <a href="https://www.flexmonster.com/api/methods/">Flexmonster API calls</a> example</h3>
+    <h3 class="title-one page-title">How to access <a class="title-link" target="blank" href="https://www.flexmonster.com/api/methods/">Flexmonster API calls</a> example</h3>
     <button v-on:click="showChart">Show Pie Chart</button>
     <button v-on:click="showGrid">Show Grid</button>
     <button v-on:click="readOnly">Make read only</button>

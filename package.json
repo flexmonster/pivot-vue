@@ -11,7 +11,6 @@
   "dependencies": {
     "core-js": "^3.3.2",
     "highcharts": "^8.2.0",
-    "tinycolor2": "^1.4.1",
     "vue": "^2.6.10",
     "vue-flexmonster": "latest"
   },
@@ -33,7 +32,9 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "no-console": "off"
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }

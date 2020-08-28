@@ -1,18 +1,18 @@
 <template>
   <header class="mainheader fixed-head">
     <div class="container-xl">
-      <a href="https://www.flexmonster.com/" class="logo">
+      <a href="https://www.flexmonster.com/" target="blank" class="logo">
         <img src="https://www.flexmonster.com/base/assets/img/svg/logo.svg" alt />
       </a>
       <ul class="mainnav">
         <li class>
-          <a href="https://www.flexmonster.com/doc/">Docs</a>
+          <a href="https://www.flexmonster.com/doc/" target="blank">Docs</a>
         </li>
         <li class>
-          <a href="https://www.flexmonster.com/support/">Support</a>
+          <a href="https://www.flexmonster.com/support/" target="blank">Support</a>
         </li>
         <li class>
-          <a href="https://www.flexmonster.com/contact/">Contact us</a>
+          <a href="https://www.flexmonster.com/contact/" target="blank">Contact us</a>
         </li>
       </ul>
     </div>
@@ -33,10 +33,11 @@ export default {
 }
 
 .mainheader {
-  padding: 19px 80px;
+  padding: 7px 80px;
   position: absolute;
   font-size: 0;
   width: 100%;
+  min-width: 736px;
   top: 0;
   left: 0;
   -webkit-transition: all 0.1s;
@@ -128,6 +129,7 @@ ul {
   text-transform: uppercase;
   color: #454545;
   position: relative;
+  font-weight: 600;
 }
 
 .mainnav li a:hover:before {

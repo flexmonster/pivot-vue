@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="title-one page-title">
-        How to <a href="https://www.flexmonster.com/api/customizecell/">customize the grid cells</a> example
+        How to <a class="title-link" target="blank" href="https://www.flexmonster.com/api/customizecell/">customize the grid cells</a> example
     </h3>
     <Pivot
       ref="pivot"
@@ -47,7 +47,6 @@
 </template>
 
 <script>
-import tinycolor from "tinycolor2";
 
 export default {
   name: "Example_6",
@@ -55,8 +54,8 @@ export default {
     customizeCellFunction: function (cell, data) {
       if (data.measure && data.measure.name == "Price") {
         let backgroundColor = "#00A45A";
-        let textShadowColor = tinycolor(backgroundColor).darken(15).toString();
-        let borderColor = tinycolor(backgroundColor).darken(3).toString();
+        let textShadowColor = "#095231";
+        let borderColor = "#009552";
         cell.style["background-color"] = backgroundColor;
         cell.style["color"] = "white";
         cell.style["font-weight"] = "bold";
