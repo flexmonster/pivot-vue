@@ -26,159 +26,159 @@ export default {
       eventList: [
         {
           "eventName": "afterchartdraw",
-          "event": this.afterchartdrawHandler
+          "eventHandler": this.afterchartdrawHandler
         },
         {
           "eventName": "aftergriddraw",
-          "event": this.aftergriddrawHandler
+          "eventHandler": this.aftergriddrawHandler
         },
         {
           "eventName": "beforegriddraw",
-          "event": this.beforegriddrawHandler
+          "eventHandler": this.beforegriddrawHandler
         },
         {
           "eventName": "beforetoolbarcreated",
-          "event": this.beforetoolbarcreatedHandler
+          "eventHandler": this.beforetoolbarcreatedHandler
         },
         {
           "eventName": "cellclick",
-          "event": this.cellclickHandler
+          "eventHandler": this.cellclickHandler
         },
         {
           "eventName": "celldoubleclick",
-          "event": this.celldoubleclickHandler
+          "eventHandler": this.celldoubleclickHandler
         },
         {
           "eventName": "chartclick",
-          "event": this.chartclickHandler
+          "eventHandler": this.chartclickHandler
         },
         {
           "eventName": "datachanged",
-          "event": this.datachangedHandler
+          "eventHandler": this.datachangedHandler
         },
         {
           "eventName": "dataerror",
-          "event": this.dataerrorHandler
+          "eventHandler": this.dataerrorHandler
         },
         {
           "eventName": "datafilecancelled",
-          "event": this.datafilecancelledHandler
+          "eventHandler": this.datafilecancelledHandler
         },
         {
           "eventName": "dataloaded",
-          "event": this.dataloadedHandler
+          "eventHandler": this.dataloadedHandler
         },
         {
           "eventName": "drillthroughclose",
-          "event": this.drillthroughcloseHandler
+          "eventHandler": this.drillthroughcloseHandler
         },
         {
           "eventName": "drillthroughopen",
-          "event": this.drillthroughopenHandler
+          "eventHandler": this.drillthroughopenHandler
         },
         {
           "eventName": "exportcomplete",
-          "event": this.exportcompleteHandler
+          "eventHandler": this.exportcompleteHandler
         },
         {
           "eventName": "exportstart",
-          "event": this.exportstartHandler
+          "eventHandler": this.exportstartHandler
         },
         {
           "eventName": "fieldslistclose",
-          "event": this.fieldslistcloseHandler
+          "eventHandler": this.fieldslistcloseHandler
         },
         {
           "eventName": "fieldslistopen",
-          "event": this.fieldslistopenHandler
+          "eventHandler": this.fieldslistopenHandler
         },
         {
           "eventName": "filterclose",
-          "event": this.filtercloseHandler
+          "eventHandler": this.filtercloseHandler
         },
         {
           "eventName": "filteropen",
-          "event": this.filteropenHandler
+          "eventHandler": this.filteropenHandler
         },
         {
           "eventName": "loadingdata",
-          "event": this.loadingdataHandler
+          "eventHandler": this.loadingdataHandler
         },
         {
           "eventName": "loadinglocalization",
-          "event": this.loadinglocalizationHandler
+          "eventHandler": this.loadinglocalizationHandler
         },
         {
           "eventName": "loadingolapstructure",
-          "event": this.loadingolapstructureHandler
+          "eventHandler": this.loadingolapstructureHandler
         },
         {
           "eventName": "loadingreportfile",
-          "event": this.loadingreportfileHandler
+          "eventHandler": this.loadingreportfileHandler
         },
         {
           "eventName": "localizationerror",
-          "event": this.localizationerrorHandler
+          "eventHandler": this.localizationerrorHandler
         },
         {
           "eventName": "localizationloaded",
-          "event": this.localizationloadedHandler
+          "eventHandler": this.localizationloadedHandler
         },
         {
           "eventName": "olapstructureerror",
-          "event": this.olapstructureerrorHandler
+          "eventHandler": this.olapstructureerrorHandler
         },
         {
           "eventName": "olapstructureloaded",
-          "event": this.olapstructureloadedHandler
+          "eventHandler": this.olapstructureloadedHandler
         },
         {
           "eventName": "openingreportfile",
-          "event": this.openingreportfileHandler
+          "eventHandler": this.openingreportfileHandler
         },
         {
           "eventName": "printcomplete",
-          "event": this.printcompleteHandler
+          "eventHandler": this.printcompleteHandler
         },
         {
           "eventName": "printstart",
-          "event": this.printstartHandler
+          "eventHandler": this.printstartHandler
         },
         {
           "eventName": "querycomplete",
-          "event": this.querycompleteHandler
+          "eventHandler": this.querycompleteHandler
         },
         {
           "eventName": "queryerror",
-          "event": this.queryerrorHandler
+          "eventHandler": this.queryerrorHandler
         },
         {
           "eventName": "ready",
-          "event": this.readyHandler
+          "eventHandler": this.readyHandler
         },
         {
           "eventName": "reportchange",
-          "event": this.reportchangeHandler
+          "eventHandler": this.reportchangeHandler
         },
         {
           "eventName": "reportcomplete",
-          "event": this.reportcompleteHandler
+          "eventHandler": this.reportcompleteHandler
         },
         {
           "eventName": "reportfilecancelled",
-          "event": this.reportfilecancelledHandler
+          "eventHandler": this.reportfilecancelledHandler
         },
         {
           "eventName": "reportfileerror",
-          "event": this.reportfileerrorHandler
+          "eventHandler": this.reportfileerrorHandler
         },
         {
           "eventName": "runningquery",
-          "event": this.runningqueryHandler
+          "eventHandler": this.runningqueryHandler
         },
         {
           "eventName": "update",
-          "event": this.updateHandler
+          "eventHandler": this.updateHandler
         }
       ]
     }
@@ -197,13 +197,13 @@ export default {
     turnOffAllEvents: function() {
       for(var i=0; i<this.eventList.length; i++){
         //remove handler for specified event
-        this.$refs.pivot.flexmonster.off(this.eventList[i].eventName, this.eventList[i].event);
+        this.$refs.pivot.flexmonster.off(this.eventList[i].eventName, this.eventList[i].eventHandler);
       }
     },
     turnOnAllEvents: function() {
       for(var i=0; i<this.eventList.length; i++){
         //add handler for specified event
-        this.$refs.pivot.flexmonster.on(this.eventList[i].eventName, this.eventList[i].event);
+        this.$refs.pivot.flexmonster.on(this.eventList[i].eventName, this.eventList[i].eventHandler);
       }
     },
     afterchartdrawHandler: function(){
