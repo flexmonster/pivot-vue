@@ -113,6 +113,7 @@ export default {
   -webkit-font-smoothing: antialiased !important;
   text-rendering: optimizeLegibility !important;
 }
+
 .wrap {
   width: 100%;
   max-width: 1240px;
@@ -120,11 +121,13 @@ export default {
   padding-left: 20px;
   padding-right: 20px;
 }
+
 .side-menu-wrap {
   background: #fff;
   position: relative;
   display: flex;
 }
+
 button {
   border: 2px solid #df3800;
   background: #fff;
@@ -139,18 +142,18 @@ button {
   padding: 10px 10px;
   font-size: 14px;
 }
+
 button:hover,
 button:focus {
   border: 2px solid #df3800;
   background: #df3800;
   color: #fff;
 }
+
 button:focus {
   outline: none;
 }
-#fm-pivot-view #fm-grid-view div[measure="Price"] {
-  background-color: #b2dbbf;
-}
+
 .container {
   float: left;
   width: 75%;
@@ -163,6 +166,7 @@ button:focus {
 .section-inner-first.section-inner-first .title-one {
   margin-top: 0;
 }
+
 .title-one {
   font-size: 28px;
   line-height: 1.35714;
@@ -174,6 +178,7 @@ button:focus {
 .page-title {
   margin-bottom: 18px;
 }
+
 h1,
 h2,
 h3,
@@ -189,10 +194,12 @@ h6 {
   min-width: 200px;
   border-right: 1px solid #eaeaea;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 .side-menu-wrap .sub-title {
   padding-right: 40px;
   color: #cdcdcd;
@@ -201,6 +208,7 @@ ul {
   margin-bottom: 5px;
   margin-top: 22px;
 }
+
 .side-menu-wrap .side-menu li a {
   display: block;
   text-align: right;
@@ -215,6 +223,7 @@ ul {
   position: relative;
   cursor: pointer;
 }
+
 .side-menu-wrap .side-menu li a:hover,
 .side-menu-wrap .side-menu li a.active,
 .side-menu-wrap .side-menu li.active a {
@@ -222,7 +231,7 @@ ul {
 }
 
 .title-link {
-  color: #00A45A;
+  color: #00a45a;
   position: relative;
 }
 
@@ -235,14 +244,14 @@ ul {
   bottom: -2px;
   width: 0;
   height: 2px;
-  background: #00A45A;
+  background: #00a45a;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
   opacity: 0;
 }
 
-.title-link:before{
+.title-link:before {
   display: block;
   position: absolute;
   left: 50%;
@@ -251,7 +260,7 @@ ul {
   transform: translateX(-50%);
 }
 
-.title-link:before{
+.title-link:before {
   content: "";
   display: block;
   position: absolute;

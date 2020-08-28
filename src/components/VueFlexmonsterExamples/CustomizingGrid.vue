@@ -1,7 +1,12 @@
 <template>
   <div>
     <h3 class="title-one page-title">
-        How to <a class="title-link" target="blank" href="https://www.flexmonster.com/api/customizecell/">customize the grid cells</a> example
+      How to
+      <a
+        class="title-link"
+        target="blank"
+        href="https://www.flexmonster.com/api/customizecell/"
+      >customize the grid cells</a> example
     </h3>
     <Pivot
       ref="pivot"
@@ -47,7 +52,6 @@
 </template>
 
 <script>
-
 export default {
   name: "Example_6",
   methods: {

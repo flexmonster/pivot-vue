@@ -1,6 +1,13 @@
 <template>
   <div>
-    <h3 class="title-one page-title">How to <a class="title-link" target="blank" href="https://www.flexmonster.com/doc/integration-with-highcharts/">integrate with Highcharts</a> example</h3>
+    <h3 class="title-one page-title">
+      How to
+      <a
+        class="title-link"
+        target="blank"
+        href="https://www.flexmonster.com/doc/integration-with-highcharts/"
+      >integrate with Highcharts</a> example
+    </h3>
     <Pivot
       ref="pivot"
       toolbar
@@ -9,15 +16,15 @@
       v-bind:reportcomplete="reportComplete"
       v-bind:licenseKey="'Z7Y4-10A24L-3B5Q5J-5L196A-452136-6W0F6L-0Y3A49-0I4042-226R6A-430W1B-4N5L'"
     ></Pivot>
-    <br>
+    <br />
     <div id="highcharts-container"></div>
   </div>
 </template>
 
 <script>
 import Highcharts from "highcharts";
-//Importing Flexmonster's connector for Highcharts: 
-import 'flexmonster/lib/flexmonster.highcharts';
+//Importing Flexmonster's connector for Highcharts:
+import "flexmonster/lib/flexmonster.highcharts";
 
 export default {
   name: "Example_7",

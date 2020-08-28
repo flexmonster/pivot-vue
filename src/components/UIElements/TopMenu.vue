@@ -26,12 +26,6 @@ export default {
 </script>
 
 <style>
-@media only screen and (max-width: 440px) {
-  .mainheader .mainnav {
-    display: none;
-  }
-}
-
 .mainheader {
   padding: 7px 80px;
   position: absolute;
@@ -95,6 +89,7 @@ a {
   display: block;
   width: 100%;
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -104,10 +99,12 @@ img {
 .mainheader .mainnav {
   margin: 0 10px;
 }
+
 .mainheader .mainnav,
 .mainheader .mainheader-icons {
   padding-top: 2px;
 }
+
 ol,
 ul {
   list-style: none;
@@ -148,9 +145,7 @@ ul {
   opacity: 0;
 }
 
-.data-slider .ui-slider-handle > span,
-.data-slider .ui-slider-handle > span:before,
-.mainnav li a:before{
+.mainnav li a:before {
   display: block;
   position: absolute;
   left: 50%;
@@ -158,12 +153,8 @@ ul {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-.text-def ul li:before,
-.check-wrap .lbl:after,
-.data-slider:before,
-.data-slider:after,
-.data-slider .ui-slider-handle > span:before,
-.mainnav li a:before{
+
+.mainnav li a:before {
   content: "";
   display: block;
   position: absolute;
