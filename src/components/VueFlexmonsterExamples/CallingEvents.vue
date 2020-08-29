@@ -18,16 +18,19 @@
         >Flexmonster event</a>. Scroll down to the log output to see which events get triggered.
       </p>
     </div>
-    <button v-on:click="turnOffAllEvents">Turn off all events</button>
-    <button v-on:click="turnOnAllEvents">Turn on all events</button>
+    <button class="button-red" v-on:click="signOffAllEvents">Sign off all events</button>
+    <button class="button-red" v-on:click="signOnAllEvents">Sign on all events</button>
     <Pivot
       ref="pivot"
       toolbar
       v-bind:report="'https://cdn.flexmonster.com/reports/report.json'"
-      v-bind:ready="turnOnAllEvents"
+      v-bind:ready="signOnAllEvents"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
     ></Pivot>
-    <div id="logs" class="logs-container"></div>
+    <div class="description-blocks first-description-block">
+      <button class="button-red" v-on:click="clearLogs">Clear Log Output</button>
+      <div id="logs" class="logs-container"></div>
+    </div>
   </div>
 </template>
 
@@ -37,162 +40,45 @@ export default {
   data: function () {
     return {
       eventList: [
-        {
-          eventName: "afterchartdraw",
-          eventHandler: this.afterchartdrawHandler,
-        },
-        {
-          eventName: "aftergriddraw",
-          eventHandler: this.aftergriddrawHandler,
-        },
-        {
-          eventName: "beforegriddraw",
-          eventHandler: this.beforegriddrawHandler,
-        },
-        {
-          eventName: "beforetoolbarcreated",
-          eventHandler: this.beforetoolbarcreatedHandler,
-        },
-        {
-          eventName: "cellclick",
-          eventHandler: this.cellclickHandler,
-        },
-        {
-          eventName: "celldoubleclick",
-          eventHandler: this.celldoubleclickHandler,
-        },
-        {
-          eventName: "chartclick",
-          eventHandler: this.chartclickHandler,
-        },
-        {
-          eventName: "datachanged",
-          eventHandler: this.datachangedHandler,
-        },
-        {
-          eventName: "dataerror",
-          eventHandler: this.dataerrorHandler,
-        },
-        {
-          eventName: "datafilecancelled",
-          eventHandler: this.datafilecancelledHandler,
-        },
-        {
-          eventName: "dataloaded",
-          eventHandler: this.dataloadedHandler,
-        },
-        {
-          eventName: "drillthroughclose",
-          eventHandler: this.drillthroughcloseHandler,
-        },
-        {
-          eventName: "drillthroughopen",
-          eventHandler: this.drillthroughopenHandler,
-        },
-        {
-          eventName: "exportcomplete",
-          eventHandler: this.exportcompleteHandler,
-        },
-        {
-          eventName: "exportstart",
-          eventHandler: this.exportstartHandler,
-        },
-        {
-          eventName: "fieldslistclose",
-          eventHandler: this.fieldslistcloseHandler,
-        },
-        {
-          eventName: "fieldslistopen",
-          eventHandler: this.fieldslistopenHandler,
-        },
-        {
-          eventName: "filterclose",
-          eventHandler: this.filtercloseHandler,
-        },
-        {
-          eventName: "filteropen",
-          eventHandler: this.filteropenHandler,
-        },
-        {
-          eventName: "loadingdata",
-          eventHandler: this.loadingdataHandler,
-        },
-        {
-          eventName: "loadinglocalization",
-          eventHandler: this.loadinglocalizationHandler,
-        },
-        {
-          eventName: "loadingolapstructure",
-          eventHandler: this.loadingolapstructureHandler,
-        },
-        {
-          eventName: "loadingreportfile",
-          eventHandler: this.loadingreportfileHandler,
-        },
-        {
-          eventName: "localizationerror",
-          eventHandler: this.localizationerrorHandler,
-        },
-        {
-          eventName: "localizationloaded",
-          eventHandler: this.localizationloadedHandler,
-        },
-        {
-          eventName: "olapstructureerror",
-          eventHandler: this.olapstructureerrorHandler,
-        },
-        {
-          eventName: "olapstructureloaded",
-          eventHandler: this.olapstructureloadedHandler,
-        },
-        {
-          eventName: "openingreportfile",
-          eventHandler: this.openingreportfileHandler,
-        },
-        {
-          eventName: "printcomplete",
-          eventHandler: this.printcompleteHandler,
-        },
-        {
-          eventName: "printstart",
-          eventHandler: this.printstartHandler,
-        },
-        {
-          eventName: "querycomplete",
-          eventHandler: this.querycompleteHandler,
-        },
-        {
-          eventName: "queryerror",
-          eventHandler: this.queryerrorHandler,
-        },
-        {
-          eventName: "ready",
-          eventHandler: this.readyHandler,
-        },
-        {
-          eventName: "reportchange",
-          eventHandler: this.reportchangeHandler,
-        },
-        {
-          eventName: "reportcomplete",
-          eventHandler: this.reportcompleteHandler,
-        },
-        {
-          eventName: "reportfilecancelled",
-          eventHandler: this.reportfilecancelledHandler,
-        },
-        {
-          eventName: "reportfileerror",
-          eventHandler: this.reportfileerrorHandler,
-        },
-        {
-          eventName: "runningquery",
-          eventHandler: this.runningqueryHandler,
-        },
-        {
-          eventName: "update",
-          eventHandler: this.updateHandler,
-        },
+        "afterchartdraw",
+        "aftergriddraw",
+        "beforegriddraw",
+        "beforetoolbarcreated",
+        "cellclick",
+        "celldoubleclick",
+        "chartclick",
+        "datachanged",
+        "dataerror",
+        "datafilecancelled",
+        "dataloaded",
+        "drillthroughclose",
+        "drillthroughopen",
+        "exportcomplete",
+        "exportstart",
+        "fieldslistclose",
+        "fieldslistopen",
+        "filterclose",
+        "filteropen",
+        "loadingdata",
+        "loadinglocalization",
+        "loadingolapstructure",
+        "loadingreportfile",
+        "localizationerror",
+        "localizationloaded",
+        "olapstructureerror",
+        "olapstructureloaded",
+        "openingreportfile",
+        "printcomplete",
+        "printstart",
+        "querycomplete",
+        "queryerror",
+        "ready",
+        "reportchange",
+        "reportcomplete",
+        "reportfilecancelled",
+        "reportfileerror",
+        "runningquery",
+        "update",
       ],
     };
   },
@@ -215,140 +101,24 @@ export default {
         logs.scrollTop = logs.scrollHeight - logs.clientHeight;
       }
     },
-    turnOffAllEvents: function () {
+    signOffAllEvents: function () {
       for (var i = 0; i < this.eventList.length; i++) {
-        //remove handler for specified event
-        this.$refs.pivot.flexmonster.off(
-          this.eventList[i].eventName,
-          this.eventList[i].eventHandler
-        );
+        //remove all handlers for specified event
+        this.$refs.pivot.flexmonster.off(this.eventList[i]);
       }
     },
-    turnOnAllEvents: function () {
+    signOnAllEvents: function () {
       for (var i = 0; i < this.eventList.length; i++) {
         //add handler for specified event
-        this.$refs.pivot.flexmonster.on(
-          this.eventList[i].eventName,
-          this.eventList[i].eventHandler
-        );
+        let eventName = this.eventList[i];
+        this.$refs.pivot.flexmonster.on(eventName, () => {
+          this.printLog(eventName);
+        });
       }
     },
-    afterchartdrawHandler: function () {
-      this.printLog("afterchartdraw");
-    },
-    aftergriddrawHandler: function () {
-      this.printLog("aftergriddraw");
-    },
-    beforegriddrawHandler: function () {
-      this.printLog("beforegriddraw");
-    },
-    beforetoolbarcreatedHandler: function () {
-      this.printLog("beforetoolbarcreated");
-    },
-    cellclickHandler: function () {
-      this.printLog("cellclick");
-    },
-    celldoubleclickHandler: function () {
-      this.printLog("celldoubleclick");
-    },
-    chartclickHandler: function () {
-      this.printLog("chartclick");
-    },
-    datachangedHandler: function () {
-      this.printLog("datachanged");
-    },
-    dataerrorHandler: function () {
-      this.printLog("dataerror");
-    },
-    datafilecancelledHandler: function () {
-      this.printLog("datafilecancelled");
-    },
-    dataloadedHandler: function () {
-      this.printLog("dataloaded");
-    },
-    drillthroughcloseHandler: function () {
-      this.printLog("drillthroughclose");
-    },
-    drillthroughopenHandler: function () {
-      this.printLog("drillthroughopen");
-    },
-    exportcompleteHandler: function () {
-      this.printLog("exportcomplete");
-    },
-    exportstartHandler: function () {
-      this.printLog("exportstart");
-    },
-    fieldslistcloseHandler: function () {
-      this.printLog("fieldslistclose");
-    },
-    fieldslistopenHandler: function () {
-      this.printLog("fieldslistopen");
-    },
-    filtercloseHandler: function () {
-      this.printLog("filterclose");
-    },
-    filteropenHandler: function () {
-      this.printLog("filteropen");
-    },
-    loadingdataHandler: function () {
-      this.printLog("loadingdata");
-    },
-    loadinglocalizationHandler: function () {
-      this.printLog("loadinglocalization");
-    },
-    loadingolapstructureHandler: function () {
-      this.printLog("loadingolapstructure");
-    },
-    loadingreportfileHandler: function () {
-      this.printLog("loadingreportfile");
-    },
-    localizationerrorHandler: function () {
-      this.printLog("localizationerror");
-    },
-    localizationloadedHandler: function () {
-      this.printLog("localizationloaded");
-    },
-    olapstructureerrorHandler: function () {
-      this.printLog("olapstructureerror");
-    },
-    olapstructureloadedHandler: function () {
-      this.printLog("olapstructureloaded");
-    },
-    openingreportfileHandler: function () {
-      this.printLog("openingreportfile");
-    },
-    printcompleteHandler: function () {
-      this.printLog("printcomplete");
-    },
-    printstartHandler: function () {
-      this.printLog("printstart");
-    },
-    querycompleteHandler: function () {
-      this.printLog("querycomplete");
-    },
-    queryerrorHandler: function () {
-      this.printLog("queryerror");
-    },
-    readyHandler: function () {
-      this.printLog("ready");
-    },
-    reportchangeHandler: function () {
-      this.printLog("reportchange");
-    },
-    reportcompleteHandler: function () {
-      this.printLog("reportcomplete");
-    },
-    reportfilecancelledHandler: function () {
-      this.printLog("reportfilecancelled");
-    },
-    reportfileerrorHandler: function () {
-      this.printLog("reportfileerror");
-    },
-    runningqueryHandler: function () {
-      this.printLog("runningquery");
-    },
-    updateHandler: function () {
-      this.printLog("update");
+    clearLogs: function () {
+      var logs = document.getElementById("logs");
+      logs.innerHTML = "";
     },
   },
 };
@@ -359,9 +129,11 @@ export default {
   margin-top: 10px;
   height: 100px;
   background: #444444;
+  border: 1px solid #444444;
   overflow: auto;
   color: #fff;
   padding: 10px 15px;
+  resize: vertical;
 }
 
 .logs-container .log {

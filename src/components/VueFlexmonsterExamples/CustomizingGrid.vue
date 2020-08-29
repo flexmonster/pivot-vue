@@ -8,6 +8,8 @@
         href="https://www.flexmonster.com/api/customizecell/"
       >customize the grid cells</a> example
     </h3>
+    <button class="button-red" v-on:click="removeCustomization">Remove Customization</button>
+    <button class="button-red" v-on:click="applyCustomization">Apply Customization</button>
     <Pivot
       ref="pivot"
       toolbar
@@ -67,6 +69,12 @@ export default {
         cell.style["border-bottom"] = `1px solid ${borderColor}`;
         cell.style["border-right"] = `1px solid ${borderColor}`;
       }
+    },
+    removeCustomization: function () {
+      this.$refs.pivot.flexmonster.customizeCell(null);
+    },
+    applyCustomization: function () {
+      this.$refs.pivot.flexmonster.customizeCell(this.customizeCellFunction);
     },
   },
 };

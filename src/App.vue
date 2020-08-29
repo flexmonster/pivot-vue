@@ -128,13 +128,13 @@ export default {
   display: flex;
 }
 
-button {
+.button-red {
   border: 2px solid #df3800;
   background: #fff;
   color: #df3800;
   text-transform: uppercase;
   cursor: pointer;
-  margin: 5px;
+  margin: 5px 5px 5px 0;
   display: inline-block;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -143,14 +143,14 @@ button {
   font-size: 14px;
 }
 
-button:hover,
-button:focus {
+.button-red:hover,
+.button-red:focus {
   border: 2px solid #df3800;
   background: #df3800;
   color: #fff;
 }
 
-button:focus {
+.button-red:focus {
   outline: none;
 }
 

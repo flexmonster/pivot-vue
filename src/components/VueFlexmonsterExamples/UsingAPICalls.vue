@@ -8,10 +8,10 @@
         href="https://www.flexmonster.com/api/methods/"
       >Flexmonster API calls</a> example
     </h3>
-    <button v-on:click="showChart">Show Pie Chart</button>
-    <button v-on:click="showGrid">Show Grid</button>
-    <button v-on:click="readOnly">Make read only</button>
-    <button v-on:click="interactive">Make interactive</button>
+    <button class="button-red" v-on:click="showChart">Show Pie Chart</button>
+    <button class="button-red" v-on:click="showGrid">Show Grid</button>
+    <button class="button-red" v-on:click="readOnly">Make read only</button>
+    <button class="button-red" v-on:click="interactive">Make interactive</button>
     <Pivot
       ref="pivot"
       v-bind:toolbar="false"
