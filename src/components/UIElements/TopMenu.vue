@@ -31,7 +31,7 @@ export default {
   position: absolute;
   font-size: 0;
   width: 100%;
-  min-width: 736px;
+  min-width: 460px;
   top: 0;
   left: 0;
   -webkit-transition: all 0.1s;
@@ -118,6 +118,17 @@ ul {
   display: inline-block;
   vertical-align: middle;
   margin-right: 24px;
+}
+
+@media screen and (max-width: 730px) {
+  .mainnav li {
+     display: block;
+  }
+
+  .mainheader {
+     padding: 7px 30px;
+  }
+  
 }
 
 .mainnav li a {

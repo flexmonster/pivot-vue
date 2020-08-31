@@ -48,7 +48,7 @@
             </li>
           </ol>
         </div>
-        <div class="container">
+        <div class="pivot-example-container">
           <component v-bind:is="currentTabComponent" class="tab"></component>
         </div>
       </div>
@@ -154,7 +154,7 @@ export default {
   outline: none;
 }
 
-.container {
+.pivot-example-container {
   float: left;
   width: 75%;
   min-width: 605px;
