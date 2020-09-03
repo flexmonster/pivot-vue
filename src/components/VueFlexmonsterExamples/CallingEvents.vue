@@ -2,24 +2,19 @@
   <div>
     <h3 class="title-one page-title">
       How to call
-      <a
-        class="title-link"
-        target="blank"
-        href="https://www.flexmonster.com/api/events/"
-      >Flexmonster events</a> example
+      <a class="title-link" target="blank" href="https://www.flexmonster.com/api/events/">Flexmonster events</a> example
     </h3>
+
     <div class="description-blocks first-description-block">
       <p>
         Perform an action (for example, click on a grid cell) to trigger a
-        <a
-          class="title-link"
-          target="blank"
-          href="https://www.flexmonster.com/api/events/"
-        >Flexmonster event</a>. Scroll down to the log output to see which events get triggered.
+        <a class="title-link" target="blank" href="https://www.flexmonster.com/api/events/">Flexmonster event</a>. Scroll down to the log output to see which events get triggered.
       </p>
     </div>
+
     <button class="button-red" v-on:click="signOffAllEvents">Sign off all events</button>
     <button class="button-red" v-on:click="signOnAllEvents">Sign on all events</button>
+    
     <Pivot
       ref="pivot"
       toolbar
@@ -29,7 +24,17 @@
     ></Pivot>
     <div class="description-blocks first-description-block">
       <button class="button-red" v-on:click="clearLogs">Clear Log Output</button>
-      <div id="logs" class="logs-container"></div>
+      <div ref="logsContainer" class="logs-container">
+        <div v-for="log in logs" v-bind:key="log.id" class="log">
+          <span class="log-label">[ Event ] {{ log.date }}:</span>
+          {{ log.event }} [
+          <a
+            class="log-link"
+            target="_blank"
+            v-bind:href="'https://www.flexmonster.com/api/'+log.event"
+          >see details</a> ]
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -39,6 +44,7 @@ export default {
   name: "CallingEvents",
   data: function () {
     return {
+      logs: [],
       eventList: [
         "afterchartdraw",
         "aftergriddraw",
@@ -84,41 +90,31 @@ export default {
   },
   methods: {
     printLog: function (log) {
-      var logs = document.getElementById("logs");
-
-      var isScrolledToBottom =
-        logs.scrollHeight - logs.clientHeight <= logs.scrollTop + 1;
-      logs.innerHTML +=
-        "<div class='log'><span class='log-label'>[ Event ] " +
-        new Date().toLocaleTimeString("en-US") +
-        ": </span>" +
-        log +
-        " [ <a class='log-link' target='blank' href='https://www.flexmonster.com/api/" +
-        log +
-        "'>see details</a> ]</div>";
-
-      if (isScrolledToBottom) {
-        logs.scrollTop = logs.scrollHeight - logs.clientHeight;
-      }
+      this.logs.push({
+        id: new Date().getTime()+log,
+        date: new Date().toLocaleTimeString(),
+        event: log,
+      });
+      requestAnimationFrame(() => {
+        this.$refs.logsContainer.scrollTop = this.$refs.logsContainer.scrollHeight;
+      });
     },
     signOffAllEvents: function () {
-      for (var i = 0; i < this.eventList.length; i++) {
+      for (const eventName of this.eventList) {
         //remove all handlers for specified event
-        this.$refs.pivot.flexmonster.off(this.eventList[i]);
+        this.$refs.pivot.flexmonster.off(eventName);
       }
     },
     signOnAllEvents: function () {
-      for (var i = 0; i < this.eventList.length; i++) {
+      for (const eventName of this.eventList) {
         //add handler for specified event
-        let eventName = this.eventList[i];
         this.$refs.pivot.flexmonster.on(eventName, () => {
           this.printLog(eventName);
         });
       }
     },
     clearLogs: function () {
-      var logs = document.getElementById("logs");
-      logs.innerHTML = "";
+      this.logs = [];
     },
   },
 };
@@ -156,29 +152,21 @@ export default {
 }
 
 .logs-container .log-link:before {
+  content: "";
+  display: block;
+  position: absolute;
   bottom: -2px;
+  left: 50%;
   width: 0;
   height: 2px;
+  opacity: 0;
   background: #34e2e2;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  opacity: 0;
-}
-
-.logs-container .log-link:before {
-  display: block;
-  position: absolute;
-  left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-}
-
-.logs-container .log-link:before {
-  content: "";
-  display: block;
-  position: absolute;
 }
 
 .first-description-block {

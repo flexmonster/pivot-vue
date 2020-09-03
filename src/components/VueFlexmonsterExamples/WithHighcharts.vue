@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="title-one page-title">
+    <h3 class="page-title">
       How to
       <a
         class="title-link"

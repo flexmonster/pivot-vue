@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="title-one page-title">
+    <h3 class="page-title">
       How to
       <a
         class="title-link"
@@ -9,7 +9,7 @@
       >update the data in Flexmonster</a> example
     </h3>
     <button class="button-red" v-on:click="updateTheData">Update the data</button>
-    <Pivot ref="pivot" toolbar _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"></Pivot>
+    <Pivot ref="pivot" toolbar v-bind:ready="onReady" _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"></Pivot>
   </div>
 </template>
 
@@ -18,40 +18,37 @@ export default {
   name: "Example_4",
   data: function () {
     return {
-      data: [],
+      data: [
+        {
+          Category: "Accessories",
+          Size: "262 oz",
+          Color: "red",
+          Destination: "Australia",
+          "Business Type": "Specialty Bike Shop",
+          Country: "Australia",
+          Price: 100,
+          Quantity: 225,
+          Discount: 23,
+        },
+        {
+          Category: "Components",
+          Size: "235 oz",
+          Color: "green",
+          Destination: "Australia",
+          "Business Type": "Warehouse",
+          Country: "Australia",
+          Price: 200,
+          Quantity: 1950,
+          Discount: 51,
+        }
+      ]
     };
   },
-  mounted: function () {
-    //Set the data
-    this.data = [
-      {
-        Category: "Accessories",
-        Size: "262 oz",
-        Color: "red",
-        Destination: "Australia",
-        "Business Type": "Specialty Bike Shop",
-        Country: "Australia",
-        Price: 100,
-        Quantity: 225,
-        Discount: 23,
-      },
-      {
-        Category: "Components",
-        Size: "235 oz",
-        Color: "green",
-        Destination: "Australia",
-        "Business Type": "Warehouse",
-        Country: "Australia",
-        Price: 200,
-        Quantity: 1950,
-        Discount: 51,
-      },
-    ];
-
-    //Connect Flexmonster to the data
-    this.$refs.pivot.flexmonster.connectTo({ data: this.data });
-  },
   methods: {
+    onReady: function(){
+      //Connect Flexmonster to the data
+      this.$refs.pivot.flexmonster.connectTo({ data: this.data });
+    },
     updateTheData: function () {
       //If the data in Vue got updated, for example:
       this.data = [
