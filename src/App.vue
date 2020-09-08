@@ -89,8 +89,8 @@ export default {
         { key: "UpdatingData", label: "Updating Data" },
       ],
       tabs2: [
-        { key: "CustomizingToolbar", label: "Customizing Toolbar" },
-        { key: "CustomizingGrid", label: "Customizing Grid" },
+        { key: "CustomizingToolbar", label: "Customizing The Toolbar" },
+        { key: "CustomizingGrid", label: "Customizing The Grid" },
       ],
       tabs3: [{ key: "WithHighcharts", label: "with Highcharts" }],
     };
