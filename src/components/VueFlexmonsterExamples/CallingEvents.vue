@@ -12,8 +12,8 @@
       </p>
     </div>
 
-    <button class="button-red" v-on:click="signOffAllEvents">Sign off all events</button>
-    <button class="button-red" v-on:click="signOnAllEvents">Sign on all events</button>
+    <button class="button-red" v-on:click="signOffAllEvents" :class="{'active-button': activeButton === 'signOffAllEvents'}">Sign off all events</button>
+    <button class="button-red" v-on:click="signOnAllEvents" :class="{'active-button': activeButton === 'signOnAllEvents'}">Sign on all events</button>
     
     <Pivot
       ref="pivot"
@@ -44,6 +44,7 @@ export default {
   name: "CallingEvents",
   data: function () {
     return {
+      activeButton: '',
       logs: [],
       eventList: [
         "afterchartdraw",
@@ -100,12 +101,14 @@ export default {
       });
     },
     signOffAllEvents: function () {
+      this.activeButton = 'signOffAllEvents';
       for (const eventName of this.eventList) {
         //remove all handlers for specified event
         this.$refs.pivot.flexmonster.off(eventName);
       }
     },
     signOnAllEvents: function () {
+      this.activeButton = 'signOnAllEvents';
       for (const eventName of this.eventList) {
         //add handler for specified event
         this.$refs.pivot.flexmonster.on(eventName, () => {

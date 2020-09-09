@@ -130,7 +130,8 @@ export default {
 }
 
 .button-red:hover,
-.button-red:focus {
+.button-red:focus,
+.active-button {
   border: 2px solid #df3800;
   background: #df3800;
   color: #fff;

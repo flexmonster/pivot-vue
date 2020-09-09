@@ -8,8 +8,8 @@
         href="https://www.flexmonster.com/api/customizecell/"
       >customize the grid cells</a> example
     </h3>
-    <button class="button-red" v-on:click="removeCustomization">Remove Customization</button>
-    <button class="button-red" v-on:click="applyCustomization">Apply Customization</button>
+    <button class="button-red" v-on:click="removeCustomization" :class="{'active-button': activeButton === 'removeCustomization'}">Remove Customization</button>
+    <button class="button-red" v-on:click="applyCustomization" :class="{'active-button': activeButton === 'applyCustomization'}">Apply Customization</button>
     <Pivot
       ref="pivot"
       toolbar
@@ -56,6 +56,11 @@
 <script>
 export default {
   name: "Example_6",
+  data: function(){
+     return {
+       activeButton: ''
+     }
+  },
   methods: {
     customizeCellFunction: function (cell, data) {
       if (data.measure && data.measure.name == "Price") {
@@ -71,9 +76,11 @@ export default {
       }
     },
     removeCustomization: function () {
+      this.activeButton = 'removeCustomization';
       this.$refs.pivot.flexmonster.customizeCell(null);
     },
     applyCustomization: function () {
+      this.activeButton = 'applyCustomization';
       this.$refs.pivot.flexmonster.customizeCell(this.customizeCellFunction);
     },
   },
