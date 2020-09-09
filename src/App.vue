@@ -114,7 +114,7 @@ export default {
   text-rendering: optimizeLegibility !important;
 }
 
-.button-red {
+.button-red, button-red:focus{
   border: 2px solid #df3800;
   background: #fff;
   color: #df3800;
@@ -130,7 +130,6 @@ export default {
 }
 
 .button-red:hover,
-.button-red:focus,
 .active-button {
   border: 2px solid #df3800;
   background: #df3800;
