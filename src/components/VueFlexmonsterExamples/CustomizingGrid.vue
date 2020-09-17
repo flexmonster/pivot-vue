@@ -1,0 +1,88 @@
+<template>
+  <div>
+    <h3 class="page-title">
+      How to
+      <a
+        class="title-link"
+        target="blank"
+        href="https://www.flexmonster.com/api/customizecell/"
+      >customize the grid cells</a> example
+    </h3>
+    <button class="button-red" v-on:click="removeCustomization" :class="{'active-button': activeButton === 'removeCustomization'}">Remove Customization</button>
+    <button class="button-red" v-on:click="applyCustomization" :class="{'active-button': activeButton === 'applyCustomization'}">Apply Customization</button>
+    <Pivot
+      ref="pivot"
+      toolbar
+      v-bind:report="{
+        dataSource: {
+          filename: 'https://cdn.flexmonster.com/data/data.csv'
+        },
+        slice: {
+                rows: [
+                    {
+                        uniqueName: 'Category'
+                    },
+                    {
+                        uniqueName: '[Measures]'
+                    }
+                ],
+                columns: [
+                    {
+                        uniqueName: 'Color'
+                    }
+                ],
+                measures: [
+                    {
+                        uniqueName: 'Price',
+                        aggregation: 'sum'
+                    },
+                    {
+                        uniqueName: 'Discount',
+                        aggregation: 'sum'
+                    },
+                    {
+                        uniqueName: 'Quantity',
+                        aggregation: 'sum'
+                    }
+                ]
+        }
+      }"
+      v-bind:customizeCell="customizeCellFunction"
+      _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
+    ></Pivot>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Example_6",
+  data: function(){
+     return {
+       activeButton: ''
+     }
+  },
+  methods: {
+    customizeCellFunction: function (cell, data) {
+      if (data.measure && data.measure.name == "Price") {
+        let backgroundColor = "#00A45A";
+        let textShadowColor = "#095231";
+        let borderColor = "#009552";
+        cell.style["background-color"] = backgroundColor;
+        cell.style["color"] = "white";
+        cell.style["font-weight"] = "bold";
+        cell.style["text-shadow"] = `0px 2px 3px ${textShadowColor}`;
+        cell.style["border-bottom"] = `1px solid ${borderColor}`;
+        cell.style["border-right"] = `1px solid ${borderColor}`;
+      }
+    },
+    removeCustomization: function () {
+      this.activeButton = 'removeCustomization';
+      this.$refs.pivot.flexmonster.customizeCell(null);
+    },
+    applyCustomization: function () {
+      this.activeButton = 'applyCustomization';
+      this.$refs.pivot.flexmonster.customizeCell(this.customizeCellFunction);
+    },
+  },
+};
+</script>
