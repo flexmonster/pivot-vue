@@ -183,6 +183,7 @@ export default {
 .side-menu ol,
 .side-menu ul {
     list-style: none;
+    margin: 0;
     padding: 0;
 }
 
@@ -215,6 +216,15 @@ export default {
 .side-menu li a.active,
 .side-menu li.active a {
     color: #df3800;
+}
+
+.side-menu li a.active:before, .side-menu-wrap .side-menu li.active a:before {
+    content: ' ';
+    position: absolute;
+    right: -1px;
+    height: calc(100% - 16px);
+    width: 3px;
+    background: #df3800;
 }
 
 .title-link {
