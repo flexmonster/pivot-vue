@@ -17,20 +17,20 @@
 export default {
   name: "ToggleButton",
   props: {
-    "labelOn": String,
-    "labelOff": String,
-    "id": String
+    labelOn: String,
+    labelOff: String,
+    id: String,
   },
-  data: function(){
-     return {
-       checked: false
-     }
+  data: function () {
+    return {
+      checked: false,
+    };
   },
   methods: {
-    onClick: function() {
-      this.$emit('clicked', this.checked)
-    }
-  }
+    onClick: function () {
+      this.$emit("clicked", this.checked);
+    },
+  },
 };
 </script>
 

@@ -2,22 +2,21 @@
   <section id="app">
     <TopMenu />
     <div class="wrap">
-        <SideMenu/>
-        <div class="pivot-example-container">
-          <router-view/>
-        </div>
+      <SideMenu />
+      <div class="pivot-example-container">
+        <router-view />
+      </div>
     </div>
   </section>
 </template>
 
 <script>
-
 import TopMenu from "./components/UIElements/TopMenu";
 import SideMenu from "./components/UIElements/SideMenu";
 
 export default {
   name: "app",
-  components: {TopMenu, SideMenu}
+  components: { TopMenu, SideMenu },
 };
 </script>
 

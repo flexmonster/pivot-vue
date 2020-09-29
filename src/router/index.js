@@ -4,8 +4,7 @@ import PivotTableDemo from '../components/VueFlexmonsterExamples/PivotTableDemo'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/pivot-table-demo',
     name: 'PivotTableDemo',
     component: PivotTableDemo

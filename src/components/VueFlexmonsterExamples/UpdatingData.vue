@@ -6,10 +6,17 @@
         class="title-link"
         target="blank"
         href="https://www.flexmonster.com/api/updatedata/"
-      >update the data in Flexmonster</a> example
+        >update the data in Flexmonster</a
+      >
+      example
     </h3>
     <button class="button-red" v-on:click="updateTheData">Update data</button>
-    <Pivot ref="pivot" toolbar v-bind:ready="onReady" _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"></Pivot>
+    <Pivot
+      ref="pivot"
+      toolbar
+      v-bind:ready="onReady"
+      _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
+    ></Pivot>
   </div>
 </template>
 
@@ -40,12 +47,12 @@ export default {
           Price: 200,
           Quantity: 1950,
           Discount: 51,
-        }
-      ]
+        },
+      ],
     };
   },
   methods: {
-    onReady: function(){
+    onReady: function () {
       //Connect Flexmonster to the data
       this.$refs.pivot.flexmonster.connectTo({ data: this.data });
     },
