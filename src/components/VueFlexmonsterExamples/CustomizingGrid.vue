@@ -6,46 +6,54 @@
         class="title-link"
         target="blank"
         href="https://www.flexmonster.com/api/customizecell/"
-      >customize the grid cells</a> example
+        >customize the grid cells</a
+      >
+      example
     </h3>
-    <button class="button-red" v-on:click="removeCustomization" :class="{'active-button': activeButton === 'removeCustomization'}">Remove Customization</button>
-    <button class="button-red" v-on:click="applyCustomization" :class="{'active-button': activeButton === 'applyCustomization'}">Apply Customization</button>
+    <div class="description-blocks">
+      <ToggleButton
+        v-on:clicked="toggleCustomization"
+        labelOn="Remove customization"
+        labelOff="Apply customization"
+        id="customizationToggle"
+      ></ToggleButton>
+    </div>
     <Pivot
       ref="pivot"
       toolbar
       v-bind:report="{
         dataSource: {
-          filename: 'https://cdn.flexmonster.com/data/data.csv'
+          filename: 'https://cdn.flexmonster.com/data/data.csv',
         },
         slice: {
-                rows: [
-                    {
-                        uniqueName: 'Category'
-                    },
-                    {
-                        uniqueName: '[Measures]'
-                    }
-                ],
-                columns: [
-                    {
-                        uniqueName: 'Color'
-                    }
-                ],
-                measures: [
-                    {
-                        uniqueName: 'Price',
-                        aggregation: 'sum'
-                    },
-                    {
-                        uniqueName: 'Discount',
-                        aggregation: 'sum'
-                    },
-                    {
-                        uniqueName: 'Quantity',
-                        aggregation: 'sum'
-                    }
-                ]
-        }
+          rows: [
+            {
+              uniqueName: 'Category',
+            },
+            {
+              uniqueName: '[Measures]',
+            },
+          ],
+          columns: [
+            {
+              uniqueName: 'Color',
+            },
+          ],
+          measures: [
+            {
+              uniqueName: 'Price',
+              aggregation: 'sum',
+            },
+            {
+              uniqueName: 'Discount',
+              aggregation: 'sum',
+            },
+            {
+              uniqueName: 'Quantity',
+              aggregation: 'sum',
+            },
+          ],
+        },
       }"
       v-bind:customizeCell="customizeCellFunction"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
@@ -54,13 +62,11 @@
 </template>
 
 <script>
+import ToggleButton from "../UIElements/ToggleButton";
+
 export default {
   name: "Example_6",
-  data: function(){
-     return {
-       activeButton: ''
-     }
-  },
+  components: { ToggleButton },
   methods: {
     customizeCellFunction: function (cell, data) {
       if (data.measure && data.measure.name == "Price") {
@@ -76,12 +82,17 @@ export default {
       }
     },
     removeCustomization: function () {
-      this.activeButton = 'removeCustomization';
       this.$refs.pivot.flexmonster.customizeCell(null);
     },
     applyCustomization: function () {
-      this.activeButton = 'applyCustomization';
       this.$refs.pivot.flexmonster.customizeCell(this.customizeCellFunction);
+    },
+    toggleCustomization: function ($event) {
+      if ($event) {
+        this.applyCustomization();
+      } else {
+        this.removeCustomization();
+      }
     },
   },
 };

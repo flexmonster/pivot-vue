@@ -6,12 +6,24 @@
         class="title-link"
         target="blank"
         href="https://www.flexmonster.com/api/methods/"
-      >Flexmonster API calls</a> example
+        >Flexmonster API calls</a
+      >
+      example
     </h3>
-    <button class="button-red" v-on:click="showChart" :class="{'active-button': activeButton === 'showChart'}">Show Pie Chart</button>
-    <button class="button-red" v-on:click="showGrid" :class="{'active-button': activeButton === 'showGrid'}">Show Grid</button>
-    <button class="button-red" v-on:click="readOnly" :class="{'active-button': activeButton === 'readOnly'}">Make read only</button>
-    <button class="button-red" v-on:click="interactive" :class="{'active-button': activeButton === 'interactive'}">Make interactive</button>
+    <div class="description-blocks">
+      <ToggleButton
+        v-on:clicked="toggleView"
+        labelOn="Show Pie chart"
+        labelOff="Show grid"
+        id="viewToggle"
+      ></ToggleButton>
+      <ToggleButton
+        v-on:clicked="toggleMode"
+        labelOn="Make read-only"
+        labelOff="Make interactive"
+        id="modeToggle"
+      ></ToggleButton>
+    </div>
     <Pivot
       ref="pivot"
       v-bind:toolbar="false"
@@ -22,24 +34,24 @@
 </template>
 
 <script>
+import ToggleButton from "../UIElements/ToggleButton";
+
 export default {
   name: "Example_3",
-  data: function(){
+  components: { ToggleButton },
+  data: function () {
     return {
-      activeButton: ''
-    }
+      activeButton: "",
+    };
   },
   methods: {
     showChart: function () {
-      this.activeButton = 'showChart';
       this.$refs.pivot.flexmonster.showCharts("pie");
     },
     showGrid: function () {
-      this.activeButton = 'showGrid';
       this.$refs.pivot.flexmonster.showGrid();
     },
     readOnly: function () {
-      this.activeButton = 'readOnly';
       this.$refs.pivot.flexmonster.setOptions({
         grid: {
           showFilter: false,
@@ -56,7 +68,6 @@ export default {
       this.$refs.pivot.flexmonster.refresh();
     },
     interactive: function () {
-      this.activeButton = 'interactive';
       this.$refs.pivot.flexmonster.setOptions({
         grid: {
           showFilter: true,
@@ -79,6 +90,20 @@ export default {
     },
     showContextMenu: function () {
       this.$refs.pivot.flexmonster.customizeContextMenu(null);
+    },
+    toggleView: function ($event) {
+      if ($event) {
+        this.showGrid();
+      } else {
+        this.showChart();
+      }
+    },
+    toggleMode: function ($event) {
+      if ($event) {
+        this.interactive();
+      } else {
+        this.readOnly();
+      }
     },
   },
 };

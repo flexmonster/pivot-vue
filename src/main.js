@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import router from './router'
 
 //Using the vue-flexmonster module as a plugin (global registration):
 //1. Importing the vue-flexmonster module and css: 
@@ -17,5 +18,6 @@ Vue.use(Pivot);
 Vue.config.productionTip = false
 
 new Vue({
+  router,
   render: h => h(App),
 }).$mount('#app')

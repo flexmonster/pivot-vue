@@ -6,7 +6,9 @@
         class="title-link"
         target="blank"
         href="https://www.flexmonster.com/doc/integration-with-highcharts/"
-      >integrate with Highcharts</a> example
+        >integrate with Highcharts</a
+      >
+      example
     </h3>
     <Pivot
       ref="pivot"
@@ -15,8 +17,9 @@
       v-bind:reportcomplete="reportComplete"
       v-bind:licenseFilePath="'https://cdn.flexmonster.com/jsfiddle.charts.key'"
     ></Pivot>
-    <br />
-    <div id="highcharts-container"></div>
+    <div class="chart-container">
+      <div id="highcharts-container"></div>
+    </div>
   </div>
 </template>
 

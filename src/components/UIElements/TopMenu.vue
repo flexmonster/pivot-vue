@@ -27,11 +27,11 @@ export default {
 
 <style>
 .mainheader {
-  padding: 7px 80px;
+  padding: 7px 60px;
   position: absolute;
   font-size: 0;
   width: 100%;
-  min-width: 460px;
+  min-width: 588px;
   top: 0;
   left: 0;
   -webkit-transition: all 0.1s;
@@ -63,9 +63,9 @@ export default {
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
+  -webkit-justify-content: flex-start;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
   margin: 0 auto;
 }
@@ -97,7 +97,7 @@ img {
 }
 
 .mainheader .mainnav {
-  margin: 0 10px;
+  margin: 0 38px;
 }
 
 .mainheader .mainnav,
@@ -123,10 +123,6 @@ ul {
 @media screen and (max-width: 730px) {
   .mainnav li {
      display: block;
-  }
-
-  .mainheader {
-     padding: 7px 30px;
   }
   
 }
