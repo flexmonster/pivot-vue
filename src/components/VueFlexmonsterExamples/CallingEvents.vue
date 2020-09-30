@@ -26,7 +26,7 @@
       <ToggleButton
         v-on:clicked="toggleEvents"
         labelOn="Events are tracked"
-        labelOff="Events not are tracked"
+        labelOff="Events are not tracked"
         id="eventsToggle"
       ></ToggleButton>
     </div>

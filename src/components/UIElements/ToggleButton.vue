@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "ToggleButton3",
+  name: "ToggleButton",
   props: {
     labelOn: String,
     labelOff: String,
