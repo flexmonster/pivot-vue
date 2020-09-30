@@ -25,8 +25,8 @@
     <div class="description-blocks">
       <ToggleButton
         v-on:clicked="toggleEvents"
-        labelOn="Sign off all events"
-        labelOff="Sign on all events"
+        labelOn="Events are tracked"
+        labelOff="Events not are tracked"
         id="eventsToggle"
       ></ToggleButton>
     </div>
@@ -40,12 +40,6 @@
 
     <div class="section">
       <h3 class="title-4">Log Output</h3>
-      <div class="section--button">
-        <button class="button-red" v-on:click="clearLogs">
-          Clear Log Output
-        </button>
-      </div>
-
       <div class="code-wrapper2 fullwidth">
         <div ref="logsContainer" class="code-wrapper2--body">
           <div v-for="log in logs" v-bind:key="log.id">
@@ -60,6 +54,11 @@
             ]
           </div>
         </div>
+      </div>
+      <div class="section--button">
+        <button class="button-red" v-on:click="clearLogs">
+          Clear Log Output
+        </button>
       </div>
     </div>
   </div>
@@ -144,9 +143,9 @@ export default {
     },
     toggleEvents: function ($event) {
       if ($event) {
-        this.signOnAllEvents();
-      } else {
         this.signOffAllEvents();
+      } else {
+        this.signOnAllEvents();
       }
     },
     clearLogs: function () {
@@ -155,127 +154,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.logs-container {
-  margin-top: 10px;
-  height: 100px;
-  background: #444444;
-  overflow: auto;
-  color: #fff;
-  padding: 10px 15px;
-  resize: vertical;
-}
-
-.log {
-  padding: 3px 0;
-}
-
-.log-label {
-  color: #8ae234;
-  font-weight: 600;
-}
-
-.log-link {
-  color: #34e2e2;
-  position: relative;
-}
-
-.log-link:hover:before {
-  opacity: 1;
-  width: 100%;
-}
-
-.log-link:before {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  opacity: 0;
-  background: #34e2e2;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
-.first-description-block {
-  margin-top: 30px;
-}
-
-.description-blocks {
-  margin: 30px 0 30px 0;
-}
-
-.section {
-  margin-top: 45px;
-  position: relative;
-}
-.title-4 {
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 1.44444;
-}
-.section--button {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  margin-bottom: 5px;
-}
-.code-wrapper2.fullwidth {
-  max-width: 100%;
-  font-size: 14px;
-  line-height: 1.42857;
-}
-.code-wrapper2 {
-  position: relative;
-  max-width: 736px;
-  margin: 0 auto;
-  background: #333;
-  border-radius: 8px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  padding: 20px 20px 20px 24px;
-  font-family: "Roboto Mono", monospace;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
-  letter-spacing: 0.02em;
-  text-align: left;
-  color: #fff;
-  margin-bottom: 32px;
-}
-.code-wrapper2--body {
-  height: 95px;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  white-space: nowrap;
-  overflow-y: auto;
-  text-align: left;
-  overflow: auto;
-}
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="toggle-button noselect" :id="id" v-on:click="onClick">
+  <div class="toggle-switch noselect" :id="id" v-on:click="onClick">
     <input
       class="button-checkbox"
       :id="labelOn"

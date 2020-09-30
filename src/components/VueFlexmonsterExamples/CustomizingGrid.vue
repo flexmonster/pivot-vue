@@ -13,8 +13,8 @@
     <div class="description-blocks">
       <ToggleButton
         v-on:clicked="toggleCustomization"
-        labelOn="Remove customization"
-        labelOff="Apply customization"
+        labelOn="The grid cells are customized"
+        labelOff="The grid cells are not customized"
         id="customizationToggle"
       ></ToggleButton>
     </div>
@@ -89,9 +89,9 @@ export default {
     },
     toggleCustomization: function ($event) {
       if ($event) {
-        this.applyCustomization();
-      } else {
         this.removeCustomization();
+      } else {
+        this.applyCustomization();
       }
     },
   },

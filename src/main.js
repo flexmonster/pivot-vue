@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import './App.css';
 
 //Using the vue-flexmonster module as a plugin (global registration):
 //1. Importing the vue-flexmonster module and css: 

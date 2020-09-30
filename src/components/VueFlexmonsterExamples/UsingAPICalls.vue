@@ -11,18 +11,18 @@
       example
     </h3>
     <div class="description-blocks">
-      <ToggleButton
+      <ToggleSwitch
         v-on:clicked="toggleView"
-        labelOn="Show Pie chart"
-        labelOff="Show grid"
+        labelOn="Show grid"
+        labelOff="Show Pie chart"
         id="viewToggle"
-      ></ToggleButton>
-      <ToggleButton
+      ></ToggleSwitch>
+      <ToggleSwitch
         v-on:clicked="toggleMode"
-        labelOn="Make read-only"
-        labelOff="Make interactive"
+        labelOn="Make interactive"
+        labelOff="Make read-only"
         id="modeToggle"
-      ></ToggleButton>
+      ></ToggleSwitch>
     </div>
     <Pivot
       ref="pivot"
@@ -34,11 +34,11 @@
 </template>
 
 <script>
-import ToggleButton from "../UIElements/ToggleButton";
+import ToggleSwitch from "../UIElements/ToggleSwitch";
 
 export default {
   name: "Example_3",
-  components: { ToggleButton },
+  components: { ToggleSwitch },
   data: function () {
     return {
       activeButton: "",
@@ -93,16 +93,16 @@ export default {
     },
     toggleView: function ($event) {
       if ($event) {
-        this.showGrid();
-      } else {
         this.showChart();
+      } else {
+        this.showGrid();
       }
     },
     toggleMode: function ($event) {
       if ($event) {
-        this.interactive();
-      } else {
         this.readOnly();
+      } else {
+        this.interactive();
       }
     },
   },
