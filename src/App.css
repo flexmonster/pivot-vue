@@ -230,12 +230,12 @@ p {
 }
 
 /* Log output */
-.code-wrapper2.fullwidth {
+.event-logs-wrapper.fullwidth {
   max-width: 100%;
   font-size: 14px;
   line-height: 1.42857;
 }
-.code-wrapper2 {
+.event-logs-wrapper {
   position: relative;
   max-width: 736px;
   margin: 0 auto;
@@ -264,7 +264,7 @@ p {
   color: #fff;
   margin-bottom: 10px;
 }
-.code-wrapper2--body {
+.content {
   height: 95px;
   -webkit-box-flex: 1;
   -webkit-flex: 1;

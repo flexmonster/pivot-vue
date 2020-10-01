@@ -40,8 +40,8 @@
 
     <div class="section">
       <h3 class="title-4">Log Output</h3>
-      <div class="code-wrapper2 fullwidth">
-        <div ref="logsContainer" class="code-wrapper2--body">
+      <div class="event-logs-wrapper fullwidth">
+        <div ref="logsContainer" class="content">
           <div v-for="log in logs" v-bind:key="log.id">
             <span class="log-label">[ Event ] {{ log.date }}:</span>
             {{ log.event }} [
