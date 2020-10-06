@@ -14,7 +14,7 @@
       <ToggleSwitch
         v-on:clicked="toggleView"
         labelOn="Show grid"
-        labelOff="Show Pie chart"
+        labelOff="Show Column chart"
         id="viewToggle"
       ></ToggleSwitch>
       <ToggleSwitch
@@ -27,7 +27,11 @@
     <Pivot
       ref="pivot"
       v-bind:toolbar="false"
-      v-bind:report="'https://cdn.flexmonster.com/reports/report.json'"
+      v-bind:report="{
+        dataSource: {
+          filename: 'https://cdn.flexmonster.com/data/data.json',
+        },
+      }"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
     ></Pivot>
   </div>
@@ -46,7 +50,7 @@ export default {
   },
   methods: {
     showChart: function () {
-      this.$refs.pivot.flexmonster.showCharts("pie");
+      this.$refs.pivot.flexmonster.showCharts("column");
     },
     showGrid: function () {
       this.$refs.pivot.flexmonster.showGrid();
@@ -59,6 +63,7 @@ export default {
         },
         chart: {
           showFilter: false,
+          showMeasures: false,
         },
         configuratorButton: false,
         sorting: false,
@@ -75,6 +80,7 @@ export default {
         },
         chart: {
           showFilter: true,
+          showMeasures: true,
         },
         configuratorButton: true,
         sorting: true,
