@@ -1,14 +1,13 @@
 <template>
   <div>
     <h3 class="page-title">
-      How to
+      Customizing
       <a
         class="title-link"
         target="blank"
         href="https://www.flexmonster.com/doc/customizing-toolbar/"
-        >customize the Toolbar</a
+        >the Toolbar</a
       >
-      example
     </h3>
     <Pivot
       ref="pivot"
