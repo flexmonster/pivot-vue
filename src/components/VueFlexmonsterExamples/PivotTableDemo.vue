@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="page-title">Simple Usage Example</h3>
+    <h3 class="page-title">Pivot Table Demo</h3>
     <Pivot
       ref="pivot"
       toolbar
