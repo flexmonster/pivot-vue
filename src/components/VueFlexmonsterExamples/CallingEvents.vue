@@ -1,14 +1,13 @@
 <template>
   <div>
     <h3 class="title-one page-title">
-      How to call
+      Calling 
       <a
         class="title-link"
         target="blank"
         href="https://www.flexmonster.com/api/events/"
         >Flexmonster events</a
       >
-      example
     </h3>
 
     <div class="description-blocks first-description-block">
