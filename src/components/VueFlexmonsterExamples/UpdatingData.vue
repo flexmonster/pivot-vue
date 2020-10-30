@@ -1,14 +1,13 @@
 <template>
   <div>
     <h3 class="page-title">
-      How to
       <a
         class="title-link"
         target="blank"
         href="https://www.flexmonster.com/api/updatedata/"
-        >update the data in Flexmonster</a
+        >Updating the data</a
       >
-      example
+      in Flexmonster
     </h3>
     <button class="button-red" v-on:click="updateTheData">Update data</button>
     <Pivot
