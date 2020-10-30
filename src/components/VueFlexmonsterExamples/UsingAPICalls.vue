@@ -1,14 +1,13 @@
 <template>
   <div>
     <h3 class="page-title">
-      How to access
+      Using 
       <a
         class="title-link"
         target="blank"
         href="https://www.flexmonster.com/api/methods/"
         >Flexmonster API calls</a
       >
-      example
     </h3>
     <div class="description-blocks">
       <ToggleSwitch
