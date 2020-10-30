@@ -1,14 +1,13 @@
 <template>
   <div>
     <h3 class="page-title">
-      How to
+      Customizing
       <a
         class="title-link"
         target="blank"
         href="https://www.flexmonster.com/api/customizecell/"
-        >customize the grid cells</a
+        >the grid cells</a
       >
-      example
     </h3>
     <div class="description-blocks">
       <ToggleButton
