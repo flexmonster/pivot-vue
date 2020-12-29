@@ -56,45 +56,15 @@ export default {
     },
     readOnly: function () {
       this.$refs.pivot.flexmonster.setOptions({
-        grid: {
-          showFilter: false,
-          dragging: false,
-        },
-        chart: {
-          showFilter: false,
-          showMeasures: false,
-        },
-        configuratorButton: false,
-        sorting: false,
-        drillThrough: false,
+        readOnly: true
       });
-      this.hideContextMenu();
       this.$refs.pivot.flexmonster.refresh();
     },
     interactive: function () {
       this.$refs.pivot.flexmonster.setOptions({
-        grid: {
-          showFilter: true,
-          dragging: true,
-        },
-        chart: {
-          showFilter: true,
-          showMeasures: true,
-        },
-        configuratorButton: true,
-        sorting: true,
-        drillThrough: true,
+        readOnly: false
       });
-      this.showContextMenu();
       this.$refs.pivot.flexmonster.refresh();
-    },
-    hideContextMenu: function () {
-      this.$refs.pivot.flexmonster.customizeContextMenu(() => {
-        return [];
-      });
-    },
-    showContextMenu: function () {
-      this.$refs.pivot.flexmonster.customizeContextMenu(null);
     },
     toggleView: function ($event) {
       if ($event) {
