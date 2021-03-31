@@ -33,6 +33,9 @@
       <li class="tab-button">
         <router-link to="/with-highcharts">WITH HIGHCHARTS</router-link>
       </li>
+      <li class="tab-button">
+        <router-link to="/with-amcharts">WITH AMCHARTS</router-link>
+      </li>
     </ol>
   </div>
 </template>

@@ -28,7 +28,7 @@ import Highcharts from "highcharts";
 import "flexmonster/lib/flexmonster.highcharts";
 
 export default {
-  name: "Example_7",
+  name: "WithHighcharts",
   methods: {
     drawChart: function () {
       this.$refs.pivot.flexmonster.highcharts.getData(

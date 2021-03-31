@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "Example_4",
+  name: "UpdatingData",
   data: function () {
     return {
       data: [

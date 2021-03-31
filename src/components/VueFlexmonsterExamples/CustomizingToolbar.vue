@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: "Example_5",
+  name: "CustomizingToolbar",
   methods: {
     showInfo: function () {
       this.$refs.pivot.flexmonster.alert({

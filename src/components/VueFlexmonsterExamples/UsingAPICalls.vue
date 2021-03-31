@@ -40,7 +40,7 @@
 import ToggleSwitch from "../UIElements/ToggleSwitch";
 
 export default {
-  name: "Example_3",
+  name: "UsingAPICalls",
   components: { ToggleSwitch },
   data: function () {
     return {

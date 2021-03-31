@@ -40,6 +40,11 @@ const routes = [{
     component: () => import('../components/VueFlexmonsterExamples/WithHighcharts')
   },
   {
+    path: '/with-amcharts',
+    name: 'WithAmcharts',
+    component: () => import('../components/VueFlexmonsterExamples/WithAmcharts')
+  },
+  {
     path: '*',
     name: 'PivotTableDemo',
     redirect: '/pivot-table-demo'

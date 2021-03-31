@@ -64,7 +64,7 @@
 import ToggleButton from "../UIElements/ToggleButton";
 
 export default {
-  name: "Example_6",
+  name: "CustomizingGrid",
   components: { ToggleButton },
   methods: {
     customizeCellFunction: function (cell, data) {
