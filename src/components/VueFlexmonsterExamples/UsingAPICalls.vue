@@ -5,7 +5,7 @@
       <a
         class="title-link"
         target="blank"
-        href="https://www.flexmonster.com/api/methods/"
+        href="https://www.flexmonster.com/api/methods/?r=rm_vue"
         >Flexmonster API calls</a
       >
     </h3>

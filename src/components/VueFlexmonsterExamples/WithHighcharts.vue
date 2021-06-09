@@ -5,7 +5,7 @@
       <a
         class="title-link"
         target="blank"
-        href="https://www.flexmonster.com/doc/integration-with-highcharts/"
+        href="https://www.flexmonster.com/doc/integration-with-highcharts/?r=rm_vue"
         >with Highcharts</a
       >
     </h3>

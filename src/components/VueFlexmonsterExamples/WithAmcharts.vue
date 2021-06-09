@@ -5,7 +5,7 @@
       <a
         class="title-link"
         target="blank"
-        href="https://www.flexmonster.com/doc/integration-with-amcharts/"
+        href="https://www.flexmonster.com/doc/integration-with-amcharts/?r=rm_vue"
         >with amCharts</a
       >
     </h3>

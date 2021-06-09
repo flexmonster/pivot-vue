@@ -5,7 +5,7 @@
       <a
         class="title-link"
         target="blank"
-        href="https://www.flexmonster.com/doc/customizing-toolbar/"
+        href="https://www.flexmonster.com/doc/customizing-toolbar/?r=rm_vue"
         >the Toolbar</a
       >
     </h3>
@@ -27,7 +27,7 @@ export default {
       this.$refs.pivot.flexmonster.alert({
         title: "Customizing Flexmonster",
         message:
-          "How to customize the Toolbar: <a style='text-decoration:underline; color:#00A45A' target='blank' href='https://www.flexmonster.com/doc/customizing-toolbar/'>https://www.flexmonster.com/doc/customizing-toolbar/</a> <br>",
+          "How to customize the Toolbar: <a style='text-decoration:underline; color:#00A45A' target='blank' href='https://www.flexmonster.com/doc/customizing-toolbar/?r=rm_vue'>https://www.flexmonster.com/doc/customizing-toolbar/</a> <br>",
         type: "info",
         blocking: false,
       });

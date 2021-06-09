@@ -5,7 +5,7 @@
       <a
         class="title-link"
         target="blank"
-        href="https://www.flexmonster.com/api/customizecell/"
+        href="https://www.flexmonster.com/api/customizecell/?r=rm_vue"
         >the grid cells</a
       >
     </h3>

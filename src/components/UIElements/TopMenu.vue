@@ -1,7 +1,7 @@
 <template>
   <header class="mainheader fixed-head">
     <div class="container-xl">
-      <a href="https://www.flexmonster.com/" target="blank" class="logo">
+      <a href="https://www.flexmonster.com/?r=rm_vue" target="blank" class="logo">
         <img
           src="https://www.flexmonster.com/base/assets/img/svg/logo.svg"
           alt
@@ -9,15 +9,15 @@
       </a>
       <ul class="mainnav">
         <li class>
-          <a href="https://www.flexmonster.com/doc/" target="blank">Docs</a>
+          <a href="https://www.flexmonster.com/doc/?r=rm_vue" target="blank">Docs</a>
         </li>
         <li class>
-          <a href="https://www.flexmonster.com/support/" target="blank"
+          <a href="https://www.flexmonster.com/support/?r=rm_vue" target="blank"
             >Support</a
           >
         </li>
         <li class>
-          <a href="https://www.flexmonster.com/contact/" target="blank"
+          <a href="https://www.flexmonster.com/contact/?r=rm_vue" target="blank"
             >Contact us</a
           >
         </li>

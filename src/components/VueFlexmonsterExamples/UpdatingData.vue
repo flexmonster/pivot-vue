@@ -4,7 +4,7 @@
       <a
         class="title-link"
         target="blank"
-        href="https://www.flexmonster.com/api/updatedata/"
+        href="https://www.flexmonster.com/api/updatedata/?r=rm_vue"
         >Updating the data</a
       >
       in Flexmonster

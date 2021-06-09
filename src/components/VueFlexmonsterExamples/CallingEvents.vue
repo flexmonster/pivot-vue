@@ -5,7 +5,7 @@
       <a
         class="title-link"
         target="blank"
-        href="https://www.flexmonster.com/api/events/"
+        href="https://www.flexmonster.com/api/events/?r=rm_vue"
         >Flexmonster events</a
       >
     </h3>
@@ -16,7 +16,7 @@
         <a
           class="title-link"
           target="blank"
-          href="https://www.flexmonster.com/api/events/"
+          href="https://www.flexmonster.com/api/events/?r=rm_vue"
           >Flexmonster event</a
         >. Scroll down to the log output to see which events get triggered.
       </p>
@@ -47,7 +47,7 @@
             <a
               class="log-link"
               target="_blank"
-              v-bind:href="'https://www.flexmonster.com/api/' + log.event"
+              v-bind:href="'https://www.flexmonster.com/api/' + log.event + '/?r=rm_vue'"
               >see details</a
             >
             ]
