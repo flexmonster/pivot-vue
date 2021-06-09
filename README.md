@@ -1,6 +1,6 @@
 # Flexmonster Pivot Table &amp; Charts integration with Vue.js
 [![Flexmonster Pivot Table & Charts](https://cdn.flexmonster.com/landing.png)](https://flexmonster.com/?r=rm_vue)
-Website: www.flexmonster.com
+Website: [www.flexmonster.com](https://www.flexmonster.com/?r=rm_vue)
 
 ## Flexmonster Pivot Table & Charts
 
