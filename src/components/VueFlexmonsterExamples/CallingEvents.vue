@@ -32,8 +32,11 @@
     <Pivot
       ref="pivot"
       toolbar
-      v-bind:report="'https://cdn.flexmonster.com/reports/report.json'"
+      v-bind:height="600"
+      v-bind:report="'https://cdn.flexmonster.com/github/demo-report.json'"
       v-bind:ready="signOnAllEvents"
+      v-bind:shareReportConnection="{url: 'https://olap.flexmonster.com:9500'}"
+      v-bind:beforetoolbarcreated="customizeToolbar"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
     ></Pivot>
 
@@ -116,6 +119,9 @@ export default {
     };
   },
   methods: {
+    customizeToolbar: function(toolbar) {
+      toolbar.showShareReportTab = true;
+    },
     printLog: function (log) {
       this.logs.push({
         id: new Date().getTime() + log,

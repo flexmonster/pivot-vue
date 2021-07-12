@@ -20,41 +20,11 @@
     <Pivot
       ref="pivot"
       toolbar
-      v-bind:report="{
-        dataSource: {
-          filename: 'https://cdn.flexmonster.com/data/data.csv',
-        },
-        slice: {
-          rows: [
-            {
-              uniqueName: 'Category',
-            },
-            {
-              uniqueName: '[Measures]',
-            },
-          ],
-          columns: [
-            {
-              uniqueName: 'Color',
-            },
-          ],
-          measures: [
-            {
-              uniqueName: 'Price',
-              aggregation: 'sum',
-            },
-            {
-              uniqueName: 'Discount',
-              aggregation: 'sum',
-            },
-            {
-              uniqueName: 'Quantity',
-              aggregation: 'sum',
-            },
-          ],
-        },
-      }"
+      v-bind:report="'https://cdn.flexmonster.com/github/demo-report.json'"
+      v-bind:shareReportConnection="{url: 'https://olap.flexmonster.com:9500'}"
+      v-bind:height="600"
       v-bind:customizeCell="customizeCellFunction"
+      v-bind:beforetoolbarcreated="customizeToolbar"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
     ></Pivot>
   </div>
@@ -67,6 +37,9 @@ export default {
   name: "CustomizingGrid",
   components: { ToggleButton },
   methods: {
+    customizeToolbar: function(toolbar) {
+      toolbar.showShareReportTab = true;
+    },
     customizeCellFunction: function (cell, data) {
       if (data.measure && data.measure.name == "Price") {
         let backgroundColor = "#00A45A";

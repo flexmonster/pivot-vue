@@ -12,7 +12,8 @@
     <Pivot
       ref="pivot"
       toolbar
-      v-bind:report="'https://cdn.flexmonster.com/reports/report.json'"
+      v-bind:report="'https://cdn.flexmonster.com/github/demo-report.json'"
+      v-bind:height="600"
       v-bind:beforetoolbarcreated="customizeToolbar"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
     ></Pivot>

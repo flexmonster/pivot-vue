@@ -12,25 +12,24 @@
     <div class="description-blocks">
       <ToggleSwitch
         v-on:clicked="toggleView"
-        labelOn="Show grid"
-        labelOff="Show Column chart"
+        labelOn="Grid"
+        labelOff="Column chart"
         id="viewToggle"
       ></ToggleSwitch>
       <ToggleSwitch
         v-on:clicked="toggleMode"
-        labelOn="Make interactive"
-        labelOff="Make read-only"
+        labelOn="Interactive"
+        labelOff="Read-only"
         id="modeToggle"
       ></ToggleSwitch>
     </div>
     <Pivot
       ref="pivot"
-      v-bind:toolbar="false"
-      v-bind:report="{
-        dataSource: {
-          filename: 'https://cdn.flexmonster.com/data/data.json',
-        },
-      }"
+      toolbar
+      v-bind:height="600"
+      v-bind:report="'https://cdn.flexmonster.com/github/demo-report.json'"
+      v-bind:shareReportConnection="{url: 'https://olap.flexmonster.com:9500'}"
+      v-bind:beforetoolbarcreated="customizeToolbar"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
     ></Pivot>
   </div>
@@ -48,6 +47,9 @@ export default {
     };
   },
   methods: {
+    customizeToolbar: function(toolbar) {
+      toolbar.showShareReportTab = true;
+    },
     showChart: function () {
       this.$refs.pivot.flexmonster.showCharts("column");
     },

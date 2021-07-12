@@ -12,8 +12,13 @@
     <Pivot
       ref="pivot"
       toolbar
-      v-bind:report="'https://cdn.flexmonster.com/reports/report.json'"
+      v-bind:height="600"
+      v-bind:report="'https://cdn.flexmonster.com/github/demo-report.json'"
       v-bind:reportcomplete="reportComplete"
+      v-bind:shareReportConnection="{
+        url: 'https://olap.flexmonster.com:9500',
+      }"
+      v-bind:beforetoolbarcreated="customizeToolbar"
       v-bind:licenseFilePath="'https://cdn.flexmonster.com/jsfiddle.charts.key'"
     ></Pivot>
     <div class="chart-container">
@@ -30,6 +35,9 @@ import "flexmonster/lib/flexmonster.highcharts";
 export default {
   name: "WithHighcharts",
   methods: {
+    customizeToolbar: function(toolbar) {
+      toolbar.showShareReportTab = true;
+    },
     drawChart: function () {
       this.$refs.pivot.flexmonster.highcharts.getData(
         {
