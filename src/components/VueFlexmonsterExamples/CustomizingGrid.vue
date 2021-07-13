@@ -20,8 +20,10 @@
     <Pivot
       ref="pivot"
       toolbar
-      v-bind:report="'https://cdn.flexmonster.com/github/demo-report.json'"
-      v-bind:shareReportConnection="{url: 'https://olap.flexmonster.com:9500'}"
+      v-bind:ready="onReady"
+      v-bind:shareReportConnection="{
+        url: 'https://olap.flexmonster.com:9500',
+      }"
       v-bind:height="600"
       v-bind:customizeCell="customizeCellFunction"
       v-bind:beforetoolbarcreated="customizeToolbar"
@@ -37,7 +39,43 @@ export default {
   name: "CustomizingGrid",
   components: { ToggleButton },
   methods: {
-    customizeToolbar: function(toolbar) {
+    onReady: function () {
+      this.$refs.pivot.flexmonster.setReport({
+        dataSource: {
+          filename: "https://cdn.flexmonster.com/data/data.csv",
+        },
+        slice: {
+          rows: [
+            {
+              uniqueName: "Category",
+            },
+            {
+              uniqueName: "[Measures]",
+            },
+          ],
+          columns: [
+            {
+              uniqueName: "Color",
+            },
+          ],
+          measures: [
+            {
+              uniqueName: "Price",
+              aggregation: "sum",
+            },
+            {
+              uniqueName: "Discount",
+              aggregation: "sum",
+            },
+            {
+              uniqueName: "Quantity",
+              aggregation: "sum",
+            },
+          ],
+        },
+      });
+    },
+    customizeToolbar: function (toolbar) {
       toolbar.showShareReportTab = true;
     },
     customizeCellFunction: function (cell, data) {

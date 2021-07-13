@@ -14,7 +14,9 @@
       ref="pivot"
       toolbar
       v-bind:height="600"
-      v-bind:shareReportConnection="{url: 'https://olap.flexmonster.com:9500'}"
+      v-bind:shareReportConnection="{
+        url: 'https://olap.flexmonster.com:9500',
+      }"
       v-bind:beforetoolbarcreated="customizeToolbar"
       v-bind:ready="onReady"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
@@ -54,7 +56,7 @@ export default {
     };
   },
   methods: {
-    customizeToolbar: function(toolbar) {
+    customizeToolbar: function (toolbar) {
       toolbar.showShareReportTab = true;
     },
     onReady: function () {
