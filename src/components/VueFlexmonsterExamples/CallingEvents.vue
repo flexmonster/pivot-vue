@@ -129,7 +129,9 @@ export default {
         event: log,
       });
       requestAnimationFrame(() => {
-        this.$refs.logsContainer.scrollTop = this.$refs.logsContainer.scrollHeight;
+        if(this.$refs.logsContainer){
+          this.$refs.logsContainer.scrollTop = this.$refs.logsContainer.scrollHeight;
+        }
       });
     },
     signOffAllEvents: function () {

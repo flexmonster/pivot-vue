@@ -46,7 +46,7 @@ const routes = [{
   },
   {
     path: '*',
-    name: 'PivotTableDemo',
+    name: 'Home',
     redirect: '/pivot-table-demo'
   }
 ]
