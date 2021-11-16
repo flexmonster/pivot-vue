@@ -64,4 +64,4 @@ To see the result, open `http://localhost:8080/` in your browser.
 
 ## Usage
 
-For details on usage, refer to the [Flexmonster integration with Vue](https://www.flexmonster.com/doc/integration-with-vue/?r=rm_vue) tutorial.
+For details on usage, refer to the [Flexmonster integration with Vue](https://www.flexmonster.com/doc/integration-with-vue-2/?r=rm_vue) tutorial.
