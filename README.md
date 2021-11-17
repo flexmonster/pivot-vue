@@ -31,7 +31,7 @@ git clone https://github.com/flexmonster/pivot-vue.git && cd pivot-vue
     ```bash
     cd vue2/ES6
     ```
-     or 
+     or to the `vue2/typescript` folder:
     
     ```bash
     cd vue2/typescript
@@ -64,4 +64,5 @@ To see the result, open `http://localhost:8080/` in your browser.
 
 ## Usage
 
-For details on usage, refer to the [Flexmonster integration with Vue](https://www.flexmonster.com/doc/integration-with-vue-2/?r=rm_vue) tutorial.
+For details on usage, refer to the [Flexmonster integration with Vue 2](https://www.flexmonster.com/doc/integration-with-vue-2/?r=rm_vue) tutorial.
+To integrate Flexmonster into a Vue 3 project, see [integration with Vue 2](https://www.flexmonster.com/doc/integration-with-vue-3/?r=rm_vue).
