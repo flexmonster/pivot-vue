@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="title-one page-title">
-      Calling
+      Handling
       <a
         class="title-link"
         target="blank"
@@ -72,9 +72,9 @@
 
 <script lang="ts">
 import ToggleButton from "@/components/UIElements/ToggleButton.vue";
-import Pivot from "vue-flexmonster";
-import Vue from "vue";
-import Flexmonster from "flexmonster/types/flexmonster";
+import Pivot from "vue-flexmonster/vue3";
+import { defineComponent } from "vue";
+import * as Flexmonster from "flexmonster/types/flexmonster";
 
 export interface ILogElement {
   id: string;
@@ -82,14 +82,14 @@ export interface ILogElement {
   event: string;
 }
 
-export interface ICallingEventsData {
+export interface IHandlingEventsData {
   logs: ILogElement[];
   eventList: string[];
 }
 
-export default Vue.extend({
-  name: "CallingEvents",
-  components: { ToggleButton },
+export default defineComponent({
+  name: "HandlingEvents",
+  components: { ToggleButton, Pivot },
   data: function () {
     return {
       logs: [],
@@ -134,7 +134,7 @@ export default Vue.extend({
         "runningquery",
         "update",
       ],
-    } as ICallingEventsData;
+    } as IHandlingEventsData;
   },
   methods: {
     customizeToolbar(toolbar: Flexmonster.Toolbar): void {
@@ -155,17 +155,13 @@ export default Vue.extend({
     signOffAllEvents: function () {
       for (const eventName of this.eventList) {
         //remove all handlers for specified event
-        (
-          (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
-        ).off(eventName);
+        ((this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot).off(eventName);
       }
     },
     signOnAllEvents(): void {
       for (const eventName of this.eventList) {
         //add handler for specified event
-        (
-          (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
-        ).on(eventName, () => {
+        ((this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot).on(eventName, () => {
           this.printLog(eventName);
         });
       }

@@ -12,9 +12,9 @@ const routes = [{
   component: () => import('@/views/VueFlexmonsterExamples/CompositionAPIDemo.vue')
 },
 {
-  path: '/calling-events',
-  name: 'CallingEvents',
-  component: () => import('../views/VueFlexmonsterExamples/CallingEvents')
+  path: '/handling-events',
+  name: 'HandlingEvents',
+  component: () => import('../views/VueFlexmonsterExamples/HandlingEvents')
 },
 {
   path: '/using-api-calls',

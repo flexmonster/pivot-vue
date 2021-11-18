@@ -8,7 +8,7 @@
     <div class="sub-title">API and Events</div>
     <ol>
       <li class="tab-button">
-        <router-link to="/calling-events">CALLING EVENTS</router-link>
+        <router-link to="/handling-events">HANDLING EVENTS</router-link>
       </li>
       <li class="tab-button">
         <router-link to="/using-api-calls">USING API CALLS</router-link>

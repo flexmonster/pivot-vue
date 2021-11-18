@@ -11,9 +11,9 @@ const routes: Array<RouteConfig> = [
     component: PivotTableDemo
   },
   {
-    path: '/calling-events',
-    name: 'CallingEvents',
-    component: () => import('@/views/VueFlexmonsterExamples/CallingEvents.vue')
+    path: '/handling-events',
+    name: 'HandlingEvents',
+    component: () => import('@/views/VueFlexmonsterExamples/HandlingEvents.vue')
   },
   {
     path: '/using-api-calls',

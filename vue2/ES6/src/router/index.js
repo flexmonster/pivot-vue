@@ -10,9 +10,9 @@ const routes = [{
     component: PivotTableDemo
   },
   {
-    path: '/calling-events',
-    name: 'CallingEvents',
-    component: () => import('@/views/VueFlexmonsterExamples/CallingEvents')
+    path: '/handling-events',
+    name: 'HandlingEvents',
+    component: () => import('@/views/VueFlexmonsterExamples/HandlingEvents')
   },
   {
     path: '/using-api-calls',

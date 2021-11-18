@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="title-one page-title">
-      Calling
+      Handling 
       <a
         class="title-link"
         target="blank"
@@ -35,9 +35,7 @@
       v-bind:height="600"
       v-bind:report="'https://cdn.flexmonster.com/github/demo-report.json'"
       v-bind:ready="signOnAllEvents"
-      v-bind:shareReportConnection="{
-        url: 'https://olap.flexmonster.com:9500',
-      }"
+      v-bind:shareReportConnection="{url: 'https://olap.flexmonster.com:9500'}"
       v-bind:beforetoolbarcreated="customizeToolbar"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
     ></Pivot>
@@ -52,9 +50,7 @@
             <a
               class="log-link"
               target="_blank"
-              v-bind:href="
-                'https://www.flexmonster.com/api/' + log.event + '/?r=rm_vue'
-              "
+              v-bind:href="'https://www.flexmonster.com/api/' + log.event + '/?r=rm_vue'"
               >see details</a
             >
             ]
@@ -70,26 +66,13 @@
   </div>
 </template>
 
-<script lang="ts">
-import ToggleButton from "@/components/UIElements/ToggleButton.vue";
-import Pivot from "vue-flexmonster/vue3";
-import { defineComponent } from "vue";
-import * as Flexmonster from "flexmonster/types/flexmonster";
+<script>
+import ToggleButton from "@/components/UIElements/ToggleButton";
+import { defineComponent } from 'vue';
 
-export interface ILogElement {
-  id: string;
-  date: string;
-  event: string;
-}
-
-export interface ICallingEventsData {
-  logs: ILogElement[];
-  eventList: string[];
-}
-
-export default defineComponent({
-  name: "CallingEvents",
-  components: { ToggleButton, Pivot },
+export default /*#__PURE__*/defineComponent({
+  name: "HandlingEvents",
+  components: { ToggleButton },
   data: function () {
     return {
       logs: [],
@@ -134,46 +117,46 @@ export default defineComponent({
         "runningquery",
         "update",
       ],
-    } as ICallingEventsData;
+    };
   },
   methods: {
-    customizeToolbar(toolbar: Flexmonster.Toolbar): void {
+    customizeToolbar: function(toolbar) {
       toolbar.showShareReportTab = true;
     },
-    printLog(log: string): void {
+    printLog: function (log) {
       this.logs.push({
         id: new Date().getTime() + log,
         date: new Date().toLocaleTimeString(),
         event: log,
       });
       requestAnimationFrame(() => {
-        if (this.$refs.logsContainer) {
-          (this.$refs.logsContainer as HTMLDivElement).scrollTop = (this.$refs.logsContainer as HTMLDivElement).scrollHeight;
+        if(this.$refs.logsContainer){
+          this.$refs.logsContainer.scrollTop = this.$refs.logsContainer.scrollHeight;
         }
       });
     },
     signOffAllEvents: function () {
       for (const eventName of this.eventList) {
         //remove all handlers for specified event
-        ((this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot).off(eventName);
+        this.$refs.pivot.flexmonster.off(eventName);
       }
     },
-    signOnAllEvents(): void {
+    signOnAllEvents: function () {
       for (const eventName of this.eventList) {
         //add handler for specified event
-        ((this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot).on(eventName, () => {
+        this.$refs.pivot.flexmonster.on(eventName, () => {
           this.printLog(eventName);
         });
       }
     },
-    toggleEvents($event: boolean): void {
+    toggleEvents: function ($event) {
       if ($event) {
         this.signOffAllEvents();
       } else {
         this.signOnAllEvents();
       }
     },
-    clearLogs(): void {
+    clearLogs: function () {
       this.logs = [];
     },
   },

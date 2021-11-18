@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="title-one page-title">
-      Calling 
+      Handling 
       <a
         class="title-link"
         target="blank"
@@ -70,7 +70,7 @@
 import ToggleButton from "@/components/UIElements/ToggleButton";
 
 export default {
-  name: "CallingEvents",
+  name: "HandlingEvents",
   components: { ToggleButton },
   data: function () {
     return {
