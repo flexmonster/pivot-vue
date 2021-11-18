@@ -33,7 +33,7 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import Flexmonster from "flexmonster/types/flexmonster";
-import {Pivot} from "vue-flexmonster";
+import Pivot from "vue-flexmonster";
 import Vue from "vue";
 
 /* Apply amCharts theme */

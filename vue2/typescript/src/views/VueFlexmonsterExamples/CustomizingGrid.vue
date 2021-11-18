@@ -34,7 +34,7 @@
 
 <script lang="ts">
 import ToggleButton from "@/components/UIElements/ToggleButton.vue";
-import {Pivot} from "vue-flexmonster";
+import Pivot from "vue-flexmonster";
 import Flexmonster from "flexmonster/types/flexmonster";
 import Vue from "vue";
 
