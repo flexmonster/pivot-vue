@@ -1,6 +1,6 @@
 # Flexmonster Pivot Table & Charts integration with Vue 3 Typescript
-[![Flexmonster Pivot Table & Charts](https://cdn.flexmonster.com/landing.png)](https://flexmonster.com/?r=rm_vue3)
-Website: [www.flexmonster.com](https://www.flexmonster.com/?r=rm_vue3)
+[![Flexmonster Pivot Table & Charts](https://cdn.flexmonster.com/landing.png)](https://flexmonster.com/?r=gh_vue3)
+Website: [www.flexmonster.com](https://www.flexmonster.com/?r=gh_vue3)
 
 ## Flexmonster Pivot Table & Charts
 
@@ -40,4 +40,4 @@ To see the result, open `http://localhost:8080/` in your browser.
 
 ## Usage
 
-For details on usage, see the [Flexmonster integration with Vue 3](https://www.flexmonster.com/doc/integration-with-vue-3/?r=rm_vue3) guide.
+For details on usage, see the [Flexmonster integration with Vue 3](https://www.flexmonster.com/doc/integration-with-vue-3/?r=gh_vue3) guide.
