@@ -1,6 +1,6 @@
 # Flexmonster Pivot Table &amp; Charts integration with Vue 2
-[![Flexmonster Pivot Table & Charts](https://cdn.flexmonster.com/landing.png)](https://flexmonster.com/?r=rm_vue2)
-Website: [www.flexmonster.com](https://www.flexmonster.com/?r=rm_vue2)
+[![Flexmonster Pivot Table & Charts](https://cdn.flexmonster.com/landing.png)](https://flexmonster.com/?r=gh_vue2)
+Website: [www.flexmonster.com](https://www.flexmonster.com/?r=gh_vue2)
 
 ## Flexmonster Pivot Table & Charts
 
@@ -40,4 +40,4 @@ To see the result, open `http://localhost:8080/` in your browser.
 
 ## Usage
 
-For details on usage, see the [Flexmonster integration with Vue 2](https://www.flexmonster.com/doc/integration-with-vue-2/?r=rm_vue2) guide.
+For details on usage, see the [Flexmonster integration with Vue 2](https://www.flexmonster.com/doc/integration-with-vue-2/?r=gh_vue2) guide.
