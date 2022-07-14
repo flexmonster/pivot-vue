@@ -8,15 +8,19 @@
         />
       </a>
       <ul class="mainnav">
-        <li class>
+        <li>
+          <a href="https://www.flexmonster.com/doc/integration-with-vue-2/?r=rm_vue" target="blank">
+          Integration with Vue 2</a>
+        </li>
+        <li>
           <a href="https://www.flexmonster.com/doc/?r=rm_vue" target="blank">Docs</a>
         </li>
-        <li class>
-          <a href="https://www.flexmonster.com/support/?r=rm_vue" target="blank"
-            >Support</a
+        <li>
+          <a href="https://www.flexmonster.com/help-center/?r=rm_vue" target="blank"
+            >Help center</a
           >
         </li>
-        <li class>
+        <li>
           <a href="https://www.flexmonster.com/contact/?r=rm_vue" target="blank"
             >Contact us</a
           >
