@@ -1,19 +1,23 @@
 <template>
   <div>
-    <h3 class="page-title">
-      Integrating
-      <a
-        class="title-link"
-        target="blank"
-        href="https://www.flexmonster.com/doc/integration-with-highcharts/?r=rm_vue"
-        >with Highcharts</a
-      >
-    </h3>
+    <h1 class="page-title">Integrating with Highcharts</h1>
+    <div class="description-blocks first-description-block">
+      <p>
+        Integrate Flexmonster with Highcharts and see your data from a new
+        perspective:
+        <a
+          href="https://www.flexmonster.com/doc/integration-with-highcharts/?r=rm_vue"
+          target="_blank"
+          class="title-link"
+          >Integration with Highcharts</a
+        >.
+      </p>
+    </div>
     <Pivot
       ref="pivot"
       toolbar
       v-bind:height="600"
-      v-bind:report="'https://cdn.flexmonster.com/github/demo-report.json'"
+      v-bind:report="'https://cdn.flexmonster.com/github/highcharts-report.json'"
       v-bind:reportcomplete="reportComplete"
       v-bind:shareReportConnection="{
         url: 'https://olap.flexmonster.com:9500',
@@ -44,7 +48,7 @@ export default Vue.extend({
     drawChart() : void {
       ((this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot).highcharts?.getData(
         {
-          type: "area",
+          type: "spline",
         },
         function (data: Flexmonster.GetDataValueObject) {
           Highcharts.chart("highcharts-container", data as Highcharts.Options);

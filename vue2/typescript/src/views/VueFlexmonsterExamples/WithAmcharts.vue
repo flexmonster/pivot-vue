@@ -1,14 +1,18 @@
 <template>
   <div>
-    <h3 class="page-title">
-      Integrating
-      <a
-        class="title-link"
-        target="blank"
-        href="https://www.flexmonster.com/doc/integration-with-amcharts/?r=rm_vue"
-        >with amCharts</a
-      >
-    </h3>
+    <h1 class="page-title">Integrating with amCharts</h1>
+    <div class="description-blocks first-description-block">
+      <p>
+        Extend Flexmonster’s visualization functionality by integrating with the
+        amCharts library:
+        <a
+          href="https://www.flexmonster.com/doc/integration-with-amcharts/?r=rm_vue"
+          target="_blank"
+          class="title-link"
+          >Integration with amCharts</a
+        >.
+      </p>
+    </div>
     <Pivot
       ref="pivot"
       toolbar

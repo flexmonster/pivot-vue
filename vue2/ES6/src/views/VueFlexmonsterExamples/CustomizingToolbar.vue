@@ -1,14 +1,20 @@
 <template>
   <div>
-    <h3 class="page-title">
-      Customizing
-      <a
-        class="title-link"
-        target="blank"
-        href="https://www.flexmonster.com/doc/customizing-toolbar/?r=rm_vue"
-        >the Toolbar</a
-      >
-    </h3>
+    <h1 class="page-title">Customizing the Toolbar</h1>
+    <div class="description-blocks first-description-block">
+      <p>You can add, remove, and update the Toolbar tabs.</p>
+      <p>
+        In this demo, we’ve removed all the tabs and added a custom
+        <strong>New Tab</strong>. See our docs to learn more about the Toolbar
+        and its customization:
+        <a
+          href="https://www.flexmonster.com/doc/customizing-toolbar/?r=rm_vue"
+          target="_blank"
+          class="title-link"
+          >Customizing the Toolbar</a
+        >.
+      </p>
+    </div>
     <Pivot
       ref="pivot"
       toolbar
