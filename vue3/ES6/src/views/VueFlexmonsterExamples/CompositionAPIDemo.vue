@@ -1,6 +1,24 @@
 <template>
   <div>
-    <h3 class="page-title">Pivot Table Demo (Composition API)</h3>
+    <h1 class="page-title">Pivot Table Demo (Composition API)</h1>
+    <div class="description-blocks first-description-block">
+      <p>
+        In this demo, Flexmonster is embedded in the Vue 3 project using the 
+        <a
+          href="https://vuejs.org/guide/extras/composition-api-faq.html"
+          target="_blank"
+          class="title-link"
+          >Composition API</a
+        >.
+      </p>
+      <p>Learn more about this example in our documentation: 
+        <a
+          href="https://www.flexmonster.com/doc/flexmonster-in-vue-3/?r=rm_vue/#composition-api"
+          target="_blank"
+          class="title-link"
+          >Creating the pivot table using the CompositionAPI</a
+        >.</p>
+    </div>
     <Pivot
       ref="pivot"
       toolbar

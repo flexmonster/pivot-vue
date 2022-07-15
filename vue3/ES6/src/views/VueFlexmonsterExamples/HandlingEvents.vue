@@ -1,14 +1,6 @@
 <template>
   <div>
-    <h3 class="title-one page-title">
-      Handling 
-      <a
-        class="title-link"
-        target="blank"
-        href="https://www.flexmonster.com/api/events/?r=rm_vue"
-        >Flexmonster events</a
-      >
-    </h3>
+    <h1 class="title-one page-title">Handling Flexmonster events</h1>
 
     <div class="description-blocks first-description-block">
       <p>

@@ -1,19 +1,30 @@
 <template>
   <div>
-    <h3 class="page-title">
-      <a
-        class="title-link"
-        target="blank"
-        href="https://www.flexmonster.com/api/updatedata/?r=rm_vue"
-        >Updating the data</a
-      >
-      in Flexmonster
-    </h3>
+    <h1 class="page-title">Updating the data in Flexmonster</h1>
+    <div class="description-blocks first-description-block">
+      <p>
+        This demo shows how to refresh the data at runtime and keep the slice,
+        options, and formatting the same.
+      </p>
+      <p>
+        Try it yourself: configure the component as you wish and click the
+        <strong>UPDATE DATA</strong> button.
+      </p>
+      <p>
+        Learn more about updating the data in
+        <a
+          href="https://www.flexmonster.com/api/updatedata/?r=rm_vue"
+          target="_blank"
+          class="title-link"
+          >our documentation</a
+        >.
+      </p>
+    </div>
     <button class="button-red" v-on:click="updateTheData">Update data</button>
     <Pivot
       ref="pivot"
       toolbar
-      v-bind:height="600"
+      v-bind:height="400"
       v-bind:shareReportConnection="{
         url: 'https://olap.flexmonster.com:9500',
       }"
