@@ -33,7 +33,7 @@
 
 <script>
 import Highcharts from "highcharts";
-//Importing Flexmonster's connector for Highcharts:
+// Importing Flexmonster Connector for Highcharts:
 import "flexmonster/lib/flexmonster.highcharts";
 
 import { defineComponent } from "vue";
