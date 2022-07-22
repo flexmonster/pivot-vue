@@ -40,7 +40,7 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 /* Apply amCharts theme */
 am4core.useTheme(am4themes_animated);
 
-//Importing Flexmonster's connector for Amcharts:
+//Importing Flexmonster Connector for amCharts:
 import "flexmonster/lib/flexmonster.amcharts";
 
 export default {
