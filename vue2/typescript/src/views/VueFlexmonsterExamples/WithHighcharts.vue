@@ -33,7 +33,7 @@
 
 <script lang="ts">
 import Highcharts from "highcharts";
-//Importing Flexmonster's connector for Highcharts:
+//Importing Flexmonster Connector for Highcharts:
 import "flexmonster/lib/flexmonster.highcharts";
 import Pivot from "vue-flexmonster";
 import Flexmonster from "flexmonster/types/flexmonster";
