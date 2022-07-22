@@ -42,7 +42,7 @@ import { defineComponent } from "vue";
 /* Apply amCharts theme */
 am4core.useTheme(am4themes_animated);
 
-//Importing Flexmonster's connector for Amcharts:
+//Importing Flexmonster Connector for amCharts:
 import "flexmonster/lib/flexmonster.amcharts";
 import Pivot from "vue-flexmonster/vue3";
 
