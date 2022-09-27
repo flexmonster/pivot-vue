@@ -22,7 +22,7 @@
       height="600"
       v-bind:beforetoolbarcreated="customizeToolbar"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
-    ></Pivot>
+    />
   </div>
 </template>
 
