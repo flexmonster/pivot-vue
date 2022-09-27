@@ -48,7 +48,7 @@ export default defineComponent({
     },
 
     customizeToolbar(toolbar: Flexmonster.Toolbar): void {
-      var tabs: Flexmonster.ToolbarTab[] = toolbar.getTabs();
+      let tabs: Flexmonster.ToolbarTab[] = toolbar.getTabs();
       toolbar.getTabs = () => {
         tabs = [];
         // add new tab

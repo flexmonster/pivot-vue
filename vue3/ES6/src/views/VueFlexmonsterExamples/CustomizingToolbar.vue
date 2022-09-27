@@ -43,7 +43,7 @@ export default /*#__PURE__*/defineComponent({
     },
 
     customizeToolbar: function (toolbar) {
-      var tabs = toolbar.getTabs();
+      let tabs = toolbar.getTabs();
       toolbar.getTabs = () => {
         tabs = [];
         // add new tab
