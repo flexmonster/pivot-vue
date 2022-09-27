@@ -20,20 +20,20 @@
         labelOn="The grid cells are customized"
         labelOff="The grid cells are not customized"
         id="customizationToggle"
-      ></ToggleButton>
+      />
     </div>
     <Pivot
       ref="pivot"
       toolbar
-      v-bind:report="'https://cdn.flexmonster.com/github/customizing-grid-report.json'"
+      report="https://cdn.flexmonster.com/github/customizing-grid-report.json"
       v-bind:shareReportConnection="{
         url: 'https://olap.flexmonster.com:9500',
       }"
-      v-bind:height="600"
+      height="600"
       v-bind:customizeCell="customizeCellFunction"
       v-bind:beforetoolbarcreated="customizeToolbar"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
-    ></Pivot>
+    />
   </div>
 </template>
 

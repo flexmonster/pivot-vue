@@ -16,15 +16,15 @@
     <Pivot
       ref="pivot"
       toolbar
-      v-bind:height="600"
-      v-bind:report="'https://cdn.flexmonster.com/github/highcharts-report.json'"
+      height="600"
+      report="https://cdn.flexmonster.com/github/highcharts-report.json"
       v-bind:reportcomplete="reportComplete"
       v-bind:shareReportConnection="{
         url: 'https://olap.flexmonster.com:9500',
       }"
       v-bind:beforetoolbarcreated="customizeToolbar"
-      v-bind:licenseFilePath="'https://cdn.flexmonster.com/jsfiddle.charts.key'"
-    ></Pivot>
+      licenseFilePath="https://cdn.flexmonster.com/jsfiddle.charts.key"
+    />
     <div class="chart-container">
       <div id="highcharts-container"></div>
     </div>

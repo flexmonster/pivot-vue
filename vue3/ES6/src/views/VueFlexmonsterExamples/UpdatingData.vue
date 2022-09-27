@@ -24,14 +24,14 @@
     <Pivot
       ref="pivot"
       toolbar
-      v-bind:height="400"
+      height="400"
       v-bind:shareReportConnection="{
         url: 'https://olap.flexmonster.com:9500',
       }"
       v-bind:beforetoolbarcreated="customizeToolbar"
       v-bind:ready="onReady"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
-    ></Pivot>
+    />
   </div>
 </template>
 

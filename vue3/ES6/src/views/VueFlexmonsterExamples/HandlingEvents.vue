@@ -19,18 +19,18 @@
         labelOn="Events are tracked"
         labelOff="Events are not tracked"
         id="eventsToggle"
-      ></ToggleButton>
+      />
     </div>
     <Pivot
       ref="pivot"
       toolbar
-      v-bind:height="600"
-      v-bind:report="'https://cdn.flexmonster.com/github/demo-report.json'"
+      height="600"
+      report="https://cdn.flexmonster.com/github/demo-report.json"
       v-bind:ready="signOnAllEvents"
       v-bind:shareReportConnection="{url: 'https://olap.flexmonster.com:9500'}"
       v-bind:beforetoolbarcreated="customizeToolbar"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
-    ></Pivot>
+    />
 
     <div class="section">
       <h3 class="title-4">Log Output</h3>
