@@ -33,22 +33,22 @@
 </template>
 
 <script setup lang="ts">
-  import Pivot from "vue-flexmonster/vue3";
-  import * as Flexmonster from "flexmonster/types/flexmonster";
-  import { Ref, ref } from 'vue';
+import Pivot from "vue-flexmonster/vue3";
+import * as Flexmonster from "flexmonster/types/flexmonster";
+import { Ref, ref } from 'vue';
 
-  interface FlexmonsterPivot {
-    flexmonster: Flexmonster.Pivot;
-  }
+interface FlexmonsterPivot {
+  flexmonster: Flexmonster.Pivot;
+}
 
-  let pivot: Ref<FlexmonsterPivot | null> = ref(null);
+let pivot: Ref<FlexmonsterPivot | null> = ref(null);
     
-  function customizeToolbar(toolbar: Flexmonster.Toolbar) : void {
-    toolbar.showShareReportTab = true;
-  }
+function customizeToolbar(toolbar: Flexmonster.Toolbar) : void {
+  toolbar.showShareReportTab = true;
+}
 
-  function reportCompleteHandler() : void {
-    let report = pivot.value?.flexmonster.getReport();
-    console.log("Flexmonster report configuration >> ", report);
-  }
+function reportCompleteHandler() : void {
+  let report = pivot.value?.flexmonster.getReport();
+  console.log("Flexmonster report configuration >> ", report);
+}
 </script>
