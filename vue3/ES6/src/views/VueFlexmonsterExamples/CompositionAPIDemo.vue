@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-	import { ref } from 'vue';
+  import { ref } from 'vue';
 
   let pivot = ref(null);
     
@@ -41,7 +41,7 @@
     toolbar.showShareReportTab = true;
   }
 
-	function reportCompleteHandler(){
+  function reportCompleteHandler(){
     let report = pivot.value.flexmonster.getReport();
     console.log("Flexmonster report configuration >> ", report);
   }
