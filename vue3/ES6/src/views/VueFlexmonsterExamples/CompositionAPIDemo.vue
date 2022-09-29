@@ -33,16 +33,16 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue';
+import { ref } from 'vue';
 
-  let pivot = ref(null);
+let pivot = ref(null);
     
-  function customizeToolbar(toolbar){
-    toolbar.showShareReportTab = true;
-  }
+function customizeToolbar(toolbar){
+  toolbar.showShareReportTab = true;
+}
 
-  function reportCompleteHandler(){
-    let report = pivot.value.flexmonster.getReport();
-    console.log("Flexmonster report configuration >> ", report);
-  }
+function reportCompleteHandler(){
+  let report = pivot.value.flexmonster.getReport();
+  console.log("Flexmonster report configuration >> ", report);
+}
 </script>
