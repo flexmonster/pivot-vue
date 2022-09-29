@@ -32,29 +32,17 @@
   </div>
 </template>
 
-<script>
-import { defineComponent, ref } from 'vue';
+<script setup>
+	import { ref } from 'vue';
 
-export default defineComponent({
-  name: "CompositionAPIDemo",
-  setup() {
-
-    let pivot = ref(null);
+  let pivot = ref(null);
     
-    function customizeToolbar(toolbar){
-      toolbar.showShareReportTab = true;
-    }
-
-    function reportCompleteHandler(){
-      let report = pivot.value.flexmonster.getReport();
-      console.log("Flexmonster report configuration >> ", report);
-    }
-
-    return {
-      pivot,
-      customizeToolbar,
-      reportCompleteHandler
-    }
+  function customizeToolbar(toolbar){
+    toolbar.showShareReportTab = true;
   }
-});
+
+	function reportCompleteHandler(){
+    let report = pivot.value.flexmonster.getReport();
+    console.log("Flexmonster report configuration >> ", report);
+  }
 </script>
