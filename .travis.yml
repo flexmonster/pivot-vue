@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - '14'
+cache:
+  npm: false
+services:
+  - xvfb
+dist: bionic
+addons:
+  chrome: stable
+before_install:
+  - google-chrome-stable --port=9515 --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+script:
+  - git clone https://github.com/flexmonster/vue-integration-testing.git
+  - bash vue-integration-testing/launchScripts/vue2ES6.sh
+  - npm run test
