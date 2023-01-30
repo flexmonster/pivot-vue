@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import ToggleButton from "@/components/UIElements/ToggleButton";
+import ToggleButton from "@/components/UIElements/ToggleButton.vue";
 import { defineComponent } from 'vue';
 
 export default /*#__PURE__*/defineComponent({

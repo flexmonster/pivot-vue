@@ -31,35 +31,40 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Highcharts from "highcharts";
 //Importing Flexmonster Connector for Highcharts:
 import "flexmonster/lib/flexmonster.highcharts";
+import Pivot from "vue-flexmonster";
+import Vue from 'vue';
 
-export default {
+export default Vue.extend({
   name: "WithHighcharts",
   methods: {
-    customizeToolbar: function (toolbar) {
+    customizeToolbar(toolbar : Flexmonster.Toolbar) : void {
       toolbar.showShareReportTab = true;
     },
-    drawChart: function () {
-      this.$refs.pivot.flexmonster.highcharts.getData(
+    drawChart() : void {
+      ((this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot).highcharts?.getData(
         {
           type: "spline",
         },
-        function (data) {
-          Highcharts.chart("highcharts-container", data);
+        function (data: Flexmonster.GetDataValueObject) {
+          Highcharts.chart("highcharts-container", data as Highcharts.Options);
         },
-        function (data) {
-          Highcharts.chart("highcharts-container", data);
+        function (data: Flexmonster.GetDataValueObject) {
+          Highcharts.chart("highcharts-container", data as Highcharts.Options);
         }
       );
     },
 
-    reportComplete: function () {
-      this.$refs.pivot.flexmonster.off("reportcomplete");
+    reportComplete() : void {
+      ((this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot).off("reportcomplete");
       this.drawChart();
     },
   },
-};
+  // components: {
+  //   Pivot
+  // }
+});
 </script>

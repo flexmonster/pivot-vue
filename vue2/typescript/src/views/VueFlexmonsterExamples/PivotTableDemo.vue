@@ -36,17 +36,18 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 //Using the vue-flexmonster module (local registration):
 //1. Importing the vue-flexmonster module:
 //Uncomment the lines below:
 // import Pivot from "vue-flexmonster";
 // import 'flexmonster/flexmonster.css';
+import Vue from "vue";
 
-export default {
+export default Vue.extend({
   name: "PivotTableDemo",
   methods: {
-    customizeToolbar: function (toolbar) {
+    customizeToolbar(toolbar: Flexmonster.Toolbar): void {
       toolbar.showShareReportTab = true;
     },
   },
@@ -54,6 +55,6 @@ export default {
   //Uncomment the lines below:
   // components: {
   //    Pivot
-  // },
-};
+  // }
+});
 </script>
