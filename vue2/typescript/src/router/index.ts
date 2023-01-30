@@ -15,11 +15,6 @@ const router = new VueRouter({
       component: PivotTableDemo
     },
     {
-      path: '/composition-api-demo',
-      name: 'CompositionAPIDemo',
-      component: () => import('@/views/VueFlexmonsterExamples/CompositionAPIDemo.vue')
-    },
-    {
       path: '/handling-events',
       name: 'HandlingEvents',
       component: () => import('@/views/VueFlexmonsterExamples/HandlingEvents.vue')
