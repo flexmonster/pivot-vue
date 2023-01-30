@@ -20,9 +20,7 @@
     <div class="sub-title">Customization</div>
     <ol>
       <li class="tab-button">
-        <router-link to="/customizing-toolbar"
-          >CUSTOMIZING THE TOOLBAR</router-link
-        >
+        <router-link to="/customizing-toolbar">CUSTOMIZING THE TOOLBAR</router-link>
       </li>
       <li class="tab-button">
         <router-link to="/customizing-grid">CUSTOMIZING THE GRID</router-link>

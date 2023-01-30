@@ -1,5 +1,5 @@
 <template>
-  <div class="toggle-switch noselect" :id="id">
+  <div class="toggle-button noselect" :id="id">
     <input
       class="button-checkbox"
       :id="labelOn"
@@ -16,12 +16,12 @@
 <script lang="ts">
 import Vue from 'vue';
 
-export interface IToggleSwitchData {
+export interface IToggleButtonData {
   checked: boolean;
 }
 
 export default Vue.extend({
-  name: "ToggleSwitch",
+  name: "ToggleButton",
   inheritAttrs: false,
   props: {
     labelOn: String,
@@ -31,7 +31,7 @@ export default Vue.extend({
   data: function () {
     return {
       checked: true,
-    } as IToggleSwitchData;
+    } as IToggleButtonData;
   },
   methods: {
     onClick() : void {

@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import ToggleButton from "@/components/UIElements/ToggleButton";
+import ToggleButton from "@/components/UIElements/ToggleButton.vue";
 
 export default {
   name: "CustomizingGrid",

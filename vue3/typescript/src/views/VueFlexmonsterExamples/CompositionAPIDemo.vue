@@ -34,7 +34,6 @@
 
 <script setup lang="ts">
 import Pivot from "vue-flexmonster/vue3";
-import * as Flexmonster from "flexmonster/types/flexmonster";
 import { Ref, ref } from 'vue';
 
 interface FlexmonsterPivot {

@@ -26,21 +26,12 @@
   </div>
 </template>
 
-<script lang="ts">
-import Pivot from "vue-flexmonster";
-import Flexmonster from "flexmonster/types/flexmonster";
-import Vue from "vue";
-
-export default Vue.extend({
+<script>
+export default {
   name: "CustomizingToolbar",
-  // components: {
-  //   Pivot,
-  // },
   methods: {
-    showInfo(): void {
-      (
-        (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
-      ).alert({
+    showInfo: function () {
+      this.$refs.pivot.flexmonster.alert({
         title: "Customizing Flexmonster",
         message:
           "How to customize the Toolbar: <a style='text-decoration:underline; color:#00A45A' target='blank' href='https://www.flexmonster.com/doc/customizing-toolbar/?r=rm_vue'>https://www.flexmonster.com/doc/customizing-toolbar/</a> <br>",
@@ -49,8 +40,8 @@ export default Vue.extend({
       });
     },
 
-    customizeToolbar(toolbar: Flexmonster.Toolbar): void {
-      var tabs: Flexmonster.ToolbarTab[] = toolbar.getTabs();
+    customizeToolbar: function (toolbar) {
+      var tabs = toolbar.getTabs();
       toolbar.getTabs = () => {
         tabs = [];
         // add new tab
@@ -64,5 +55,5 @@ export default Vue.extend({
       };
     },
   },
-});
+};
 </script>

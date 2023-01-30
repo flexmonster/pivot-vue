@@ -35,16 +35,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import Pivot from "vue-flexmonster";
-import Flexmonster from "flexmonster/types/flexmonster";
-import Vue from "vue";
-
-export default Vue.extend({
+<script>
+export default {
   name: "UpdatingData",
-  // components: {
-  //   Pivot,
-  // },
   data: function () {
     return {
       data: [
@@ -74,16 +67,14 @@ export default Vue.extend({
     };
   },
   methods: {
-    customizeToolbar(toolbar: Flexmonster.Toolbar): void {
+    customizeToolbar: function (toolbar) {
       toolbar.showShareReportTab = true;
     },
-    onReady(): void {
+    onReady: function () {
       //Connect Flexmonster to the data
-      ((this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot).connectTo({
-        data: this.data,
-      });
+      this.$refs.pivot.flexmonster.connectTo({ data: this.data });
     },
-    updateTheData(): void {
+    updateTheData: function () {
       //If the data in Vue got updated, for example:
       this.data = [
         {
@@ -111,10 +102,8 @@ export default Vue.extend({
       ];
       //then the data needs to be updated in Flexmonster as well
       //this can be done via Flexmonster's updateData() API call:
-      ((this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot).updateData({
-        data: this.data,
-      });
+      this.$refs.pivot.flexmonster.updateData({ data: this.data });
     },
   },
-});
+};
 </script>

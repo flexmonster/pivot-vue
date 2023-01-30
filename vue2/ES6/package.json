@@ -1,54 +1,26 @@
 {
-  "name": "pivot-vue",
+  "name": "pivot-vue2",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "vue-cli-service serve --open",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.17",
-    "core-js": "^3.3.2",
-    "highcharts": "^8.2.0",
-    "router": "^1.3.5",
-    "vue": "^2.6.10",
+    "highcharts": "^10.3.3",
+    "vue": "^2.7.7",
     "vue-flexmonster": "latest",
-    "vue-router": "^3.4.5"
+    "vue-router": "^3.5.4"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.0.0",
-    "@vue/cli-plugin-eslint": "^4.0.0",
-    "@vue/cli-service": "^4.0.0",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {
-      "no-console": "off"
-    },
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+    "@vitejs/plugin-legacy": "^2.0.0",
+    "@vitejs/plugin-vue2": "^1.1.2",
+    "eslint": "^8.5.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "terser": "^5.14.2",
+    "vite": "^3.0.2"
+  }
 }

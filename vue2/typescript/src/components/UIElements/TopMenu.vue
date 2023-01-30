@@ -3,8 +3,7 @@
     <div class="container-xl">
       <a href="https://www.flexmonster.com/?r=rm_vue" target="blank" class="logo">
         <img
-          src="https://www.flexmonster.com/base/assets/img/svg/logo.svg"
-          alt
+          src="https://www.flexmonster.com/base/assets/img/svg/logo.svg" 
         />
       </a>
       <ul class="mainnav">

@@ -66,7 +66,6 @@
 import ToggleButton from "@/components/UIElements/ToggleButton.vue";
 import Pivot from "vue-flexmonster/vue3";
 import { defineComponent } from "vue";
-import * as Flexmonster from "flexmonster/types/flexmonster";
 
 export interface ILogElement {
   id: string;

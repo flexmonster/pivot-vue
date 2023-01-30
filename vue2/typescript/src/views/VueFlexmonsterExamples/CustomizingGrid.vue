@@ -37,49 +37,36 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import ToggleButton from "@/components/UIElements/ToggleButton.vue";
-import Pivot from "vue-flexmonster";
-import Flexmonster from "flexmonster/types/flexmonster";
-import Vue from "vue";
 
-export default Vue.extend({
+export default {
   name: "CustomizingGrid",
   components: { ToggleButton },
   methods: {
-    customizeToolbar(toolbar: Flexmonster.Toolbar): void {
+    customizeToolbar: function (toolbar) {
       toolbar.showShareReportTab = true;
     },
-    customizeCellFunction(
-      cell: Flexmonster.CellBuilder,
-      data: Flexmonster.CellData
-    ): void {
-      if (data.measure && data.measure.uniqueName == "Price") {
+    customizeCellFunction: function (cell, data) {
+      if (data.measure && data.measure.name == "Price") {
         let backgroundColor = "#00A45A";
         let textShadowColor = "#095231";
         let borderColor = "#009552";
-        cell.style = {
-          ...cell.style,
-          "background-color": backgroundColor,
-          color: "white",
-          "font-weight": "bold",
-          "text-shadow": `0px 2px 3px ${textShadowColor}`,
-          "border-bottom": `1px solid ${borderColor}`,
-          "border-right": `1px solid ${borderColor}`,
-        };
+        cell.style["background-color"] = backgroundColor;
+        cell.style["color"] = "white";
+        cell.style["font-weight"] = "bold";
+        cell.style["text-shadow"] = `0px 2px 3px ${textShadowColor}`;
+        cell.style["border-bottom"] = `1px solid ${borderColor}`;
+        cell.style["border-right"] = `1px solid ${borderColor}`;
       }
     },
-    removeCustomization(): void {
-      (
-        (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
-      ).customizeCell(() => null);
+    removeCustomization: function () {
+      this.$refs.pivot.flexmonster.customizeCell(null);
     },
-    applyCustomization(): void {
-      (
-        (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
-      ).customizeCell(this.customizeCellFunction);
+    applyCustomization: function () {
+      this.$refs.pivot.flexmonster.customizeCell(this.customizeCellFunction);
     },
-    toggleCustomization($event: boolean): void {
+    toggleCustomization: function ($event) {
       if ($event) {
         this.removeCustomization();
       } else {
@@ -87,5 +74,5 @@ export default Vue.extend({
       }
     },
   },
-});
+};
 </script>

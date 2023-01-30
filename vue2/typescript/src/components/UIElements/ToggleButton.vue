@@ -5,7 +5,7 @@
       :id="labelOn"
       type="checkbox"
       v-model="checked"
-      v-on:click="onClick"
+      @click="onClick"
     />
     <label :for="labelOn" class="button-checkbox-label">
       <span class="on">{{ checked ? labelOn : labelOff }}</span>
@@ -14,13 +14,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
 
 export interface IToggleButtonData {
   checked: boolean;
 }
 
-export default Vue.extend({
+export default defineComponent({
   name: "ToggleButton",
   inheritAttrs: false,
   props: {

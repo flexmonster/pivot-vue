@@ -40,7 +40,6 @@
 <script lang="ts">
 import ToggleButton from "@/components/UIElements/ToggleButton.vue";
 import Pivot from "vue-flexmonster/vue3";
-import * as Flexmonster from "flexmonster/types/flexmonster";
 import { defineComponent } from "vue";
 
 export default defineComponent({

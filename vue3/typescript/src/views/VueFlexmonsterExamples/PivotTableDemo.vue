@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="page-title">Pivot Table Demo</h1>
-    <div class="description-blocks first-description-block">
+        <div class="description-blocks first-description-block">
       <p>
         Flexmonster is a fast and powerful JavaScript pivot grid for data
         visualization and reporting.
@@ -39,7 +39,6 @@
 //Using the vue-flexmonster module (local registration):
 //1. Importing the vue-flexmonster module:
 import Pivot from "vue-flexmonster/vue3";
-import * as Flexmonster from "flexmonster/types/flexmonster";
 import { defineComponent } from "vue";
 
 export default defineComponent({

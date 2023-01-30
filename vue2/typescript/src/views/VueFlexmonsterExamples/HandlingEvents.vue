@@ -27,9 +27,7 @@
       v-bind:height="600"
       v-bind:report="'https://cdn.flexmonster.com/github/demo-report.json'"
       v-bind:ready="signOnAllEvents"
-      v-bind:shareReportConnection="{
-        url: 'https://olap.flexmonster.com:9500',
-      }"
+      v-bind:shareReportConnection="{url: 'https://olap.flexmonster.com:9500'}"
       v-bind:beforetoolbarcreated="customizeToolbar"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
     ></Pivot>
@@ -44,9 +42,7 @@
             <a
               class="log-link"
               target="_blank"
-              v-bind:href="
-                'https://www.flexmonster.com/api/' + log.event + '/?r=rm_vue'
-              "
+              v-bind:href="'https://www.flexmonster.com/api/' + log.event + '/?r=rm_vue'"
               >see details</a
             >
             ]
@@ -62,24 +58,10 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import ToggleButton from "@/components/UIElements/ToggleButton.vue";
-import Pivot from "vue-flexmonster";
-import Vue from "vue";
-import Flexmonster from "flexmonster/types/flexmonster";
 
-export interface ILogElement {
-  id: string;
-  date: string;
-  event: string;
-}
-
-export interface IHandlingEventsData {
-  logs: ILogElement[];
-  eventList: string[];
-}
-
-export default Vue.extend({
+export default {
   name: "HandlingEvents",
   components: { ToggleButton },
   data: function () {
@@ -126,52 +108,48 @@ export default Vue.extend({
         "runningquery",
         "update",
       ],
-    } as IHandlingEventsData;
+    };
   },
   methods: {
-    customizeToolbar(toolbar: Flexmonster.Toolbar): void {
+    customizeToolbar: function(toolbar) {
       toolbar.showShareReportTab = true;
     },
-    printLog(log: string): void {
+    printLog: function (log) {
       this.logs.push({
         id: new Date().getTime() + log,
         date: new Date().toLocaleTimeString(),
         event: log,
       });
       requestAnimationFrame(() => {
-        if (this.$refs.logsContainer) {
-          (this.$refs.logsContainer as HTMLDivElement).scrollTop = (this.$refs.logsContainer as HTMLDivElement).scrollHeight;
+        if(this.$refs.logsContainer){
+          this.$refs.logsContainer.scrollTop = this.$refs.logsContainer.scrollHeight;
         }
       });
     },
     signOffAllEvents: function () {
       for (const eventName of this.eventList) {
         //remove all handlers for specified event
-        (
-          (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
-        ).off(eventName);
+        this.$refs.pivot.flexmonster.off(eventName);
       }
     },
-    signOnAllEvents(): void {
+    signOnAllEvents: function () {
       for (const eventName of this.eventList) {
         //add handler for specified event
-        (
-          (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
-        ).on(eventName, () => {
+        this.$refs.pivot.flexmonster.on(eventName, () => {
           this.printLog(eventName);
         });
       }
     },
-    toggleEvents($event: boolean): void {
+    toggleEvents: function ($event) {
       if ($event) {
         this.signOffAllEvents();
       } else {
         this.signOnAllEvents();
       }
     },
-    clearLogs(): void {
+    clearLogs: function () {
       this.logs = [];
     },
   },
-});
+};
 </script>

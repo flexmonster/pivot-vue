@@ -36,7 +36,6 @@ import Highcharts from "highcharts";
 //Importing Flexmonster Connector for Highcharts:
 import "flexmonster/lib/flexmonster.highcharts";
 import Pivot from "vue-flexmonster/vue3";
-import * as Flexmonster from "flexmonster/types/flexmonster";
 import { defineComponent } from "vue";
 
 export default defineComponent({
