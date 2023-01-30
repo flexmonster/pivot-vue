@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "vite",
+    "start": "vite --open",
     "build": "run-p type-check build-only",
     "preview": "vite preview --port 4173",
     "build-only": "vite build",

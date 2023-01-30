@@ -34,49 +34,65 @@
       toolbar
       v-bind:height="600"
       v-bind:report="'https://cdn.flexmonster.com/github/demo-report.json'"
-      v-bind:shareReportConnection="{url: 'https://olap.flexmonster.com:9500'}"
+      v-bind:shareReportConnection="{
+        url: 'https://olap.flexmonster.com:9500',
+      }"
       v-bind:beforetoolbarcreated="customizeToolbar"
       _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
     ></Pivot>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import ToggleSwitch from "@/components/UIElements/ToggleSwitch.vue";
+import Pivot from "vue-flexmonster";
+import Vue from "vue";
 
-export default {
+export default Vue.extend({
   name: "UsingAPICalls",
   components: { ToggleSwitch },
   methods: {
-    customizeToolbar: function(toolbar) {
+    customizeToolbar(toolbar: Flexmonster.Toolbar): void {
       toolbar.showShareReportTab = true;
     },
-    showChart: function () {
-      this.$refs.pivot.flexmonster.showCharts("column");
+    showChart(): void {
+      (
+        (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
+      ).showCharts("column");
     },
-    showGrid: function () {
-      this.$refs.pivot.flexmonster.showGrid();
+    showGrid(): void {
+      (
+        (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
+      ).showGrid();
     },
-    readOnly: function () {
-      this.$refs.pivot.flexmonster.setOptions({
-        readOnly: true
+    readOnly(): void {
+      (
+        (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
+      ).setOptions({
+        readOnly: true,
       });
-      this.$refs.pivot.flexmonster.refresh();
+      (
+        (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
+      ).refresh();
     },
-    interactive: function () {
-      this.$refs.pivot.flexmonster.setOptions({
-        readOnly: false
+    interactive(): void {
+      (
+        (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
+      ).setOptions({
+        readOnly: false,
       });
-      this.$refs.pivot.flexmonster.refresh();
+      (
+        (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
+      ).refresh();
     },
-    toggleView: function ($event) {
+    toggleView($event: boolean): void {
       if ($event) {
         this.showChart();
       } else {
         this.showGrid();
       }
     },
-    toggleMode: function ($event) {
+    toggleMode($event: boolean): void {
       if ($event) {
         this.readOnly();
       } else {
@@ -84,5 +100,5 @@ export default {
       }
     },
   },
-};
+});
 </script>

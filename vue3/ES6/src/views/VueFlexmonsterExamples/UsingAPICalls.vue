@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import ToggleSwitch from "@/components/UIElements/ToggleSwitch";
+import ToggleSwitch from "@/components/UIElements/ToggleSwitch.vue";
 import { defineComponent } from 'vue';
 
 export default /*#__PURE__*/defineComponent({
