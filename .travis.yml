@@ -16,4 +16,5 @@ script:
   - git clone https://github.com/flexmonster/vue-integration-testing.git
   - chmod +x ./vue-integration-testing/launchScripts/vue2ES6.sh
   - bash ./vue-integration-testing/launchScripts/vue2ES6.sh
+  - cd ./vue-integration-testing
   - npm run test
