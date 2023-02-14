@@ -31,52 +31,40 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 // amCharts imports
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
-import { defineComponent } from "vue";
 
 /* Apply amCharts theme */
 am4core.useTheme(am4themes_animated);
 
-//Importing Flexmonster Connector for amCharts:
+// Importing Flexmonster Connector for amCharts:
 import "flexmonster/lib/flexmonster.amcharts";
-import Pivot from "vue-flexmonster/vue3";
+import { defineComponent } from 'vue';
 
-declare interface IWithAmchartsData {
-  chart: am4charts.PieChart | null;
-}
-
-export default defineComponent({
-  name: "WithAmcharts",
-  data: function () {
-    return {
-      chart: null,
-    } as IWithAmchartsData;
-  },
+export default /*#__PURE__*/defineComponent({
+  name: "WithAmcharts4",
   methods: {
-    customizeToolbar(toolbar: Flexmonster.Toolbar): void {
+    customizeToolbar: function (toolbar) {
       toolbar.showShareReportTab = true;
     },
-    reportComplete(): void {
-      ((this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot).off(
-        "reportcomplete"
-      );
+    reportComplete: function () {
+      this.$refs.pivot.flexmonster.off("reportcomplete");
       this.drawChart();
     },
-    drawChart(): void {
+
+    drawChart: function () {
       //Running Flexmonster's getData method for amCharts
-      (
-        (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
-      ).amcharts?.getData(
+      this.$refs.pivot.flexmonster.amcharts.getData(
         {},
         this.createChart.bind(this),
         this.updateChart.bind(this)
       );
     },
-    createChart(chartData: Flexmonster.GetDataValueObject, rawData: Flexmonster.GetDataValueObject): void {
+
+    createChart: function (chartData, rawData) {
       /* Apply amCharts theme */
       am4core.useTheme(am4themes_animated);
 
@@ -91,12 +79,10 @@ export default defineComponent({
 
       /* Create and configure series for a pie chart */
       var pieSeries = chart.series.push(new am4charts.PieSeries());
-      pieSeries.dataFields.category = (
-        (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
-      ).amcharts?.getCategoryName(rawData);
-      pieSeries.dataFields.value = (
-        (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
-      ).amcharts?.getMeasureNameByIndex(rawData, 0);
+      pieSeries.dataFields.category =
+        this.$refs.pivot.flexmonster.amcharts.getCategoryName(rawData);
+      pieSeries.dataFields.value =
+        this.$refs.pivot.flexmonster.amcharts.getMeasureNameByIndex(rawData, 0);
       pieSeries.slices.template.stroke = am4core.color("#fff");
       pieSeries.slices.template.strokeWidth = 2;
       pieSeries.slices.template.strokeOpacity = 1;
@@ -108,18 +94,16 @@ export default defineComponent({
 
       this.chart = chart;
     },
-    updateChart(chartData: Flexmonster.GetDataValueObject, rawData: Flexmonster.GetDataValueObject): void {
-      this.chart?.dispose();
+
+    updateChart: function (chartData, rawData) {
+      this.chart.dispose();
       this.createChart(chartData, rawData);
     },
   },
-  beforeUnmount(): void {
+  beforeUnmount() {
     if (this.chart) {
       this.chart.dispose();
     }
-  },
-  components: {
-    Pivot,
   }
 });
 </script>

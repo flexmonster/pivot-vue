@@ -44,7 +44,7 @@ am4core.useTheme(am4themes_animated);
 import "flexmonster/lib/flexmonster.amcharts";
 
 export default {
-  name: "WithAmcharts",
+  name: "WithAmcharts4",
   methods: {
     customizeToolbar: function (toolbar) {
       toolbar.showShareReportTab = true;

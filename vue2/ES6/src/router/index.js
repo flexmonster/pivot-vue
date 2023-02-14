@@ -39,9 +39,14 @@ const router = new VueRouter({
     component: () => import('@/views/VueFlexmonsterExamples/WithHighcharts.vue')
   },
   {
-    path: '/with-amcharts',
-    name: 'WithAmcharts',
-    component: () => import('@/views/VueFlexmonsterExamples/WithAmcharts.vue')
+    path: '/with-amcharts4',
+    name: 'WithAmcharts4',
+    component: () => import('@/views/VueFlexmonsterExamples/WithAmcharts4.vue')
+  },
+  {
+    path: '/with-amcharts5',
+    name: 'WithAmcharts5',
+    component: () => import('@/views/VueFlexmonsterExamples/WithAmcharts5.vue')
   },
   {
     path: '/:pathMatch(.*)*',

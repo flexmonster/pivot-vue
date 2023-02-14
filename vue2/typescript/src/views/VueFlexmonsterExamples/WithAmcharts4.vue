@@ -16,55 +16,51 @@
     <Pivot
       ref="pivot"
       toolbar
-      height="600"
-      report="https://cdn.flexmonster.com/github/demo-report.json"
+      v-bind:height="600"
+      v-bind:report="'https://cdn.flexmonster.com/github/demo-report.json'"
       v-bind:reportcomplete="reportComplete"
       v-bind:shareReportConnection="{
         url: 'https://olap.flexmonster.com:9500',
       }"
       v-bind:beforetoolbarcreated="customizeToolbar"
-      licenseFilePath="https://cdn.flexmonster.com/jsfiddle.charts.key"
-    />
+      v-bind:licenseFilePath="'https://cdn.flexmonster.com/jsfiddle.charts.key'"
+    ></Pivot>
     <div class="chart-container">
       <div id="amcharts-container" style="width: 100%; height: 500px"></div>
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 // amCharts imports
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+import Pivot from "vue-flexmonster";
+import Vue from "vue";
 
 /* Apply amCharts theme */
 am4core.useTheme(am4themes_animated);
 
-// Importing Flexmonster Connector for amCharts:
+//Importing Flexmonster Connector for amCharts:
 import "flexmonster/lib/flexmonster.amcharts";
-import { defineComponent } from 'vue';
 
-export default /*#__PURE__*/defineComponent({
-  name: "WithAmcharts",
+declare interface IWithAmchartsData {
+  chart: am4charts.PieChart | null;
+}
+
+export default Vue.extend({
+  name: "WithAmcharts4",
+  data: function () {
+    return {
+      chart: null,
+    } as IWithAmchartsData;
+  },
   methods: {
-    customizeToolbar: function (toolbar) {
+    customizeToolbar(toolbar: Flexmonster.Toolbar): void {
       toolbar.showShareReportTab = true;
     },
-    reportComplete: function () {
-      this.$refs.pivot.flexmonster.off("reportcomplete");
-      this.drawChart();
-    },
-
-    drawChart: function () {
-      //Running Flexmonster's getData method for amCharts
-      this.$refs.pivot.flexmonster.amcharts.getData(
-        {},
-        this.createChart.bind(this),
-        this.updateChart.bind(this)
-      );
-    },
-
-    createChart: function (chartData, rawData) {
+    createChart(chartData: Flexmonster.GetDataValueObject, rawData: Flexmonster.GetDataValueObject): void {
       /* Apply amCharts theme */
       am4core.useTheme(am4themes_animated);
 
@@ -79,10 +75,12 @@ export default /*#__PURE__*/defineComponent({
 
       /* Create and configure series for a pie chart */
       var pieSeries = chart.series.push(new am4charts.PieSeries());
-      pieSeries.dataFields.category =
-        this.$refs.pivot.flexmonster.amcharts.getCategoryName(rawData);
-      pieSeries.dataFields.value =
-        this.$refs.pivot.flexmonster.amcharts.getMeasureNameByIndex(rawData, 0);
+      pieSeries.dataFields.category = (
+        (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
+      ).amcharts?.getCategoryName(rawData);
+      pieSeries.dataFields.value = (
+        (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
+      ).amcharts?.getMeasureNameByIndex(rawData, 0);
       pieSeries.slices.template.stroke = am4core.color("#fff");
       pieSeries.slices.template.strokeWidth = 2;
       pieSeries.slices.template.strokeOpacity = 1;
@@ -94,16 +92,34 @@ export default /*#__PURE__*/defineComponent({
 
       this.chart = chart;
     },
-
-    updateChart: function (chartData, rawData) {
-      this.chart.dispose();
+    updateChart(chartData: Flexmonster.GetDataValueObject, rawData: Flexmonster.GetDataValueObject): void {
+      this.chart?.dispose();
       this.createChart(chartData, rawData);
     },
+    drawChart(): void {
+      //Running Flexmonster's getData method for amCharts
+      (
+        (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
+      ).amcharts?.getData(
+        {},
+        this.createChart.bind(this),
+        this.updateChart.bind(this)
+      );
+    },
+    reportComplete(): void {
+      ((this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot).off(
+        "reportcomplete"
+      );
+      this.drawChart();
+    }
   },
-  beforeUnmount() {
+  beforeDestroy(): void {
     if (this.chart) {
       this.chart.dispose();
     }
-  }
+  },
+  // components: {
+  //   Pivot,
+  // },
 });
 </script>
