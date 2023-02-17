@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router';
-import router from '/src/router'
+import router from './router'
 import './App.css';
 
 //Using the vue-flexmonster module as a plugin (global registration):

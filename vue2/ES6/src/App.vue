@@ -1,8 +1,3 @@
-<script setup>
-import TopMenu from "./components/UIElements/TopMenu.vue";
-import SideMenu from "./components/UIElements/SideMenu.vue";
-</script>
-
 <template>
   <section id="sample-app">
     <TopMenu />
@@ -18,6 +13,8 @@ import SideMenu from "./components/UIElements/SideMenu.vue";
 </template>
 
 <script>
+import TopMenu from "./components/UIElements/TopMenu.vue";
+import SideMenu from "./components/UIElements/SideMenu.vue";
 export default {
   name: "app",
   components: { TopMenu, SideMenu },
