@@ -31,7 +31,7 @@ import "flexmonster/lib/flexmonster.amcharts";
 import { defineComponent } from 'vue';
 
 export default /*#__PURE__*/defineComponent({
-    name: "WithAmcharts5",
+    name: "WithAmcharts",
     methods: {
         customizeToolbar: function (toolbar) {
             toolbar.showShareReportTab = true;

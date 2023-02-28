@@ -9,12 +9,11 @@
                     class="title-link">Integration with amCharts</a>.
             </p>
         </div>
-        <Pivot ref="pivot" toolbar v-bind:height="600"
-            v-bind:report="'https://cdn.flexmonster.com/github/demo-report.json'" v-bind:reportcomplete="reportComplete"
-            v-bind:shareReportConnection="{
+        <Pivot ref="pivot" toolbar height="600" report="https://cdn.flexmonster.com/github/demo-report.json"
+            v-bind:reportcomplete="reportComplete" v-bind:shareReportConnection="{
                 url: 'https://olap.flexmonster.com:9500',
             }" v-bind:beforetoolbarcreated="customizeToolbar"
-            v-bind:licenseFilePath="'https://cdn.flexmonster.com/jsfiddle.charts.key'"></Pivot>
+            licenseFilePath="https://cdn.flexmonster.com/jsfiddle.charts.key" />
         <div class="chart-container">
             <div id="amcharts-container" style="width: 100%; height: 500px"></div>
         </div>
@@ -26,19 +25,19 @@
 import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
-import Pivot from "vue-flexmonster";
-import Vue from "vue";
 
+import { defineComponent } from "vue";
 
 //Importing Flexmonster Connector for amCharts:
 import "flexmonster/lib/flexmonster.amcharts";
+import Pivot from "vue-flexmonster/vue3";
 
 declare interface IWithAmchartsData {
     root: am5.Root | null;
 }
 
-export default Vue.extend({
-    name: "WithAmcharts4",
+export default defineComponent({
+    name: "WithAmcharts",
     data: function () {
         return {
             root: null,
@@ -47,6 +46,22 @@ export default Vue.extend({
     methods: {
         customizeToolbar(toolbar: Flexmonster.Toolbar): void {
             toolbar.showShareReportTab = true;
+        },
+        reportComplete(): void {
+            ((this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot).off(
+                "reportcomplete"
+            );
+            this.drawChart();
+        },
+        drawChart(): void {
+            //Running Flexmonster's getData method for amCharts
+            (
+                (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
+            ).amcharts?.getData(
+                {},
+                this.createChart.bind(this),
+                this.updateChart.bind(this)
+            );
         },
         createChart(chartData: Flexmonster.GetDataValueObject, rawData: Flexmonster.GetDataValueObject): void {
 
@@ -112,30 +127,14 @@ export default Vue.extend({
             this.root?.dispose();
             this.createChart(chartData, rawData);
         },
-        drawChart(): void {
-            //Running Flexmonster's getData method for amCharts
-            (
-                (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
-            ).amcharts?.getData(
-                {},
-                this.createChart.bind(this),
-                this.updateChart.bind(this)
-            );
-        },
-        reportComplete(): void {
-            ((this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot).off(
-                "reportcomplete"
-            );
-            this.drawChart();
-        }
     },
-    beforeDestroy(): void {
+    beforeUnmount(): void {
         if (this.root) {
             this.root.dispose();
         }
     },
-    // components: {
-    //   Pivot,
-    // },
+    components: {
+        Pivot,
+    }
 });
 </script>

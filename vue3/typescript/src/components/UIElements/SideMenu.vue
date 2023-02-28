@@ -37,10 +37,7 @@
         <router-link to="/with-highcharts">WITH HIGHCHARTS</router-link>
       </li>
       <li class="tab-button">
-        <router-link to="/with-amcharts4">WITH AMCHARTS 4</router-link>
-      </li>
-      <li class="tab-button">
-        <router-link to="/with-amcharts5">WITH AMCHARTS 5</router-link>
+        <router-link to="/with-amcharts">WITH AMCHARTS</router-link>
       </li>
     </ol>
   </div>

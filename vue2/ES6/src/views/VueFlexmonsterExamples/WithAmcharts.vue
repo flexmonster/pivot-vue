@@ -31,7 +31,7 @@ import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 import "flexmonster/lib/flexmonster.amcharts";
 
 export default {
-    name: "WithAmcharts5",
+    name: "WithAmcharts",
     methods: {
         customizeToolbar: function (toolbar) {
             toolbar.showShareReportTab = true;
