@@ -15,10 +15,12 @@ before_install:
 script:
   - git clone https://github.com/flexmonster/vue-integration-testing.git
   - chmod +x ./vue-integration-testing/launchScripts/vue2ES6.sh
-  - bash ./vue-integration-testing/launchScripts/vue2ES6.sh
-  - chmod +x ./vue-integration-testing/launchScripts/vueTestLaunch.sh
-  - bash ./vue-integration-testing/launchScripts/vueTestLaunch.sh
-  - sudo kill -9 `sudo lsof -t -i:5173`
   - chmod +x ./vue-integration-testing/launchScripts/vue2Typescript.sh
+  - chmod +x ./vue-integration-testing/launchScripts/vueTestLaunch.sh
+  - chmod +x ./vue-integration-testing/launchScripts/vueKillProcess.sh  
+  - bash ./vue-integration-testing/launchScripts/vue2ES6.sh
+  - bash ./vue-integration-testing/launchScripts/vueTestLaunch.sh
+  - bash ./vue-integration-testing/launchScripts/vueKillProcess.sh
   - bash ./vue-integration-testing/launchScripts/vue2Typescript.sh
   - bash ./vue-integration-testing/launchScripts/vueTestLaunch.sh
+  - bash ./vue-integration-testing/launchScripts/vueKillProcess.sh
