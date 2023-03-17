@@ -16,5 +16,9 @@ script:
   - git clone https://github.com/flexmonster/vue-integration-testing.git
   - chmod +x ./vue-integration-testing/launchScripts/vue2ES6.sh
   - bash ./vue-integration-testing/launchScripts/vue2ES6.sh
-  - cd ./vue-integration-testing
-  - npm run test
+  - chmod +x ./vue-integration-testing/launchScripts/vueTestLaunch.sh
+  - bash ./vue-integration-testing/launchScripts/vueTestLaunch.sh
+  - sudo kill -9 `sudo lsof -t -i:8080`
+  - chmod +x ./vue-integration-testing/launchScripts/vue2Typescript.sh
+  - bash ./vue-integration-testing/launchScripts/vue2Typescript.sh
+  - bash ./vue-integration-testing/launchScripts/vueTestLaunch.sh
