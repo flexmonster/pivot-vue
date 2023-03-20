@@ -3,6 +3,7 @@ import PivotTableDemo from '../views/VueFlexmonsterExamples/PivotTableDemo.vue'
 //import UsingAPICalls from '../views/VueFlexmonsterExamples/UsingAPICalls.vue'
 
 const router = new VueRouter({
+	mode:"history",
   routes: [{
     path: '/pivot-table-demo',
     name: 'PivotTableDemo',
