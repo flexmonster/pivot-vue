@@ -16,11 +16,19 @@ script:
   - git clone https://github.com/flexmonster/vue-integration-testing.git
   - chmod +x ./vue-integration-testing/launchScripts/vue2ES6.sh
   - chmod +x ./vue-integration-testing/launchScripts/vue2Typescript.sh
+  - chmod +x ./vue-integration-testing/launchScripts/vue3ES6.sh
+  - chmod +x ./vue-integration-testing/launchScripts/vue3Typescript.sh
   - chmod +x ./vue-integration-testing/launchScripts/vueTestLaunch.sh
   - chmod +x ./vue-integration-testing/launchScripts/vueKillPorts.sh  
   - bash ./vue-integration-testing/launchScripts/vue2ES6.sh
   - bash ./vue-integration-testing/launchScripts/vueTestLaunch.sh
   - bash ./vue-integration-testing/launchScripts/vueKillPorts.sh
   - bash ./vue-integration-testing/launchScripts/vue2Typescript.sh
+  - bash ./vue-integration-testing/launchScripts/vueTestLaunch.sh
+  - bash ./vue-integration-testing/launchScripts/vueKillPorts.sh
+  - bash ./vue-integration-testing/launchScripts/vue3ES6.sh
+  - bash ./vue-integration-testing/launchScripts/vueTestLaunch.sh
+  - bash ./vue-integration-testing/launchScripts/vueKillPorts.sh
+  - bash ./vue-integration-testing/launchScripts/vue3Typescript.sh
   - bash ./vue-integration-testing/launchScripts/vueTestLaunch.sh
   - bash ./vue-integration-testing/launchScripts/vueKillPorts.sh
