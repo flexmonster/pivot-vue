@@ -14,7 +14,7 @@ before_install:
 - google-chrome-stable --port=9515 --headless --disable-gpu --remote-debugging-port=9222
   http://localhost &
 beforescript:
-- git clone git@github.com:flexmonster/vue-integration-testing.git
+- git clone https://github.com/flexmonster/vue-integration-testing.git
 - chmod +x ./vue-integration-testing/launchScripts/vue2ES6.sh
 - chmod +x ./vue-integration-testing/launchScripts/vue2Typescript.sh
 - chmod +x ./vue-integration-testing/launchScripts/vue3ES6.sh
