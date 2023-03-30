@@ -60,7 +60,7 @@ npm install
 npm start 
 ```
 
-To see the result, open `http://localhost:8080/` in your browser.
+To see the result, open `http://localhost:5173/` in your browser.
 
 ## Usage
 
