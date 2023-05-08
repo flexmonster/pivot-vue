@@ -30,9 +30,11 @@ script:
 - bash ./vue-integration-testing/launchScripts/vueKillPorts.sh
 - bash ./vue-integration-testing/launchScripts/vue3ES6.sh
 - bash ./vue-integration-testing/launchScripts/vueTestLaunch.sh
+- bash ./vue-integration-testing/launchScripts/vue3CompositionAPI.sh
 - bash ./vue-integration-testing/launchScripts/vueKillPorts.sh
 - bash ./vue-integration-testing/launchScripts/vue3Typescript.sh
 - bash ./vue-integration-testing/launchScripts/vueTestLaunch.sh
+- bash ./vue-integration-testing/launchScripts/vue3CompositionAPI.sh
 notifications:
   slack:
     rooms:
