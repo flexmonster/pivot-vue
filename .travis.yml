@@ -19,7 +19,8 @@ beforescript:
 - chmod +x ./vue-integration-testing/launchScripts/vue2Typescript.sh
 - chmod +x ./vue-integration-testing/launchScripts/vue3ES6.sh
 - chmod +x ./vue-integration-testing/launchScripts/vue3Typescript.sh
-- chmod +x ./vue-integration-testing/launchScripts/vueTestLaunch.sh
+- chmod +x ./vue-integration-testing/launchScripts/vue2TestLaunch.sh
+- chmod +x ./vue-integration-testing/launchScripts/vue3TestLaunch.sh
 - chmod +x ./vue-integration-testing/launchScripts/vueKillPorts.sh
 script:
 - bash ./vue-integration-testing/launchScripts/vue2ES6.sh
