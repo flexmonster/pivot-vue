@@ -15,25 +15,25 @@ before_install:
   http://localhost &
 beforescript:
 - git clone https://github.com/flexmonster/framework-integration-testing.git
-- chmod +x ./framework-integration-testing/launchScripts/vue2ES6.sh
-- chmod +x ./framework-integration-testing/launchScripts/vue2Typescript.sh
-- chmod +x ./framework-integration-testing/launchScripts/vue3ES6.sh
-- chmod +x ./framework-integration-testing/launchScripts/vue3Typescript.sh
-- chmod +x ./framework-integration-testing/launchScripts/vue2TestLaunch.sh
-- chmod +x ./framework-integration-testing/launchScripts/vue3TestLaunch.sh
-- chmod +x ./framework-integration-testing/launchScripts/vueKillPorts.sh
+- chmod +x ./framework-integration-testing/launchScripts/vue/vue2ES6.sh
+- chmod +x ./framework-integration-testing/launchScripts/vue/vue2Typescript.sh
+- chmod +x ./framework-integration-testing/launchScripts/vue/vue3ES6.sh
+- chmod +x ./framework-integration-testing/launchScripts/vue/vue3Typescript.sh
+- chmod +x ./framework-integration-testing/launchScripts/vue/vue2TestLaunch.sh
+- chmod +x ./framework-integration-testing/launchScripts/vue/vue3TestLaunch.sh
+- chmod +x ./framework-integration-testing/launchScripts/vue/vueKillPorts.sh
 script:
-- bash ./framework-integration-testing/launchScripts/vue2ES6.sh
-- bash ./framework-integration-testing/launchScripts/vue2TestLaunch.sh
-- bash ./framework-integration-testing/launchScripts/vueKillPorts.sh
-- bash ./framework-integration-testing/launchScripts/vue2Typescript.sh
-- bash ./framework-integration-testing/launchScripts/vue2TestLaunch.sh
-- bash ./framework-integration-testing/launchScripts/vueKillPorts.sh
-- bash ./framework-integration-testing/launchScripts/vue3ES6.sh
-- bash ./framework-integration-testing/launchScripts/vue3TestLaunch.sh
-- bash ./framework-integration-testing/launchScripts/vueKillPorts.sh
-- bash ./framework-integration-testing/launchScripts/vue3Typescript.sh
-- bash ./framework-integration-testing/launchScripts/vue3TestLaunch.sh
+- bash ./framework-integration-testing/launchScripts/vue/vue2ES6.sh
+- bash ./framework-integration-testing/launchScripts/vue/vue2TestLaunch.sh
+- bash ./framework-integration-testing/launchScripts/vue/vueKillPorts.sh
+- bash ./framework-integration-testing/launchScripts/vue/vue2Typescript.sh
+- bash ./framework-integration-testing/launchScripts/vue/vue2TestLaunch.sh
+- bash ./framework-integration-testing/launchScripts/vue/vueKillPorts.sh
+- bash ./framework-integration-testing/launchScripts/vue/vue3ES6.sh
+- bash ./framework-integration-testing/launchScripts/vue/vue3TestLaunch.sh
+- bash ./framework-integration-testing/launchScripts/vue/vueKillPorts.sh
+- bash ./framework-integration-testing/launchScripts/vue/vue3Typescript.sh
+- bash ./framework-integration-testing/launchScripts/vue/vue3TestLaunch.sh
 notifications:
   slack:
     rooms:
