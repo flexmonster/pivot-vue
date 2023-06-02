@@ -6,7 +6,7 @@ Website: [www.flexmonster.com](https://www.flexmonster.com/?r=gh_vue)
 
 Flexmonster Pivot is a powerful JavaScript tool for interactive web reporting. It allows you to visualize and analyze data from JSON, CSV, SQL, NoSQL, Elasticsearch, and OLAP data sources quickly and conveniently. Flexmonster is designed to integrate seamlessly with any client-side framework and can be easily embedded into your application.
 
-This repository holds the source code for several [Vue](https://vuejs.org/) and Flexmonster Pivot Table & Charts projects.
+This repository contains sample [Vue 3](https://vuejs.org/) and [Vue 2](https://v2.vuejs.org/) projects for Flexmonster Pivot Table & Charts.
 
 Table of contents:
 
