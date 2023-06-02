@@ -42,4 +42,4 @@ To see the result, open `http://localhost:5173/` in your browser.
 
 ## Usage
 
-For details on usage, see [Flexmonster integration with Vue 2](https://www.flexmonster.com/doc/integration-with-vue-2/?r=gh_vue2) guide.
+For details on usage, see [Flexmonster integration with Vue 2](https://www.flexmonster.com/doc/integration-with-vue-2/?r=gh_vue2).
