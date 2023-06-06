@@ -16,7 +16,7 @@ Table of contents:
 
 ## Prerequisites
 
-To run a simple application with the Vue.js pivot table, you will need Node.js and npm. [Get them here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) if they're not already installed on your machine.
+- [Node.js 16.0 or later](https://nodejs.org/en/)
 
 ## Installation 
 
@@ -26,7 +26,7 @@ To run a simple application with the Vue.js pivot table, you will need Node.js a
 git clone https://github.com/flexmonster/pivot-vue.git && cd pivot-vue/vue2/ES6
 ```
 
-2. Install the npm packages described in `package.json`: 
+2. Install the npm dependencies described in `package.json`: 
 
 ```bash
 npm install
@@ -42,4 +42,4 @@ To see the result, open `http://localhost:5173/` in your browser.
 
 ## Usage
 
-For details on usage, see [Flexmonster integration with Vue 2](https://www.flexmonster.com/doc/integration-with-vue-2/?r=gh_vue2).
+For details on usage, see the [Integration with Vue 2](https://www.flexmonster.com/doc/integration-with-vue-2/?r=gh_vue2) guide.
