@@ -42,5 +42,5 @@ To see the result, open `http://localhost:5173/` in your browser.
 
 ## Related Flexmonster docs
 
-- Learn how to integrate Flexmonster with a Vue 3 project in the [Integration with Vue 3](https://www.flexmonster.com/doc/integration-with-vue-3/?r=gh_vue3) guide.
-- For details on Flexmonster usage, refer to the [Usage examples in Vue 3](https://www.flexmonster.com/doc/flexmonster-in-vue-3/?r=gh_vue3) guide.
+- [Integration with Vue 3](https://www.flexmonster.com/doc/integration-with-vue-3/?r=gh_vue3) — learn how to integrate Flexmonster into a Vue 3 project.
+- [Usage examples in Vue 3](https://www.flexmonster.com/doc/flexmonster-in-vue-3/?r=gh_vue3) — see details on Flexmonster usage.
