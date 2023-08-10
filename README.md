@@ -67,4 +67,4 @@ To see the result, open `http://localhost:5173/` in your browser.
 ## Related Flexmonster docs
 
 - [Integration with Vue 3](https://www.flexmonster.com/doc/integration-with-vue-3/?r=gh_vue) and [Integration with Vue 2](https://www.flexmonster.com/doc/integration-with-vue-2/?r=gh_vue) — learn how to integrate Flexmonster into a Vue project.
-- [Usage examples in Vue 3](https://www.flexmonster.com/doc/flexmonster-in-vue-3/?r=gh_vue) and [Usage examples in Vue 2](https://www.flexmonster.com/doc/flexmonster-in-vue-2/?r=gh_vue) — see details on Flexmonster usage.
+- [Usage examples in Vue 3](https://www.flexmonster.com/doc/usage-examples-vue-3/?r=gh_vue) and [Usage examples in Vue 2](https://www.flexmonster.com/doc/usage-examples-vue-2/?r=gh_vue) — see details on Flexmonster usage.
