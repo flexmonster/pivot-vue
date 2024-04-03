@@ -100,10 +100,10 @@ To share your feedback or ask questions, contact our Tech team by raising a tick
 
 This sample project uses [Flexmonster Vue wrapper](https://github.com/flexmonster/vue-flexmonster?=gh_vue), which is released as an MIT-licensed (free and open-source) add-on to Flexmonster Pivot.
 
-To learn about Flexmonster Pivot licenses, visit the [Flexmonster licensing page](https://www.flexmonster.com/pivot-table-editions-and-pricing?r=gh_react). 
+To learn about Flexmonster Pivot licenses, visit the [Flexmonster licensing page](https://www.flexmonster.com/pivot-table-editions-and-pricing?r=gh_vue). 
 If you want to test our product, we provide a 30-day free trial.
 
-If you need any help with your license — fill out our [Contact form](https://www.flexmonster.com/contact-our-team?r=gh_react), and we will get in touch with you.
+If you need any help with your license — fill out our [Contact form](https://www.flexmonster.com/contact-our-team?r=gh_vue), and we will get in touch with you.
 
 ## Social media
 
