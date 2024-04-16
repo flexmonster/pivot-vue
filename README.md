@@ -1,5 +1,5 @@
 # Vue pivot table | Flexmonster Pivot Table & Charts sample project with Vue 2 and Vue 3
-[![Flexmonster Pivot Table & Charts](https://static.flexmonster.com/uploads/2023/09/08090612/vue.png)](https://www.flexmonster.com?r=sample_vue)
+[![Flexmonster Pivot Table & Charts](https://cdn.flexmonster.com/readmes/vue.webp)](https://www.flexmonster.com?r=sample_vue)
 Website: [flexmonster.com](https://www.flexmonster.com?r=sample_vue)
 
 [![NPM](https://img.shields.io/npm/v/vue-flexmonster)](https://www.npmjs.com/package/vue-flexmonster)
