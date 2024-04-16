@@ -1,5 +1,5 @@
 # Vue 2 + TypeScript pivot table | Flexmonster Pivot Table & Charts sample project with Vue 2 + TypeScript
-[![Flexmonster Pivot Table & Charts](https://static.flexmonster.com/uploads/2023/09/08090612/vue.png)](https://www.flexmonster.com?r=sample_vue2)
+[![Flexmonster Pivot Table & Charts](https://cdn.flexmonster.com/readmes/vue.webp)](https://www.flexmonster.com?r=sample_vue2)
 Website: [flexmonster.com](https://www.flexmonster.com?r=sample_vue2)
 
 [![NPM](https://img.shields.io/npm/v/vue-flexmonster)](https://www.npmjs.com/package/vue-flexmonster)
