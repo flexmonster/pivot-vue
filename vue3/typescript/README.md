@@ -56,7 +56,7 @@ Vue 3 sample project contains several examples of Flexmonster Pivot usage and cu
 - **Using API calls** illustrates how to use Flexmonster's methods. 
 - **Updating data** is an example of using the `updateData()` method.
 - **Customizing the Toolbar** illustrates how to customize the Toolbar.
-- **Customizing the grid** shows how to customize the grid using the `customizeCell()` API call.
+- **Customizing the grid** shows how to customize the pivot table using the `customizeCell()` API call.
 - **Integration with Highcharts** demonstrates how to integrate with the Highcharts charting library.
 - **Integration with amCharts** is an example of integration with the amCharts charting library.
   
