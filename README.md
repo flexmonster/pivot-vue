@@ -87,8 +87,13 @@ You can try all of these examples right from the project’s starting page.
 
 ## Related Flexmonster docs
 
-- [Integration with Vue 3](https://www.flexmonster.com/doc/integration-with-vue-3/?r=sample_vue) and [Integration with Vue 2](https://www.flexmonster.com/doc/integration-with-vue-2/?r=sample_vue) — learn how to integrate Flexmonster into a Vue project.
-- [Usage examples in Vue 3](https://www.flexmonster.com/doc/usage-examples-vue-3/?r=sample_vue) and [Usage examples in Vue 2](https://www.flexmonster.com/doc/usage-examples-vue-2/?r=sample_vue) — see details on Flexmonster usage.
+For Vue 3:
+- [Integration with Vue 3](https://www.flexmonster.com/doc/integration-with-vue-3/?r=sample_vue) — learn how to integrate Flexmonster into a Vue 3 project.
+- [Usage examples in Vue 3](https://www.flexmonster.com/doc/usage-examples-vue-3/?r=sample_vue) — see details on Flexmonster usage in Vue 3.
+
+For Vue 2:
+- [Integration with Vue 2](https://www.flexmonster.com/doc/integration-with-vue-2/?r=sample_vue) — learn how to integrate Flexmonster into a Vue 2 project.
+- [Usage examples in Vue 2](https://www.flexmonster.com/doc/usage-examples-vue-2/?r=sample_vue) — see details on Flexmonster usage in Vue 2.
 
 ## Support and feedback
 
