@@ -1,12 +1,12 @@
 # Vue 2 + TypeScript pivot table | Flexmonster Pivot Table & Charts sample project with Vue 2 + TypeScript
-[![Flexmonster Pivot Table & Charts](https://cdn.flexmonster.com/readmes/vue.webp)](https://www.flexmonster.com?r=sample_vue2)
-Website: [flexmonster.com](https://www.flexmonster.com?r=sample_vue2)
+[![Flexmonster Pivot Table & Charts](https://cdn.flexmonster.com/readmes/vue.webp)](https://www.flexmonster.com?r=sample_vue2_ts)
+Website: [flexmonster.com](https://www.flexmonster.com?r=sample_vue2_ts)
 
 [![NPM](https://img.shields.io/npm/v/vue-flexmonster)](https://www.npmjs.com/package/vue-flexmonster)
 [![Github Stars](https://img.shields.io/github/stars/flexmonster?style=social)](https://github.com/flexmonster) [![Twitter](https://img.shields.io/twitter/follow/Flexmonster?style=social)](https://twitter.com/Flexmonster)
 
 ## Flexmonster Pivot Table & Charts
-Flexmonster Pivot Table & Charts is a powerful and fully customizable JavaScript component for web reporting. It is packed with all core features for data analysis and can easily become a part of your Vue data visualization project. The tool supports popular frameworks like Angular, React, Vue, Blazor, and [more](https://www.flexmonster.com/doc/available-tutorials-integration?r=sample_vue2). Also, Flexmonster connects to any data source, including SQL and NoSQL databases, JSON and CSV files, OLAP cubes, and Elasticsearch. 
+Flexmonster Pivot Table & Charts is a powerful and fully customizable JavaScript component for web reporting. It is packed with all core features for data analysis and can easily become a part of your Vue 2 data visualization project. The tool supports popular frameworks like Angular, React, Vue, Blazor, and [more](https://www.flexmonster.com/doc/available-tutorials-integration?r=sample_vue2_ts). Also, Flexmonster connects to any data source, including SQL and NoSQL databases, JSON and CSV files, OLAP cubes, and Elasticsearch. 
 
 This repository contains a sample [Vue 2](https://v2.vuejs.org/) TypeScript project for Flexmonster Pivot Table & Charts.
 
@@ -63,23 +63,23 @@ You can try all of these examples right from the project’s starting page.
 
 ## Related Flexmonster docs
 
-- [Integration with Vue 2](https://www.flexmonster.com/doc/integration-with-vue-2/?r=sample_vue2) — learn how to integrate Flexmonster into a Vue 2 project.
-- [Usage examples in Vue 2](https://www.flexmonster.com/doc/usage-examples-vue-2/?r=sample_vue2) — see details on Flexmonster usage.
+- [Integration with Vue 2](https://www.flexmonster.com/doc/integration-with-vue-2/?r=sample_vue2_ts) — learn how to integrate Flexmonster into a Vue 2 project.
+- [Usage examples in Vue 2](https://www.flexmonster.com/doc/usage-examples-vue-2/?r=sample_vue2_ts) — see details on Flexmonster usage.
 
 ## Support and feedback
 
-In case of any issues, visit our [troubleshooting section](https://www.flexmonster.com/doc/typical-errors?r=sample_vue2). You can also search among the [resolved cases](https://www.flexmonster.com/technical-support?r=sample_vue2) for a solution to your problem.
+In case of any issues, visit our [troubleshooting section](https://www.flexmonster.com/doc/typical-errors?r=sample_vue2_ts). You can also search among the [resolved cases](https://www.flexmonster.com/technical-support?r=sample_vue2_ts) for a solution to your problem.
 
-To share your feedback or ask questions, contact our Tech team by raising a ticket on [Flexmonster Help Center](https://www.flexmonster.com/help-center?r=sample_vue2). You can also find a list of samples, technical specifications, and a user interface guide there.
+To share your feedback or ask questions, contact our Tech team by raising a ticket on [Flexmonster Help Center](https://www.flexmonster.com/help-center?r=sample_vue2_ts). You can also find a list of samples, technical specifications, and a user interface guide there.
 
 ## Flexmonster licensing
 
 This sample project uses [Flexmonster Vue wrapper](https://github.com/flexmonster/vue-flexmonster), which is released as an MIT-licensed (free and open-source) add-on to Flexmonster Pivot.
 
-To learn about Flexmonster Pivot licenses, visit the [Flexmonster licensing page](https://www.flexmonster.com/pivot-table-editions-and-pricing?r=sample_vue2). 
+To learn about Flexmonster Pivot licenses, visit the [Flexmonster licensing page](https://www.flexmonster.com/pivot-table-editions-and-pricing?r=sample_vue2_ts). 
 If you want to test our product, we provide a 30-day free trial.
 
-If you need any help with your license — fill out our [Contact form](https://www.flexmonster.com/contact-our-team?r=sample_vue2), and we will get in touch with you.
+If you need any help with your license — fill out our [Contact form](https://www.flexmonster.com/contact-our-team?r=sample_vue2_ts), and we will get in touch with you.
 
 ## Social media
 
