@@ -41,8 +41,13 @@
   //Using the vue-flexmonster module (local registration):
   //1. Importing the vue-flexmonster module:
   //Uncomment the lines below:
-  // import Pivot from "vue-flexmonster/vue3";
-  // import 'flexmonster/flexmonster.css';
+  // if (import.meta.client) {
+  // import('vue-flexmonster').then((module) => {
+  //   const Pivot = module.default
+  //   Pivot.init()
+  // })
+  // }
+  //import 'flexmonster/flexmonster.css';
   import { defineComponent } from "vue";
   
   export default /*#__PURE__*/ defineComponent({
