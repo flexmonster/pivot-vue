@@ -1,4 +1,4 @@
-# Vue pivot table | Flexmonster Pivot Table & Charts sample project with Vue 2 and Vue 3
+# Vue pivot table | Flexmonster Pivot Table & Charts sample project with Vue 3, Nuxt, and Vue 2
 [![Flexmonster Pivot Table & Charts](https://cdn.flexmonster.com/readmes/vue.webp)](https://www.flexmonster.com?r=sample_vue)
 Website: [flexmonster.com](https://www.flexmonster.com?r=sample_vue)
 
@@ -7,7 +7,7 @@ Website: [flexmonster.com](https://www.flexmonster.com?r=sample_vue)
 ## Flexmonster Pivot Table & Charts
 Flexmonster Pivot Table & Charts is a powerful and fully customizable JavaScript component for web reporting. It is packed with all core features for data analysis and can easily become a part of your Vue data visualization project. The tool supports popular frameworks like Angular, React, Vue, Blazor, and [more](https://www.flexmonster.com/doc/available-tutorials-integration?r=sample_vue). Also, Flexmonster connects to any data source, including SQL and NoSQL databases, JSON and CSV files, OLAP cubes, and Elasticsearch. 
 
-This repository contains sample [Vue 3](https://vuejs.org/) and [Vue 2](https://v2.vuejs.org/) projects for Flexmonster Pivot Table & Charts.
+This repository contains sample [Vue 3](https://vuejs.org/), [Nuxt](https://nuxt.com/), and [Vue 2](https://v2.vuejs.org/) projects for Flexmonster Pivot Table & Charts.
 
 Table of contents:
 
@@ -44,6 +44,11 @@ git clone https://github.com/flexmonster/pivot-vue.git && cd pivot-vue
     cd vue3/typescript
     ```
 
+    - For the **Nuxt** application, go to the `nuxt` folder:
+    ```bash
+    cd nuxt
+    ```
+
     - To see how the **Vue 2** application works, run the following command:
 
     ```bash
@@ -55,7 +60,7 @@ git clone https://github.com/flexmonster/pivot-vue.git && cd pivot-vue
     cd vue2/typescript
     ```
 
-3. Install the npm dependencies described in `package.json`:
+2. Install the npm dependencies described in `package.json`:
 
 ```bash
 npm install
@@ -67,7 +72,7 @@ npm install
 npm start 
 ```
 
-To see the result, open `http://localhost:5173/` in your browser.
+To see the result, open the project in your browser.
 
 ## What is inside the project
 
@@ -90,6 +95,9 @@ You can try all of these examples right from the project’s starting page.
 For Vue 3:
 - [Integration with Vue 3](https://www.flexmonster.com/doc/integration-with-vue-3/?r=sample_vue) — learn how to integrate Flexmonster into a Vue 3 project.
 - [Usage examples in Vue 3](https://www.flexmonster.com/doc/usage-examples-vue-3/?r=sample_vue) — see details on Flexmonster usage in Vue 3.
+
+For Nuxt:
+- [Integration with Nuxt](https://www.flexmonster.com/doc/integration-with-nuxt/?r=sample_vue) — learn how to integrate Flexmonster into a Nuxt project.
 
 For Vue 2:
 - [Integration with Vue 2](https://www.flexmonster.com/doc/integration-with-vue-2/?r=sample_vue) — learn how to integrate Flexmonster into a Vue 2 project.
