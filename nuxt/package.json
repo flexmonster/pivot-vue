@@ -14,7 +14,7 @@
     "@amcharts/amcharts4": "^4.10.39",
     "@amcharts/amcharts5": "^5.10.7",
     "highcharts": "^11.4.8",
-    "nuxt": "^3.14.159",
+    "nuxt": "^3.15.3",
     "vue": "latest",
     "vue-flexmonster": "^2.9.89",
     "vue-router": "latest"
