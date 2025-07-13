@@ -16,7 +16,7 @@
     "highcharts": "^11.4.8",
     "nuxt": "^3.14.159",
     "vue": "latest",
-    "vue-flexmonster": "^2.9.89",
+    "vue-flexmonster": "latest",
     "vue-router": "latest"
   }
 }
