@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="page-title">Integrating with amCharts</h1>
+    <h1 class="page-title">Integrating with amCharts 4</h1>
     <div class="description-blocks first-description-block">
       <p>
         Extend Flexmonster’s visualization functionality by integrating with the amCharts library:

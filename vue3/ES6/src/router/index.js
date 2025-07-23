@@ -56,8 +56,7 @@ const router = createRouter({
     },
     {
       path: "/:pathMatch(.*)*",
-      name: "PivotTableDemo",
-      component: PivotTableDemo,
+      redirect: { name: 'PivotTableDemo' }
     },
   ],
 });
