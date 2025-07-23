@@ -18,42 +18,30 @@
             href="https://www.flexmonster.com/doc/?r=rm_vue"
             target="_blank"
             class="title-link"
-        >our documentation</a>
-        for step-by-step guidance on Flexmonster.
+        >our documentation</a> for step-by-step guidance on Flexmonster.
       </p>
     </div>
     <Pivot
       toolbar
       height="600"
       report="https://cdn.flexmonster.com/github/demo-report.json"
-      v-bind:shareReportConnection="{
+      :shareReportConnection="{
         url: 'https://olap.flexmonster.com:9500',
       }"
-      v-bind:beforetoolbarcreated="customizeToolbar"
-      _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
+      :beforetoolbarcreated="customizeToolbar"
+      _:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
     />
   </div>
 </template>
 
-<script>
-//Using the vue-flexmonster module (local registration):
-//1. Importing the vue-flexmonster module:
-//Uncomment the lines below:
+<script setup>
+// Using the vue-flexmonster module (local registration)
+// Uncomment the lines below:
 // import Pivot from "vue-flexmonster/vue3";
-// import 'flexmonster/flexmonster.css';
-import { defineComponent } from "vue";
+// import "flexmonster/flexmonster.css";
 
-export default /*#__PURE__*/ defineComponent({
-  name: "PivotTableDemo",
-  methods: {
-    customizeToolbar: function (toolbar) {
-      toolbar.showShareReportTab = true;
-    },
-  },
-  //2. Defining the component:
-  //Uncomment the lines below:
-  // components: {
-  //    Pivot
-  // }
-});
+function customizeToolbar(toolbar) {
+  // Customizing the Toolbar to show the Share tab
+  toolbar.showShareReportTab = true;
+}
 </script>

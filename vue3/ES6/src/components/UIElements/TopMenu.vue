@@ -30,8 +30,5 @@
   </header>
 </template>
 
-<script>
-export default {
-  name: "TopMenu",
-};
+<script setup>
 </script>
