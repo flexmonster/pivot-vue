@@ -58,7 +58,7 @@
 
   function drawChart() {
     // Running Flexmonster's getData() method for amCharts
-    pivot.value.flexmonster.amcharts.getData({}, createChart.bind(this), updateChart.bind(this));
+    pivot.value.flexmonster.amcharts.getData({}, createChart, updateChart);
   }
 
   function createChart(chartData, rawData) {

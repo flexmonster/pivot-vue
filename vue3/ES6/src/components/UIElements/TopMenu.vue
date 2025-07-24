@@ -4,7 +4,7 @@
       <a href="https://www.flexmonster.com/?r=rm_vue" target="blank" class="logo">
         <img
           src="https://www.flexmonster.com/base/assets/img/svg/logo.svg"
-          alt
+          alt=""
         />
       </a>
       <ul class="mainnav">
@@ -16,14 +16,10 @@
           <a href="https://www.flexmonster.com/doc/?r=rm_vue" target="blank">Docs</a>
         </li>
         <li>
-          <a href="https://www.flexmonster.com/help-center/?r=rm_vue" target="blank"
-            >Help center</a
-          >
+          <a href="https://www.flexmonster.com/help-center/?r=rm_vue" target="blank">Help center</a>
         </li>
         <li>
-          <a href="https://www.flexmonster.com/contact/?r=rm_vue" target="blank"
-            >Contact us</a
-          >
+          <a href="https://www.flexmonster.com/contact/?r=rm_vue" target="blank">Contact us</a>
         </li>
       </ul>
     </div>

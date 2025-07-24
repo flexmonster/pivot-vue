@@ -56,7 +56,7 @@ const router = createRouter({
     },
     {
       path: "/:pathMatch(.*)*",
-      redirect: { name: 'PivotTableDemo' }
+      redirect: { name: 'PivotTableDemo', params: {} }
     },
   ],
 });

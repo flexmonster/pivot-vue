@@ -33,6 +33,7 @@
   import { useTemplateRef } from "vue";
 
   import Highcharts from "highcharts";
+  import "highcharts/modules/accessibility";
   // Importing Flexmonster Connector for Highcharts:
   import "flexmonster/lib/flexmonster.highcharts";
 

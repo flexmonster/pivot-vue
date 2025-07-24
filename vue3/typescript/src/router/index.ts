@@ -10,9 +10,9 @@ const router = createRouter({
       component: PivotTableDemo
     },
     {
-      path: '/composition-api-demo',
-      name: 'CompositionAPIDemo',
-      component: () => import('@/views/VueFlexmonsterExamples/CompositionAPIDemo.vue')
+      path: '/options-api-demo',
+      name: 'OptionsAPIDemo',
+      component: () => import('@/views/VueFlexmonsterExamples/OptionsAPIDemo.vue')
     },
     {
       path: '/handling-events',
@@ -56,8 +56,7 @@ const router = createRouter({
     },
     {
       path: '/:pathMatch(.*)*',
-      name: 'PivotTableDemo',
-      component: PivotTableDemo
+      redirect: { name: 'PivotTableDemo', params: {} }
     }
   ]
 })

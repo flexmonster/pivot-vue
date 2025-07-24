@@ -8,7 +8,7 @@
           href="https://www.flexmonster.com/doc/customizing-grid/?r=rm_vue"
           target="_blank"
           class="title-link"
-        >Customizing the grid</a>.
+        >Customizing the grid cells</a>.
       </p>
       <p>In this demo, the <strong>Price</strong> measure is customized.</p>
     </div>
@@ -46,7 +46,7 @@
   }
 
   function customizeCellFunction(cell, data) {
-    if (data.measure && data.measure.name == "Price") {
+    if (data.measure && data.measure.uniqueName == "Price") {
       let backgroundColor = "#00A45A";
       let textShadowColor = "#095231";
       let borderColor = "#009552";

@@ -2,7 +2,10 @@
   <div>
     <h1 class="page-title">Updating the data in Flexmonster</h1>
     <div class="description-blocks first-description-block">
-      <p>This demo shows how to refresh the data at runtime and keep the slice, options, and formatting the same.</p>
+      <p>
+        This demo shows how to refresh the data at runtime 
+        and keep the slice, options, and formatting the same.
+      </p>
       <p>
         Try it yourself: configure the component as you wish and click the
         <strong>UPDATE DATA</strong> button.

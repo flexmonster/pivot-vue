@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="page-title">Pivot Table Demo</h1>
-        <div class="description-blocks first-description-block">
+    <div class="description-blocks first-description-block">
       <p>
         Flexmonster is a fast and powerful JavaScript pivot grid for data
         visualization and reporting.
@@ -18,39 +18,30 @@
             href="https://www.flexmonster.com/doc/?r=rm_vue"
             target="_blank"
             class="title-link"
-        >our documentation</a>
-        for step-by-step guidance on Flexmonster.
+        >our documentation</a> for step-by-step guidance on Flexmonster.
       </p>
     </div>
     <Pivot
       toolbar
       height="600"
       report="https://cdn.flexmonster.com/github/demo-report.json"
-      v-bind:shareReportConnection="{
+      :shareReportConnection="{
         url: 'https://olap.flexmonster.com:9500',
       }"
-      v-bind:beforetoolbarcreated="customizeToolbar"
-      _v-bind:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
+      :beforetoolbarcreated="customizeToolbar"
+      _:licenseKey="'XXXX-XXXX-XXXX-XXXX-XXXX'"
     />
   </div>
 </template>
 
-<script lang="ts">
-//Using the vue-flexmonster module (local registration):
-//1. Importing the vue-flexmonster module:
+<script setup lang="ts">
+// Using the vue-flexmonster module (local registration)
 import Pivot from "vue-flexmonster/vue3";
-import { defineComponent } from "vue";
+// Uncomment the line below to import Flexmonster styles:
+// import "flexmonster/flexmonster.css";
 
-export default defineComponent({
-  name: "PivotTableDemo",
-  methods: {
-    customizeToolbar(toolbar: Flexmonster.Toolbar): void {
-      toolbar.showShareReportTab = true;
-    },
-  },
-  //2. Defining the component:
-  components: {
-    Pivot,
-  },
-});
+function customizeToolbar(toolbar: Flexmonster.Toolbar): void {
+  // Customizing the Toolbar to show the Share tab
+  toolbar.showShareReportTab = true;
+}
 </script>
