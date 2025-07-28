@@ -16,7 +16,7 @@
       ref="pivot"
       toolbar
       height="600"
-      report="https://cdn.flexmonster.com/github/highcharts-report.json"
+      report="https://cdn.flexmonster.com/github/charts-report.json"
       :shareReportConnection="{
         url: 'https://olap.flexmonster.com:9500',
       }"
@@ -92,12 +92,12 @@
 
     series.children.push(
       am5.Label.new(root, {
-        text: "[fontSize: 20px; #999]TOTAL[/]\n{valueSum.formatNumber()}",
+        text: "[#999]TOTAL:[/]\n{valueSum.formatNumber()}",
         populateText: true,
         textAlign: "center",
         centerX: am5.p50,
         centerY: am5.p50,
-        fontSize: 36,
+        fontSize: 24,
         fontWeight: "500",
         fill: am5.color(0x555555),
         oversizedBehavior: "fit",

@@ -15,7 +15,7 @@
       ref="pivot"
       toolbar
       height="600"
-      report="https://cdn.flexmonster.com/github/highcharts-report.json"
+      report="https://cdn.flexmonster.com/github/charts-report.json"
       :shareReportConnection="{
         url: 'https://olap.flexmonster.com:9500',
       }"
