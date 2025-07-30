@@ -5,7 +5,7 @@
         <router-link to="/pivot-table-demo">PIVOT TABLE DEMO</router-link>
       </li>
       <li class="tab-button">
-        <router-link to="/composition-api-demo">PIVOT TABLE DEMO (Composition API)</router-link>
+        <router-link to="/options-api-demo">PIVOT TABLE DEMO (Options API)</router-link>
       </li>
     </ol>
     <div class="sub-title">API and Events</div>
@@ -43,10 +43,5 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: "SideMenu",
-});
+<script setup lang="ts">
 </script>
