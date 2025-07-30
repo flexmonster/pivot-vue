@@ -13,7 +13,7 @@
     "@amcharts/amcharts5": "^5.13.4",
     "highcharts": "^12.3.0",
     "vue": "^3.5.17",
-    "vue-flexmonster": "^2.9.108",
+    "vue-flexmonster": "latest",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
