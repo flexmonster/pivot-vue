@@ -54,7 +54,7 @@
       cell.style = {
         ...cell.style,
         "background-color": backgroundColor,
-        color: "white",
+        "color": "white",
         "font-weight": "bold",
         "text-shadow": `0px 2px 3px ${textShadowColor}`,
         "border-bottom": `1px solid ${borderColor}`,
