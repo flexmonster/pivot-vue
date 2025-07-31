@@ -8,8 +8,7 @@
           href="https://www.flexmonster.com/doc/integration-with-amcharts/?r=rm_vue"
           target="_blank"
           class="title-link"
-          >Integration with amCharts</a
-        >.
+        >Integration with amCharts</a>.
       </p>
     </div>
     <Pivot

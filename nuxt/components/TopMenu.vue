@@ -4,13 +4,13 @@
       <a href="https://www.flexmonster.com/?r=rm_vue" target="blank" class="logo">
         <img
           src="https://www.flexmonster.com/base/assets/img/svg/logo.svg"
-          alt
+          alt=""
         />
       </a>
       <ul class="mainnav">
         <li>
-          <a href="https://www.flexmonster.com/doc/integration-with-vue-3/?r=rm_vue" target="blank">
-          Integration with Vue 3</a>
+          <a href="https://www.flexmonster.com/doc/integration-with-nuxt/?r=rm_vue" target="blank">
+          Integration with Nuxt</a>
         </li>
         <li>
           <a href="https://www.flexmonster.com/doc/?r=rm_vue" target="blank">Docs</a>
@@ -30,8 +30,5 @@
   </header>
 </template>
 
-<script>
-export default {
-  name: "TopMenu",
-};
+<script setup>
 </script>

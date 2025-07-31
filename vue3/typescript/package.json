@@ -11,8 +11,8 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@amcharts/amcharts4": "^4.10.22",
-    "@amcharts/amcharts5": "^5.3.3",
+    "@amcharts/amcharts4": "^4.10.40",
+    "@amcharts/amcharts5": "^5.13.4",
     "highcharts": "^12.3.0",
     "vue": "^3.5.17",
     "vue-flexmonster": "latest",
