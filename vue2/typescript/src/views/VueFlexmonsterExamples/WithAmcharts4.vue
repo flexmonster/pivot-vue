@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="page-title">Integrating with amCharts</h1>
+    <h1 class="page-title">Integrating with amCharts 4</h1>
     <div class="description-blocks first-description-block">
       <p>
         Extend Flexmonster’s visualization functionality by integrating with the
@@ -9,15 +9,14 @@
           href="https://www.flexmonster.com/doc/integration-with-amcharts/?r=rm_vue"
           target="_blank"
           class="title-link"
-          >Integration with amCharts</a
-        >.
+        >Integration with amCharts</a>.
       </p>
     </div>
     <Pivot
       ref="pivot"
       toolbar
       v-bind:height="600"
-      v-bind:report="'https://cdn.flexmonster.com/github/demo-report.json'"
+      v-bind:report="'https://cdn.flexmonster.com/github/charts-report.json'"
       v-bind:reportcomplete="reportComplete"
       v-bind:shareReportConnection="{
         url: 'https://olap.flexmonster.com:9500',
@@ -70,11 +69,8 @@ export default Vue.extend({
       /* Add data processed by Flexmonster to the chart */
       chart.data = chartData.data;
 
-      /* Set an inner radius to transform a pie chart into a donut chart */
-      chart.innerRadius = am4core.percent(50);
-
       /* Create and configure series for a pie chart */
-      var pieSeries = chart.series.push(new am4charts.PieSeries());
+      const pieSeries = chart.series.push(new am4charts.PieSeries());
       pieSeries.dataFields.category = (
         (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
       ).amcharts?.getCategoryName(rawData);
@@ -82,7 +78,7 @@ export default Vue.extend({
         (this.$refs.pivot as typeof Pivot).flexmonster as Flexmonster.Pivot
       ).amcharts?.getMeasureNameByIndex(rawData, 0);
       pieSeries.slices.template.stroke = am4core.color("#fff");
-      pieSeries.slices.template.strokeWidth = 2;
+      pieSeries.slices.template.strokeWidth = 3;
       pieSeries.slices.template.strokeOpacity = 1;
 
       /* Create initial animation */
@@ -118,8 +114,5 @@ export default Vue.extend({
       this.chart.dispose();
     }
   },
-  // components: {
-  //   Pivot,
-  // },
 });
 </script>

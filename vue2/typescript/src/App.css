@@ -78,6 +78,7 @@ body {
   margin: 5px 5px 5px 0;
   position: relative;
   width: auto;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   -webkit-box-sizing: border-box;
