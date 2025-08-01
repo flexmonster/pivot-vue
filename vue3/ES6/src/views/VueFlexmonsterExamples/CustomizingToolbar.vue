@@ -4,7 +4,7 @@
     <div class="description-blocks first-description-block">
       <p>You can add, remove, and update the Toolbar tabs.</p>
       <p>
-        In this demo, we’ve removed all the tabs and added a custom
+        In this demo, we've removed all the tabs and added a custom
         <strong>New Tab</strong>. See our docs to learn more about the Toolbar and its customization:
         <a
           href="https://www.flexmonster.com/doc/customizing-toolbar/?r=rm_vue"

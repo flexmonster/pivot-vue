@@ -9,22 +9,22 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@amcharts/amcharts4": "^4.10.17",
+    "@amcharts/amcharts4": "^4.10.22",
     "@amcharts/amcharts5": "^5.3.3",
-    "create-vite": "^4.3.2",
-    "express": "^4.18.2",
-    "highcharts": "^10.3.3",
+    "create-vite": "^7.0.3",
+    "express": "^5.1.0",
+    "highcharts": "^12.3.0",
     "path": "^0.12.7",
-    "vue": "^2.7.7",
+    "vue": "^2.7.16",
     "vue-flexmonster": "latest",
     "vue-router": "^3.5.4"
   },
   "devDependencies": {
-    "@vitejs/plugin-legacy": "^2.0.0",
-    "@vitejs/plugin-vue2": "^1.1.2",
-    "eslint": "^8.5.0",
-    "eslint-plugin-vue": "^9.0.0",
+    "@vitejs/plugin-legacy": "^6.1.1",
+    "@vitejs/plugin-vue2": "^2.3.3",
+    "eslint": "^9.31.0",
+    "eslint-plugin-vue": "^9.33.0",
     "terser": "^5.14.2",
-    "vite": "^3.2.7"
+    "vite": "^6.0.0"
   }
 }

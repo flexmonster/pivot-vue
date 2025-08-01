@@ -1,110 +1,96 @@
 <template>
-    <div>
-      <h1 class="page-title">Integrating with amCharts</h1>
-      <div class="description-blocks first-description-block">
-        <p>
-          Extend Flexmonster’s visualization functionality by integrating with the
-          amCharts library:
-          <a
-            href="https://www.flexmonster.com/doc/integration-with-amcharts/?r=rm_vue"
-            target="_blank"
-            class="title-link"
-            >Integration with amCharts</a
-          >.
-        </p>
-      </div>
-      <ClientOnly>
-        <Pivot
-          ref="pivot"
-          toolbar
-          height="600"
-          report="https://cdn.flexmonster.com/github/demo-report.json"
-          v-bind:reportcomplete="reportComplete"
-          v-bind:shareReportConnection="{
-            url: 'https://olap.flexmonster.com:9500',
-          }"
-          v-bind:beforetoolbarcreated="customizeToolbar"
-          licenseFilePath="https://cdn.flexmonster.com/jsfiddle.charts.key"
-        />
-      </ClientOnly>
-      <div class="chart-container">
-        <div id="amcharts-container" style="width: 100%; height: 500px"></div>
-      </div>
+  <div>
+    <h1 class="page-title">Integrating with amCharts 4</h1>
+    <div class="description-blocks first-description-block">
+      <p>
+        Extend Flexmonster's visualization functionality by integrating with the amCharts library:
+        <a
+          href="https://www.flexmonster.com/doc/integration-with-amcharts/?r=rm_vue"
+          target="_blank"
+          class="title-link"
+        >Integration with amCharts</a>.
+      </p>
     </div>
-  </template>
-  
-  <script>
-  // amCharts imports
+    <ClientOnly>
+      <Pivot
+        ref="pivot"
+        toolbar
+        height="600"
+        report="https://cdn.flexmonster.com/github/charts-report.json"
+        :shareReportConnection="{
+          url: 'https://olap.flexmonster.com:9500',
+        }"
+        :beforetoolbarcreated="customizeToolbar"
+        :reportcomplete="reportComplete"
+        licenseFilePath="https://cdn.flexmonster.com/jsfiddle.charts.key"
+      />
+    </ClientOnly>
+    <div class="chart-container">
+      <div
+        id="amcharts-container"
+        style="width: 100%; height: 500px"
+      ></div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+  import { useTemplateRef, onBeforeUnmount } from "vue";
+
+  // Importing amCharts
   import * as am4core from "@amcharts/amcharts4/core";
   import * as am4charts from "@amcharts/amcharts4/charts";
   import am4themes_animated from "@amcharts/amcharts4/themes/animated";
-  
-  /* Apply amCharts theme */
+
+  // Applying the amCharts theme
   am4core.useTheme(am4themes_animated);
-  
-  import { defineComponent } from 'vue';
-  
-  export default /*#__PURE__*/defineComponent({
-    name: "WithAmcharts4",
-    methods: {
-      customizeToolbar: function (toolbar) {
-        toolbar.showShareReportTab = true;
-      },
-      reportComplete: function () {
-        this.$refs.pivot.flexmonster.off("reportcomplete");
-        this.drawChart();
-      },
-  
-      drawChart: function () {
-        //Running Flexmonster's getData method for amCharts
-        this.$refs.pivot.flexmonster.amcharts.getData(
-          {},
-          this.createChart.bind(this),
-          this.updateChart.bind(this)
-        );
-      },
-  
-      createChart: function (chartData, rawData) {
-        /* Apply amCharts theme */
-        am4core.useTheme(am4themes_animated);
-  
-        /* Create chart instance */
-        let chart = am4core.create("amcharts-container", am4charts.PieChart);
-  
-        /* Add data processed by Flexmonster to the chart */
-        chart.data = chartData.data;
-  
-        /* Set an inner radius to transform a pie chart into a donut chart */
-        chart.innerRadius = am4core.percent(50);
-  
-        /* Create and configure series for a pie chart */
-        var pieSeries = chart.series.push(new am4charts.PieSeries());
-        pieSeries.dataFields.category =
-          this.$refs.pivot.flexmonster.amcharts.getCategoryName(rawData);
-        pieSeries.dataFields.value =
-          this.$refs.pivot.flexmonster.amcharts.getMeasureNameByIndex(rawData, 0);
-        pieSeries.slices.template.stroke = am4core.color("#fff");
-        pieSeries.slices.template.strokeWidth = 2;
-        pieSeries.slices.template.strokeOpacity = 1;
-  
-        /* Create initial animation */
-        pieSeries.hiddenState.properties.opacity = 1;
-        pieSeries.hiddenState.properties.endAngle = -90;
-        pieSeries.hiddenState.properties.startAngle = -90;
-  
-        this.chart = chart;
-      },
-  
-      updateChart: function (chartData, rawData) {
-        this.chart.dispose();
-        this.createChart(chartData, rawData);
-      },
-    },
-    beforeUnmount() {
-      if (this.chart) {
-        this.chart.dispose();
-      }
+
+  const pivot = useTemplateRef("pivot");
+  let chart;
+
+  function customizeToolbar(toolbar) {
+    toolbar.showShareReportTab = true;
+  }
+
+  function reportComplete() {
+    pivot.value.flexmonster.off("reportcomplete");
+    drawChart();
+  }
+
+  function drawChart() {
+    // Running Flexmonster's getData() method for amCharts
+    pivot.value.flexmonster.amcharts.getData({}, createChart, updateChart);
+  }
+
+  function createChart(chartData, rawData) {
+    // Creating a chart instance
+    chart = am4core.create("amcharts-container", am4charts.PieChart);
+
+    // Adding data processed by Flexmonster to the chart
+    chart.data = chartData.data;
+
+    // Creating and configuring series for a pie chart
+    const pieSeries = chart.series.push(new am4charts.PieSeries());
+    pieSeries.dataFields.category = pivot.value.flexmonster.amcharts.getCategoryName(rawData);
+    pieSeries.dataFields.value = pivot.value.flexmonster.amcharts.getMeasureNameByIndex(rawData, 0);
+    pieSeries.slices.template.stroke = am4core.color("#fff");
+    pieSeries.slices.template.strokeWidth = 3;
+    pieSeries.slices.template.strokeOpacity = 1;
+
+    // Creating initial animation
+    pieSeries.hiddenState.properties.opacity = 1;
+    pieSeries.hiddenState.properties.endAngle = -90;
+    pieSeries.hiddenState.properties.startAngle = -90;
+  }
+
+  function updateChart(chartData, rawData) {
+    chart.dispose();
+    createChart(chartData, rawData);
+  }
+
+  onBeforeUnmount(() => {
+    if (chart) {
+      chart.dispose();
     }
   });
-  </script>
-  
+</script>

@@ -1,36 +1,35 @@
 <template>
-  <div class="toggle-button noselect" :id="id">
+  <div
+    class="toggle-button noselect"
+    :id="id"
+  >
     <input
       class="button-checkbox"
       :id="labelOn"
       type="checkbox"
       v-model="checked"
-      v-on:click="onClick"
+      v-on:click="$emit('clicked', checked)"
     />
-    <label :for="labelOn" class="button-checkbox-label">
+    <label
+      :for="labelOn"
+      class="button-checkbox-label"
+    >
       <span class="on">{{ checked ? labelOn : labelOff }}</span>
     </label>
   </div>
 </template>
 
-<script>
-export default {
-  name: "ToggleButton",
-  inheritAttrs: false,
-  props: {
+<script setup>
+  import { ref } from "vue";
+
+  defineProps({
     labelOn: String,
     labelOff: String,
     id: String,
-  },
-  data: function () {
-    return {
-      checked: true,
-    };
-  },
-  methods: {
-    onClick: function () {
-      this.$emit("clicked", this.checked);
-    },
-  },
-};
+  });
+  defineOptions({
+    inheritAttrs: false,
+  });
+
+  const checked = ref(true);
 </script>

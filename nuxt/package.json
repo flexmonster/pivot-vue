@@ -1,9 +1,9 @@
 {
   "name": "nuxt-app",
   "private": true,
-  "type": "module",
+  "version": "1.0.0",
   "scripts": {
-    "start": "nuxt dev",
+    "start": "nuxt dev --open",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
@@ -11,10 +11,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@amcharts/amcharts4": "^4.10.39",
-    "@amcharts/amcharts5": "^5.10.7",
-    "highcharts": "^11.4.8",
-    "nuxt": "^3.14.159",
+    "@amcharts/amcharts4": "^4.10.40",
+    "@amcharts/amcharts5": "^5.13.4",
+    "highcharts-vue": "^2.0.1",
+    "nuxt": "^4.0.2",
     "vue": "latest",
     "vue-flexmonster": "latest",
     "vue-router": "latest"

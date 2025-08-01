@@ -1,133 +1,135 @@
 <template>
-    <div>
-        <h1 class="page-title">Integrating with amCharts</h1>
-        <div class="description-blocks first-description-block">
-            <p>
-                Extend Flexmonster’s visualization functionality by integrating with the
-                amCharts library:
-                <a href="https://www.flexmonster.com/doc/integration-with-amcharts/?r=rm_vue" target="_blank"
-                    class="title-link">Integration with amCharts</a>.
-            </p>
-        </div>
-        <ClientOnly>
-          <Pivot
-          ref="pivot"
-          toolbar
-          height="600"
-          report="https://cdn.flexmonster.com/github/demo-report.json"
-          v-bind:reportcomplete="reportComplete"
-          v-bind:shareReportConnection="{
-            url: 'https://olap.flexmonster.com:9500',
-          }"
-          v-bind:beforetoolbarcreated="customizeToolbar"
-          licenseFilePath="https://cdn.flexmonster.com/jsfiddle.charts.key"
-          />
-        </ClientOnly>
-        <div class="chart-container">
-            <div id="amcharts-container" style="width: 100%; height: 500px"></div>
-        </div>
+  <div>
+    <h1 class="page-title">Integrating with amCharts</h1>
+    <div class="description-blocks first-description-block">
+      <p>
+        Extend Flexmonster's visualization functionality by integrating with the amCharts library:
+        <a
+          href="https://www.flexmonster.com/doc/integration-with-amcharts/?r=rm_vue"
+          target="_blank"
+          class="title-link"
+        >Integration with amCharts</a>.
+      </p>
     </div>
+    <ClientOnly>
+      <Pivot
+        ref="pivot"
+        toolbar
+        height="600"
+        report="https://cdn.flexmonster.com/github/charts-report.json"
+        :shareReportConnection="{
+          url: 'https://olap.flexmonster.com:9500',
+        }"
+        :beforetoolbarcreated="customizeToolbar"
+        :reportcomplete="reportComplete"
+        licenseFilePath="https://cdn.flexmonster.com/jsfiddle.charts.key"
+      />
+    </ClientOnly>
+    <div class="chart-container">
+      <div
+        id="amcharts-container"
+        style="width: 100%; height: 600px"
+      ></div>
+    </div>
+  </div>
 </template>
 
-<script>
-// amCharts imports
-import * as am5 from "@amcharts/amcharts5";
-import * as am5xy from "@amcharts/amcharts5/xy";
-import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
+<script setup>
+  import { useTemplateRef, onBeforeUnmount } from "vue";
 
-import { defineComponent } from 'vue';
+  // Importing amCharts
+  import * as am5 from "@amcharts/amcharts5";
+  import * as am5percent from "@amcharts/amcharts5/percent";
+  import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 
-export default /*#__PURE__*/defineComponent({
-    name: "WithAmcharts",
-    methods: {
-        customizeToolbar: function (toolbar) {
-            toolbar.showShareReportTab = true;
-        },
-        reportComplete: function () {
-            this.$refs.pivot.flexmonster.off("reportcomplete");
-            this.drawChart();
-        },
+  const pivot = useTemplateRef("pivot");
+  let root;
 
-        drawChart: function () {
-            //Running Flexmonster's getData method for amCharts
-            this.$refs.pivot.flexmonster.amcharts.getData(
-                {},
-                this.createChart.bind(this),
-                this.updateChart.bind(this)
-            );
-        },
+  function customizeToolbar(toolbar) {
+    toolbar.showShareReportTab = true;
+  }
 
-        createChart: function (chartData, rawData) {
+  function reportComplete() {
+    pivot.value.flexmonster.off("reportcomplete");
+    drawChart();
+  }
 
-            /* Create root element and chart instance */
-            this.root = am5.Root.new("amcharts-container");
-            let chart = this.root.container.children.push(am5xy.XYChart.new(this.root, {
-            }));
+  function drawChart() {
+    // Running Flexmonster's getData() method for amCharts
+    pivot.value.flexmonster.amcharts.getData({}, createChart, updateChart);
+  }
 
-            /* Apply amCharts theme */
-            this.root.setThemes([
-                am5themes_Animated.new(this.root),
-            ]);
+  function createChart(chartData, rawData) {
+    // Initializing the root element
+    root = am5.Root.new("amcharts-container");
+    // Applying the amCharts theme
+    root.setThemes([am5themes_Animated.new(root)]);
+    // Applying number format from Flexmonster
+    root.numberFormatter.set("numberFormat", pivot.value.flexmonster.amcharts.getNumberFormatPattern(rawData.meta.formats[0]));
 
-            /* Apply number format from Flexmonster */
-            this.root.numberFormatter.set("numberFormat", this.$refs.pivot.flexmonster.amcharts.getNumberFormatPattern(rawData.meta.formats[0]));
+    // Creating a chart instance
+    const chart = root.container.children.push(
+      am5percent.PieChart.new(root, {
+        layout: root.verticalLayout,
+        innerRadius: 100,
+      })
+    );
 
-            /* Create and configure Y axis */
-            let yAxis = chart.yAxes.push(am5xy.CategoryAxis.new(this.root, {
-                categoryField: this.$refs.pivot.flexmonster.amcharts.getCategoryName(rawData),
-                renderer: am5xy.AxisRendererY.new(this.root, {
-                    cellStartLocation: 0.1,
-                    cellEndLocation: 0.9,
-                })
-            }));
+    const series = chart.series.push(
+      am5percent.PieSeries.new(root, {
+        valueField: pivot.value.flexmonster.amcharts.getMeasureNameByIndex(rawData, 0),
+        categoryField: pivot.value.flexmonster.amcharts.getCategoryName(rawData),
+      })
+    );
 
-            /* Create and configure X axis */
-            let xAxis = chart.xAxes.push(am5xy.ValueAxis.new(this.root, {
-                renderer: am5xy.AxisRendererX.new(this.root, {}),
-            }));
+    series.children.push(
+      am5.Label.new(root, {
+        text: "[#999]TOTAL:[/]\n{valueSum.formatNumber()}",
+        populateText: true,
+        textAlign: "center",
+        centerX: am5.p50,
+        centerY: am5.p50,
+        fontSize: 24,
+        fontWeight: "500",
+        fill: am5.color(0x555555),
+        oversizedBehavior: "fit",
+      })
+    );
 
-            xAxis.set("numberFormatter", am5.NumberFormatter.new(this.root, {
-                "numberFormat": "#a"
-            }));
+    series.slices.template.set("tooltipText", "{category}: {value} ({valuePercentTotal.formatNumber('0.00')}%)");
+    series.labels.template.set("visible", false);
+    series.ticks.template.set("visible", false);
 
-            /* Create and configure series for a bar chart */
-            let series = chart.series.push(am5xy.ColumnSeries.new(this.root, {
-                name: this.$refs.pivot.flexmonster.amcharts.getMeasureNameByIndex(rawData, 0),
-                xAxis: xAxis,
-                yAxis: yAxis,
-                sequencedInterpolation: true,
-                valueXField: this.$refs.pivot.flexmonster.amcharts.getMeasureNameByIndex(rawData, 0),
-                categoryYField: this.$refs.pivot.flexmonster.amcharts.getCategoryName(rawData),
-                tooltip: am5.Tooltip.new(this.root, {
-                    labelText: '{name}: [bold]{valueX}[/]'
-                })
-            }));
+    series.data.setAll(chartData.data);
 
-            /* Create XY cursor */
-            chart.set("cursor", am5xy.XYCursor.new(this.root, {
-                behavior: "none",
-                xAxis: xAxis,
-                yAxis: yAxis
-            }));
+    const legend = chart.children.push(am5.Legend.new(root, {
+      centerX: am5.percent(50),
+      x: am5.percent(50),
+      layout: am5.GridLayout.new(root, {
+        maxColumns: 3,
+        fixedWidthGrid: true
+      }),
+      height: am5.percent(20),
+      verticalScrollbar: am5.Scrollbar.new(root, {
+        orientation: "vertical"
+      }),
+    }));
+    legend.data.setAll(series.dataItems);
+    legend.valueLabels.template.set("forceHidden", true);
 
-            /* Add data processed by Flexmonster to the chart */
-            yAxis.data.setAll(chartData.data);
-            series.data.setAll(chartData.data);
+    chart.appear(1000, 100);
+    series.appear(1000, 100);
+  }
 
-            /* Create initial animation */
-            series.appear(1000);
-            chart.appear(1000, 100);
-        },
+  function updateChart(chartData, rawData) {
+    root.dispose();
+    createChart(chartData, rawData);
+  }
 
-        updateChart: function (chartData, rawData) {
-            this.chart.dispose();
-            this.createChart(chartData, rawData);
-        },
-    },
-    beforeUnmount() {
-        if (this.chart) {
-            this.chart.dispose();
-        }
+  onBeforeUnmount(() => {
+    // Disposing of the chart instance when the component is unmounted
+    if (root) {
+      root.dispose();
     }
-});
+  });
 </script>
