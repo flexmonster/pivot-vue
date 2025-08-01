@@ -26,7 +26,7 @@
     <div class="chart-container">
       <div
         id="amcharts-container"
-        style="width: 100%; height: 500px"
+        style="width: 100%; height: 600px"
       ></div>
     </div>
   </div>
@@ -71,6 +71,7 @@
     // Creating a chart instance
     const chart = root.container.children.push(
       am5percent.PieChart.new(root, {
+        layout: root.verticalLayout,
         innerRadius: 100,
       })
     );
@@ -79,15 +80,8 @@
       am5percent.PieSeries.new(root, {
         valueField: pivot.value.flexmonster.amcharts.getMeasureNameByIndex(rawData, 0),
         categoryField: pivot.value.flexmonster.amcharts.getCategoryName(rawData),
-        alignLabels: false,
       })
     );
-
-    series.labels.template.setAll({
-      textType: "circular",
-      centerX: 0,
-      centerY: 0,
-    });
 
     series.children.push(
       am5.Label.new(root, {
@@ -103,9 +97,26 @@
       })
     );
 
-    series.slices.template.set("tooltipText", "{category}: {value}");
+    series.slices.template.set("tooltipText", "{category}: {value} ({valuePercentTotal.formatNumber('0.00')}%)");
+    series.labels.template.set("visible", false);
+    series.ticks.template.set("visible", false);
 
     series.data.setAll(chartData.data);
+
+    const legend = chart.children.push(am5.Legend.new(root, {
+      centerX: am5.percent(50),
+      x: am5.percent(50),
+      layout: am5.GridLayout.new(root, {
+        maxColumns: 3,
+        fixedWidthGrid: true
+      }),
+      height: am5.percent(20),
+      verticalScrollbar: am5.Scrollbar.new(root, {
+        orientation: "vertical"
+      }),
+    }));
+    legend.data.setAll(series.dataItems);
+    legend.valueLabels.template.set("forceHidden", true);
 
     chart.appear(1000, 100);
     series.appear(1000, 100);
