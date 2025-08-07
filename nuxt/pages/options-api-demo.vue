@@ -13,7 +13,7 @@
       <p>
         Learn more about this example in our documentation:
         <a
-          href="https://www.flexmonster.com/doc/flexmonster-in-vue-3/?r=rm_vue#options-api"
+          href="https://www.flexmonster.com/doc/flexmonster-in-vue-3/?r=rm_vue/#options-api"
           target="_blank"
           class="title-link"
         >Creating the pivot table using Options API</a>.
