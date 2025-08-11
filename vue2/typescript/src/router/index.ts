@@ -56,8 +56,7 @@ const router = new VueRouter({
     },
     {
       path: '/:pathMatch(.*)*',
-      name: 'Home',
-      component: PivotTableDemo
+      redirect: { name: 'PivotTableDemo', params: {} }
     }
   ]
 })

@@ -9,8 +9,7 @@
           href="https://www.flexmonster.com/doc/customizing-grid/?r=rm_vue"
           target="_blank"
           class="title-link"
-          >Customizing the grid</a
-        >.
+        >Customizing the grid cells</a>.
       </p>
       <p>In this demo, the <strong>Price</strong> measure is customized.</p>
     </div>
@@ -60,7 +59,7 @@ export default Vue.extend({
         cell.style = {
           ...cell.style,
           "background-color": backgroundColor,
-          color: "white",
+          "color": "white",
           "font-weight": "bold",
           "text-shadow": `0px 2px 3px ${textShadowColor}`,
           "border-bottom": `1px solid ${borderColor}`,

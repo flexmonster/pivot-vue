@@ -1,6 +1,5 @@
 import VueRouter from 'vue-router'
 import PivotTableDemo from '../views/VueFlexmonsterExamples/PivotTableDemo.vue'
-//import UsingAPICalls from '../views/VueFlexmonsterExamples/UsingAPICalls.vue'
 
 const router = new VueRouter({
 	mode:"history",
@@ -51,8 +50,7 @@ const router = new VueRouter({
   },
   {
     path: '/:pathMatch(.*)*',
-    name: 'Home',
-    component: PivotTableDemo
+    redirect: { name: 'PivotTableDemo', params: {} }
   }
   ]
 })

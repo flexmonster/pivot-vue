@@ -3,7 +3,7 @@
     <h1 class="page-title">Integrating with amCharts 4</h1>
     <div class="description-blocks first-description-block">
       <p>
-        Extend Flexmonster’s visualization functionality by integrating with the amCharts library:
+        Extend Flexmonster's visualization functionality by integrating with the amCharts library:
         <a
           href="https://www.flexmonster.com/doc/integration-with-amcharts/?r=rm_vue"
           target="_blank"

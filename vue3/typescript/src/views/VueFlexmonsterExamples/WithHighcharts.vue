@@ -24,21 +24,22 @@
       licenseFilePath="https://cdn.flexmonster.com/jsfiddle.charts.key"
     />
     <div class="chart-container">
-      <div id="highcharts-container"></div>
+      <Chart :options="chartOptions"/>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { useTemplateRef, Ref } from "vue";
+  import { useTemplateRef, ref, Ref } from "vue";
   import Pivot from "vue-flexmonster/vue3";
 
-  import Highcharts from "highcharts";
+  import { Chart } from "highcharts-vue";
   import "highcharts/modules/accessibility";
   // Importing Flexmonster Connector for Highcharts:
   import "flexmonster/lib/flexmonster.highcharts";
 
   const pivot: Ref<typeof Pivot | null> = useTemplateRef("pivot");
+  const chartOptions: Ref<Highcharts.Options> = ref({});
 
   function customizeToolbar(toolbar: Flexmonster.Toolbar): void {
     toolbar.showShareReportTab = true;
@@ -55,10 +56,10 @@
         type: "spline",
       },
       function (data: Flexmonster.GetDataValueObject) {
-        Highcharts.chart("highcharts-container", data as Highcharts.Options);
+        chartOptions.value = data as Highcharts.Options;
       },
       function (data: Flexmonster.GetDataValueObject) {
-        Highcharts.chart("highcharts-container", data as Highcharts.Options);
+        chartOptions.value = data as Highcharts.Options;
       }
     );
   }

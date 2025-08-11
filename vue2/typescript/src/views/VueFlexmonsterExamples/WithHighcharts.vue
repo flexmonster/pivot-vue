@@ -17,7 +17,7 @@
       ref="pivot"
       toolbar
       v-bind:height="600"
-      v-bind:report="'https://cdn.flexmonster.com/github/highcharts-report.json'"
+      v-bind:report="'https://cdn.flexmonster.com/github/charts-report.json'"
       v-bind:reportcomplete="reportComplete"
       v-bind:shareReportConnection="{
         url: 'https://olap.flexmonster.com:9500',
@@ -33,6 +33,7 @@
 
 <script lang="ts">
 import Highcharts from "highcharts";
+import "highcharts/modules/accessibility";
 //Importing Flexmonster Connector for Highcharts:
 import "flexmonster/lib/flexmonster.highcharts";
 import Pivot from "vue-flexmonster";
@@ -63,8 +64,5 @@ export default Vue.extend({
       this.drawChart();
     },
   },
-  // components: {
-  //   Pivot
-  // }
 });
 </script>
