@@ -40,7 +40,7 @@ npm install
 3. Run the sample project: 
 
 ```bash
-npm start 
+npm start
 ```
 
 To see the result, open `http://localhost:5173/` in your browser.
@@ -53,7 +53,7 @@ Vue 3 sample project contains several examples of Flexmonster Pivot usage and cu
 - **Pivot table demo (Options API)** is an example of how to embed Flexmonster in a Vue 3 project using Options API.
 - **Handling events** demonstrates how to subscribe to events and unsubscribe from them. 
 - **Using API calls** illustrates how to use Flexmonster's methods. 
-- **Updating data** is an example of using the `updateData()` method.
+- **Updating data** is an example of refreshing data at runtime using the `updateData()` method.
 - **Customizing the Toolbar** shows how to customize the Toolbar.
 - **Customizing the grid** illustrates how to customize the pivot table using the `customizeCell()` API call.
 - **Integration with Highcharts** demonstrates how to integrate with the Highcharts charting library.
