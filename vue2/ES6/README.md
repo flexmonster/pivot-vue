@@ -21,7 +21,7 @@ Table of contents:
 
 ## Prerequisites
 
-- [Node.js 18 or later](https://nodejs.org/en/)
+- [Node.js 16 or later](https://nodejs.org/en/)
 
 ## Installation 
 
@@ -40,7 +40,7 @@ npm install
 3. Run the sample project: 
 
 ```bash
-npm start 
+npm start
 ```
 
 To see the result, open `http://localhost:5173/` in your browser.
