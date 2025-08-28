@@ -78,7 +78,7 @@ To see the result, open the project in your browser.
 
 Vue sample projects contain several examples of Flexmonster Pivot usage and customization:
 
-- **Pivot table demo** shows how to define the `report`, `toolbar`, `height`, and other initialization parameters in the pivot grid.
+- **Pivot table demo** shows how to define the `report`, `toolbar`, and other initialization parameters in the pivot grid.
 - **Pivot table demo (Options API)** is an example of how to embed Flexmonster in a Vue 3 project using Options API.
 - **Handling events** demonstrates how to subscribe to events and unsubscribe from them. 
 - **Using API calls** illustrates how to use Flexmonster's methods. 
