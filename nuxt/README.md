@@ -59,6 +59,7 @@ Nuxt sample project contains several examples of Flexmonster Pivot usage and cus
 - **Integration with Highcharts** demonstrates how to integrate with the Highcharts charting library.
 - **Integration with amCharts** is an example of integration with the amCharts charting library.
 
+You can try all of these examples right from the project’s starting page.
 
 ## Related Flexmonster docs
 
