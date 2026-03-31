@@ -3,6 +3,9 @@ os:
 language: node_js
 node_js:
 - '22'
+env:
+  global:
+    - npm_config_detect_chromedriver_version=true
 cache:
   npm: false
 services:
@@ -10,10 +13,7 @@ services:
 dist: jammy
 addons:
   chrome: stable
-before_install:
-- google-chrome-stable --port=9515 --headless --disable-gpu --remote-debugging-port=9222
-  http://localhost &
-beforescript:
+before_script:
 - git clone https://github.com/flexmonster/framework-integration-testing.git
 - chmod +x ./framework-integration-testing/launchScripts/vue/vue2ES6.sh
 - chmod +x ./framework-integration-testing/launchScripts/vue/vue2Typescript.sh
